@@ -1,0 +1,944 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/21/2022 1:03:25 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-5VBE4DS"
+  DTS:CreatorName="DESKTOP-5VBE4DS\kjmop"
+  DTS:DTSID="{7BEFC0B9-8449-42C5-B0C4-941D5088960F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1042"
+  DTS:ObjectName="Lesson 2"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{33E1C693-1B81-46E9-B9E3-09BE0F76753A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1FF7A1B6-88F9-482C-B85B-2E29F005E62E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varFileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Foreach File in Folder"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach 루프 컨테이너"
+      DTS:DTSID="{227BD247-52AC-479E-84BC-A91ACFC5ABD2}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="1033"
+      DTS:ObjectName="Foreach File in Folder">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{9CCBC8F6-340A-4A27-9D0E-29EE5ED6AA95}"
+        DTS:ObjectName="{9CCBC8F6-340A-4A27-9D0E-29EE5ED6AA95}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Users\kjmop\Downloads\Creating a Simple ETL Package\Creating a Simple ETL Package\Sample Data" />
+            <FEFEProperty
+              FileSpec="Currency_*.txt" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach File in Folder\Extract Sample Currency Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="데이터 흐름 태스크"
+          DTS:DTSID="{A3DE0628-D8B1-465F-A9BA-989977D8A8E5}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="1033"
+          DTS:ObjectName="Extract Sample Currency Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="플랫 파일 원본;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;1"
+                  description="플랫 파일 원본"
+                  localeId="1033"
+                  name="Extract Sample Currency Data"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="길이가 0인 열을 Null로 처리할지 여부를 지정합니다."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="파일 이름이 들어 있는 출력 열의 이름을 지정합니다. 이름을 지정하지 않으면 파일 이름이 들어 있는 출력 열이 생성되지 않습니다."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Connections[FlatFileConnection]"
+                      connectionManagerID="{7D4E89E7-4567-4C7E-A5BD-0CB238418FEA}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Sample Flat File Source Data]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력]"
+                      name="플랫 파일 원본 출력">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].Columns[AverageRate]"
+                          dataType="r4"
+                          errorOrTruncationOperation="변환"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].ExternalColumns[AverageRate]"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].Columns[AverageRate]"
+                          name="AverageRate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="열이 보다 빠른 로캘 중립 구문 분석 루틴을 사용하는지 여부를 나타냅니다."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="데이터가 이진 형식인지 여부를 나타냅니다."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].Columns[CurrencyID]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="변환"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].ExternalColumns[CurrencyID]"
+                          length="50"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].Columns[CurrencyID]"
+                          name="CurrencyID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="열이 보다 빠른 로캘 중립 구문 분석 루틴을 사용하는지 여부를 나타냅니다."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="데이터가 이진 형식인지 여부를 나타냅니다."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].Columns[CurrencyDate]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="변환"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].ExternalColumns[CurrencyDate]"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].Columns[CurrencyDate]"
+                          name="CurrencyDate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="열이 보다 빠른 로캘 중립 구문 분석 루틴을 사용하는지 여부를 나타냅니다."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="데이터가 이진 형식인지 여부를 나타냅니다."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].Columns[EndOfDayRate]"
+                          dataType="r4"
+                          errorOrTruncationOperation="변환"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].ExternalColumns[EndOfDayRate]"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].Columns[EndOfDayRate]"
+                          name="EndOfDayRate"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="열이 보다 빠른 로캘 중립 구문 분석 루틴을 사용하는지 여부를 나타냅니다."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="데이터가 이진 형식인지 여부를 나타냅니다."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].ExternalColumns[AverageRate]"
+                          dataType="r4"
+                          name="AverageRate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].ExternalColumns[CurrencyID]"
+                          dataType="wstr"
+                          length="50"
+                          name="CurrencyID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].ExternalColumns[CurrencyDate]"
+                          dataType="dbDate"
+                          name="CurrencyDate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].ExternalColumns[EndOfDayRate]"
+                          dataType="r4"
+                          name="EndOfDayRate" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 오류 출력]"
+                      isErrorOut="true"
+                      name="플랫 파일 원본 오류 출력">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 오류 출력].Columns[플랫 파일 원본 오류 출력 열]"
+                          codePage="1252"
+                          dataType="text"
+                          description="플랫 파일 원본 오류 출력 열"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 오류 출력].Columns[플랫 파일 원본 오류 출력 열]"
+                          name="플랫 파일 원본 오류 출력 열" />
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 오류 출력].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 오류 출력].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 오류 출력].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 오류 출력].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="조회;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;6"
+                  description="테이블의 값을 조회하여 데이터 흐름에 추가 열을 조인합니다. 예를 들어 직원 테이블을 '직원 ID' 열에 조인하여 '고용 날짜' 및 '직원 이름'을 가져올 수 있습니다. 조회 테이블이 메모리에 적합한 경우 이 변환을 사용하는 것이 좋습니다."
+                  name="Lookup Currency Key"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="조회 테이블을 생성하는 SQL 문을 지정합니다."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM dbo.DimCurrency
+WHERE CurrencyAlternateKey 
+      IN  ('ARS', 'AUD', 'BRL', 'CAD', 'CNY',
+            'DEM', 'EUR', 'FRF', 'GBP', 'JPY',
+            'MXN', 'SAR', 'USD', 'VEB')</property>
+                    <property
+                      dataType="System.String"
+                      description="매개 변수를 사용하여 조회 테이블을 생성하는 SQL 문을 지정합니다."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT * FROM dbo.DimCurrency
+WHERE CurrencyAlternateKey 
+      IN  ('ARS', 'AUD', 'BRL', 'CAD', 'CNY',
+            'DEM', 'EUR', 'FRF', 'GBP', 'JPY',
+            'MXN', 'SAR', 'USD', 'VEB')) [refTable]
+where [refTable].[CurrencyAlternateKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="참조 데이터 세트에 액세스하는 데 사용되는 연결 유형을 지정합니다."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="조회 테이블의 캐시 유형을 지정합니다."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="조회 변환 시 참조 데이터 집합에서 일치하는 항목이 없는 행을 처리하는 방법을 지정합니다."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="참조 데이터 세트에서 일치하는 항목이 없는 행에 할당되는 캐시의 비율을 지정합니다."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="32비트 플랫폼에서 참조 캐시의 최대 메모리 사용량입니다."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="64비트 플랫폼에서 참조 캐시의 최대 메모리 사용량입니다."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="XML 형식의 메타데이터를 참조할지 여부를 나타냅니다."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CurrencyKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrencyAlternateKey" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrencyName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="SQLCommand 속성의 SQL 문이 사용하는 매개 변수에 매핑되는 계보 식별자 목록을 지정합니다. 목록의 항목은 세미콜론으로 구분됩니다."
+                      name="ParameterMap">#{Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].Columns[CurrencyID]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="데이터 원본에서 코드 페이지 정보를 사용할 수 없을 때 사용할 열 코드 페이지를 지정합니다."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="전체 캐시 모드를 사용할 때 참조 데이터의 중복 키를 오류로 처리할지 여부를 결정합니다."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key.Connections[OleDbConnection]"
+                      connectionManagerID="{175F9DD7-2733-42C1-B23A-C0497511531A}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                      description="조회 데이터에 액세스하는 데 사용되는 연결 관리자입니다."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key.Inputs[조회 입력]"
+                      name="조회 입력">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key.Inputs[조회 입력].Columns[CurrencyID]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="CurrencyID"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].Columns[CurrencyID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="열을 조인할 참조 테이블의 열을 지정합니다."
+                              name="JoinToReferenceColumn">CurrencyAlternateKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="열을 복사할 참조 테이블의 열을 지정합니다."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key.Outputs[조회 일치 항목 출력]"
+                      errorOrTruncationOperation="조회"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="조회 일치 항목 출력"
+                      synchronousInputId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key.Inputs[조회 입력]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key.Outputs[조회 일치 항목 출력].Columns[CurrencyKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="열 복사"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key.Outputs[조회 일치 항목 출력].Columns[CurrencyKey]"
+                          name="CurrencyKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="열을 복사할 참조 테이블의 열을 지정합니다."
+                              name="CopyFromReferenceColumn">CurrencyKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key.Outputs[조회 불일치 항목 출력]"
+                      description="참조 데이터 세트에서 일치하는 항목이 없는 행을 처리하는 조회 출력입니다. NoMatchBehavior 속성이 &quot;일치하는 항목이 없는 행을 불일치 항목 출력으로 보냅니다.&quot;로 설정되어 있는 경우 이 출력을 사용합니다."
+                      exclusionGroup="1"
+                      name="조회 불일치 항목 출력"
+                      synchronousInputId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key.Inputs[조회 입력]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key.Outputs[조회 오류 출력]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="조회 오류 출력"
+                      synchronousInputId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key.Inputs[조회 입력]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key.Outputs[조회 오류 출력].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key.Outputs[조회 오류 출력].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key.Outputs[조회 오류 출력].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key.Outputs[조회 오류 출력].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="조회;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;6"
+                  description="테이블의 값을 조회하여 데이터 흐름에 추가 열을 조인합니다. 예를 들어 직원 테이블을 '직원 ID' 열에 조인하여 '고용 날짜' 및 '직원 이름'을 가져올 수 있습니다. 조회 테이블이 메모리에 적합한 경우 이 변환을 사용하는 것이 좋습니다."
+                  name="Lookup Date Key"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="조회 테이블을 생성하는 SQL 문을 지정합니다."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimDate]</property>
+                    <property
+                      dataType="System.String"
+                      description="매개 변수를 사용하여 조회 테이블을 생성하는 SQL 문을 지정합니다."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimDate]) [refTable]
+where [refTable].[FullDateAlternateKey] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="참조 데이터 세트에 액세스하는 데 사용되는 연결 유형을 지정합니다."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="조회 테이블의 캐시 유형을 지정합니다."
+                      name="CacheType"
+                      typeConverter="CacheType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="조회 변환 시 참조 데이터 집합에서 일치하는 항목이 없는 행을 처리하는 방법을 지정합니다."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="참조 데이터 세트에서 일치하는 항목이 없는 행에 할당되는 캐시의 비율을 지정합니다."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="32비트 플랫폼에서 참조 캐시의 최대 메모리 사용량입니다."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="64비트 플랫폼에서 참조 캐시의 최대 메모리 사용량입니다."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="XML 형식의 메타데이터를 참조할지 여부를 나타냅니다."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FullDateAlternateKey" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberOfWeek" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EnglishDayNameOfWeek" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SpanishDayNameOfWeek" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FrenchDayNameOfWeek" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberOfMonth" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberOfYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeekNumberOfYear" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EnglishMonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SpanishMonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FrenchMonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthNumberOfYear" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CalendarQuarter" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CalendarYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CalendarSemester" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FiscalQuarter" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FiscalYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FiscalSemester" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="SQLCommand 속성의 SQL 문이 사용하는 매개 변수에 매핑되는 계보 식별자 목록을 지정합니다. 목록의 항목은 세미콜론으로 구분됩니다."
+                      name="ParameterMap">#{Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].Columns[CurrencyDate]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="데이터 원본에서 코드 페이지 정보를 사용할 수 없을 때 사용할 열 코드 페이지를 지정합니다."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="전체 캐시 모드를 사용할 때 참조 데이터의 중복 키를 오류로 처리할지 여부를 결정합니다."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key.Connections[OleDbConnection]"
+                      connectionManagerID="{175F9DD7-2733-42C1-B23A-C0497511531A}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                      description="조회 데이터에 액세스하는 데 사용되는 연결 관리자입니다."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key.Inputs[조회 입력]"
+                      name="조회 입력">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key.Inputs[조회 입력].Columns[CurrencyDate]"
+                          cachedDataType="dbDate"
+                          cachedName="CurrencyDate"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].Columns[CurrencyDate]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="열을 조인할 참조 테이블의 열을 지정합니다."
+                              name="JoinToReferenceColumn">FullDateAlternateKey</property>
+                            <property
+                              dataType="System.Null"
+                              description="열을 복사할 참조 테이블의 열을 지정합니다."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key.Outputs[조회 일치 항목 출력]"
+                      errorOrTruncationOperation="조회"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="조회 일치 항목 출력"
+                      synchronousInputId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key.Inputs[조회 입력]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key.Outputs[조회 일치 항목 출력].Columns[DateKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="열 복사"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key.Outputs[조회 일치 항목 출력].Columns[DateKey]"
+                          name="DateKey"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="열을 복사할 참조 테이블의 열을 지정합니다."
+                              name="CopyFromReferenceColumn">DateKey</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key.Outputs[조회 불일치 항목 출력]"
+                      description="참조 데이터 세트에서 일치하는 항목이 없는 행을 처리하는 조회 출력입니다. NoMatchBehavior 속성이 &quot;일치하는 항목이 없는 행을 불일치 항목 출력으로 보냅니다.&quot;로 설정되어 있는 경우 이 출력을 사용합니다."
+                      exclusionGroup="1"
+                      name="조회 불일치 항목 출력"
+                      synchronousInputId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key.Inputs[조회 입력]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key.Outputs[조회 오류 출력]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="조회 오류 출력"
+                      synchronousInputId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key.Inputs[조회 입력]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key.Outputs[조회 오류 출력].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key.Outputs[조회 오류 출력].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key.Outputs[조회 오류 출력].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key.Outputs[조회 오류 출력].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB 대상;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB 대상"
+                  name="Sample OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="명령이 종료되기 전의 제한 시간 값(초)입니다. 값 0은 제한 시간이 없음을 나타냅니다."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="행 집합을 여는 데 사용되는 데이터베이스 개체의 이름을 지정합니다."
+                      name="OpenRowset">[NewFactCurrencyRate]</property>
+                    <property
+                      dataType="System.String"
+                      description="행 집합을 여는 데 사용되는 데이터베이스 개체의 이름이 들어 있는 변수를 지정합니다."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="실행할 SQL 명령입니다."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="데이터 원본에서 코드 페이지 정보를 사용할 수 없을 때 사용할 열 코드 페이지를 지정합니다."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="문자 데이터를 설명할 때 DefaultCodePage 속성 값을 사용하도록 합니다."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="데이터베이스에 액세스하는 데 사용되는 모드를 지정합니다."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="ID 열에 제공된 값을 대상에 복사할지 여부를 나타냅니다. false인 경우 ID 열의 값이 대상에서 자동 생성됩니다. 빠른 로드를 사용하는 경우에만 적용됩니다."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Null 포함 열을 대상에 Null로 삽입할지 여부를 나타냅니다. false인 경우 Null 포함 열은 지정된 기본값으로 대상에 삽입됩니다. 빠른 로드를 사용하는 경우에만 적용됩니다."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="빠른 로드와 함께 사용할 옵션을 지정합니다. 빠른 로드를 사용하는 경우에만 적용됩니다."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="데이터 삽입 도중 커밋이 수행되는 시점을 지정합니다. 값을 0으로 지정하면 데이터 삽입 완료 시에 커밋이 한 번 수행됩니다. 빠른 로드를 사용하는 경우에만 적용됩니다."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{175F9DD7-2733-42C1-B23A-C0497511531A}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                      description="데이터베이스에 액세스하는 데 사용되는 OLE DB 런타임 연결입니다."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력]"
+                      errorOrTruncationOperation="삽입"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB 대상 입력">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].Columns[AverageRate]"
+                          cachedDataType="r4"
+                          cachedName="AverageRate"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[AverageRate]"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].Columns[AverageRate]" />
+                        <inputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].Columns[CurrencyID]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="CurrencyID"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyID]"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].Columns[CurrencyID]" />
+                        <inputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].Columns[CurrencyDate]"
+                          cachedDataType="dbDate"
+                          cachedName="CurrencyDate"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyDate]"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].Columns[CurrencyDate]" />
+                        <inputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].Columns[EndOfDayRate]"
+                          cachedDataType="r4"
+                          cachedName="EndOfDayRate"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[EndOfDayRate]"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].Columns[EndOfDayRate]" />
+                        <inputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].Columns[CurrencyKey]"
+                          cachedDataType="i4"
+                          cachedName="CurrencyKey"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyKey]"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key.Outputs[조회 일치 항목 출력].Columns[CurrencyKey]" />
+                        <inputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].Columns[DateKey]"
+                          cachedDataType="i4"
+                          cachedName="DateKey"
+                          externalMetadataColumnId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[DateKey]"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key.Outputs[조회 일치 항목 출력].Columns[DateKey]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[AverageRate]"
+                          dataType="r4"
+                          name="AverageRate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyID]"
+                          dataType="wstr"
+                          length="50"
+                          name="CurrencyID" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyDate]"
+                          dataType="dbDate"
+                          name="CurrencyDate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[EndOfDayRate]"
+                          dataType="r4"
+                          name="EndOfDayRate" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyKey]"
+                          dataType="i4"
+                          name="CurrencyKey" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[DateKey]"
+                          dataType="i4"
+                          name="DateKey" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Outputs[OLE DB 대상 오류 출력]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB 대상 오류 출력"
+                      synchronousInputId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Outputs[OLE DB 대상 오류 출력].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Outputs[OLE DB 대상 오류 출력].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Outputs[OLE DB 대상 오류 출력].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Outputs[OLE DB 대상 오류 출력].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach File in Folder\Extract Sample Currency Data.Paths[조회 일치 항목 출력]"
+                  endId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key.Inputs[조회 입력]"
+                  name="조회 일치 항목 출력"
+                  startId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key.Outputs[조회 일치 항목 출력]" />
+                <path
+                  refId="Package\Foreach File in Folder\Extract Sample Currency Data.Paths[조회 일치 항목 출력1]"
+                  endId="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력]"
+                  name="조회 일치 항목 출력"
+                  startId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key.Outputs[조회 일치 항목 출력]" />
+                <path
+                  refId="Package\Foreach File in Folder\Extract Sample Currency Data.Paths[플랫 파일 원본 출력]"
+                  endId="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key.Inputs[조회 입력]"
+                  name="플랫 파일 원본 출력"
+                  startId="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{009E2CB6-7953-42ED-9C1C-7B4A5B698B95}"
+          DTS:ObjectName="{009E2CB6-7953-42ED-9C1C-7B4A5B698B95}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::varFileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--이 CDATA 섹션에는 패키지에 대한 레이아웃 정보가 포함되어 있습니다. 이 섹션에는 (x,y) 좌표, 너비 및 높이와 같은 정보가 포함되어 있습니다.-->
+<!--이 섹션을 수동으로 편집할 때 실수한 경우 해당 내용을 삭제할 수 있습니다. -->
+<!--패키지를 계속 수동으로 로드할 수 있지만 이전 레이아웃 정보가 손실되고 디자이너가 디자인 화면의 요소를 자동으로 다시 정렬합니다.-->
+<Objects
+  Version="8">
+  <!--아래의 각 노드에는 런타임 동작에 영향을 미치지 않는 속성이 포함됩니다.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="246.4,41.6"
+          Id="Package\Foreach File in Folder\Extract Sample Currency Data"
+          TopLeft="7.12500081025063,23.2999996556176" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="256.8,120"
+          Size="256.8,163.2"
+          Id="Package\Foreach File in Folder"
+          TopLeft="153.12499771826,185.611106194096" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach File in Folder\Extract Sample Currency Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="246.4,41.6"
+          Id="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key"
+          TopLeft="427.5,166.333333333333" />
+        <NodeLayout
+          Size="246.4,41.6"
+          Id="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key"
+          TopLeft="427.5,238.666666666667" />
+        <NodeLayout
+          Size="246.4,41.6"
+          Id="Package\Foreach File in Folder\Extract Sample Currency Data\Extract Sample Currency Data"
+          TopLeft="427.5,94" />
+        <NodeLayout
+          Size="246.4,41.6"
+          Id="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination"
+          TopLeft="427.5,311" />
+        <EdgeLayout
+          Id="Package\Foreach File in Folder\Extract Sample Currency Data.Paths[플랫 파일 원본 출력]"
+          TopLeft="550.7,135.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.7333333333333"
+              Start="0,0"
+              End="0,23.2333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.2333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach File in Folder\Extract Sample Currency Data.Paths[조회 일치 항목 출력1]"
+          TopLeft="550.7,280.266666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.7333333333333"
+              Start="0,0"
+              End="0,23.2333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.2333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-44.606015625,5.84127604166665,89.21203125,11.55078125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach File in Folder\Extract Sample Currency Data.Paths[조회 일치 항목 출력]"
+          TopLeft="550.7,207.933333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.7333333333333"
+              Start="0,0"
+              End="0,23.2333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.2333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-44.606015625,5.84127604166665,89.21203125,11.55078125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="데이터 흐름이 파일에서 데이터를 추출하고 DimCurrency 테이블의 CurrencyKey 열과 DimDate 테이블&#xA;의 DateKey 열에서 값을 조회한 다음 NewFactCurrencyRate 테이블에 데이터를 기록합니다."
+          ParentId="Package\Foreach File in Folder\Extract Sample Currency Data"
+          FontInfo="{assembly:Null}"
+          Size="580,56"
+          Id="d1c69b42-62f0-43f0-a04a-6be3a2b9add3"
+          TopLeft="251,18" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Currency Key">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach File in Folder\Extract Sample Currency Data\Lookup Date Key">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach File in Folder\Extract Sample Currency Data\Sample OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

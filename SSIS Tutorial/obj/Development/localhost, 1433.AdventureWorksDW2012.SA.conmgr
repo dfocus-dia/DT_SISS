@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="localhost, 1433.AdventureWorksDW2012.SA"
+  DTS:DTSID="{175F9DD7-2733-42C1-B23A-C0497511531A}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=localhost, 1433;User ID=SA;Initial Catalog=AdventureWorksDW2012;Provider=SQLNCLI11.1;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAACAAAAAAAQZgAAAAEAACAAAABQvL81njKtf62W7ljMH6bJF7sQabcZtkyUJtHugJ5YjwAAAAAOgAAAAAIAACAAAAAWfUvTzI9uEomoFwaXkxSkMuwD45hb6UX4k8yNhRtBUoAAAABp8LzN/EdK8ho2IeSU+uTz538mPAn9LTQUrCbWR/yXrjTq4OW4jaGYexpguT3YK+R835bRdy9WXcb+r87COZtNibeXHlgFcJyXTDMOeA1pWzq6Skc5a1jOpvDk93MGG//h+2PWJIiKPV874NUpdBKqpDsMNU0gnN0q5pDj/X5+XEAAAABtXBx2CLHkY2RidZqf/ALPJyxXfTjUIKHhlVvQnKODQur7mzQkhr0IX9lgPEXM8GcHMfaa6Jb1ExUgDmcuzdOi</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
