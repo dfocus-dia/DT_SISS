@@ -11,8 +11,8 @@
   DTS:LocaleID="1042"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{28E31DE4-5AD6-4835-A03A-B316ED175E1E}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{609182FE-6D8A-47BC-AB54-2CCD6CF41B1F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -53,8 +53,8 @@
               <connections>
                 <connection
                   refId="Package\Extract Sample Currency Data\Extract Sample Currency Data.Connections[FlatFileConnection]"
-                  connectionManagerID="{7D4E89E7-4567-4C7E-A5BD-0CB238418FEA}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[Sample Flat File Source Data]"
+                  connectionManagerID="{82F45C41-CBCB-43B0-BDB9-DFEF4D1171F3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[Extract File Txt]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -152,7 +152,8 @@
                       name="AverageRate" />
                     <externalMetadataColumn
                       refId="Package\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].ExternalColumns[CurrencyID]"
-                      dataType="wstr"
+                      codePage="1252"
+                      dataType="str"
                       length="50"
                       name="CurrencyID" />
                     <externalMetadataColumn
@@ -592,12 +593,6 @@ where [refTable].[FullDateAlternateKey] = ?</property>
                   name="OLE DB 대상 입력">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].Columns[AverageRate]"
-                      cachedDataType="r4"
-                      cachedName="AverageRate"
-                      externalMetadataColumnId="Package\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[AverageRate]"
-                      lineageId="Package\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].Columns[AverageRate]" />
-                    <inputColumn
                       refId="Package\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].Columns[CurrencyID]"
                       cachedDataType="wstr"
                       cachedLength="50"
@@ -616,25 +611,9 @@ where [refTable].[FullDateAlternateKey] = ?</property>
                       cachedName="EndOfDayRate"
                       externalMetadataColumnId="Package\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[EndOfDayRate]"
                       lineageId="Package\Extract Sample Currency Data\Extract Sample Currency Data.Outputs[플랫 파일 원본 출력].Columns[EndOfDayRate]" />
-                    <inputColumn
-                      refId="Package\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].Columns[CurrencyKey]"
-                      cachedDataType="i4"
-                      cachedName="CurrencyKey"
-                      externalMetadataColumnId="Package\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyKey]"
-                      lineageId="Package\Extract Sample Currency Data\Lookup Currency Key.Outputs[조회 일치 항목 출력].Columns[CurrencyKey]" />
-                    <inputColumn
-                      refId="Package\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].Columns[DateKey]"
-                      cachedDataType="i4"
-                      cachedName="DateKey"
-                      externalMetadataColumnId="Package\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[DateKey]"
-                      lineageId="Package\Extract Sample Currency Data\Lookup Date Key.Outputs[조회 일치 항목 출력].Columns[DateKey]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[AverageRate]"
-                      dataType="r4"
-                      name="AverageRate" />
                     <externalMetadataColumn
                       refId="Package\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyID]"
                       dataType="wstr"
@@ -649,13 +628,9 @@ where [refTable].[FullDateAlternateKey] = ?</property>
                       dataType="r4"
                       name="EndOfDayRate" />
                     <externalMetadataColumn
-                      refId="Package\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyKey]"
-                      dataType="i4"
-                      name="CurrencyKey" />
-                    <externalMetadataColumn
-                      refId="Package\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[DateKey]"
-                      dataType="i4"
-                      name="DateKey" />
+                      refId="Package\Extract Sample Currency Data\Sample OLE DB Destination.Inputs[OLE DB 대상 입력].ExternalColumns[AverateRate]"
+                      dataType="r4"
+                      name="AverateRate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -707,12 +682,12 @@ where [refTable].[FullDateAlternateKey] = ?</property>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--이 CDATA 섹션에는 패키지에 대한 레이아웃 정보가 포함되어 있습니다. 이 섹션에는 (x,y) 좌표, 너비 및 높이와 같은 정보가 포함되어 있습니다.-->
-<!--이 섹션을 수동으로 편집할 때 실수한 경우 해당 내용을 삭제할 수 있습니다. -->
-<!--패키지를 계속 수동으로 로드할 수 있지만 이전 레이아웃 정보가 손실되고 디자이너가 디자인 화면의 요소를 자동으로 다시 정렬합니다.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--아래의 각 노드에는 런타임 동작에 영향을 미치지 않는 속성이 포함됩니다.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -721,7 +696,7 @@ where [refTable].[FullDateAlternateKey] = ?</property>
         <NodeLayout
           Size="246.4,41.6"
           Id="Package\Extract Sample Currency Data"
-          TopLeft="95.6249985750765,64.9999982780881" />
+          TopLeft="92.4999986216426,62.1111094657286" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
