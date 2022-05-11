@@ -1,0 +1,1789 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/21/2022 1:03:25 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-5VBE4DS"
+  DTS:CreatorName="DESKTOP-5VBE4DS\kjmop"
+  DTS:DTSID="{BE5D1022-A566-42B5-9A33-FF701351A706}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1042"
+  DTS:ObjectName="Deploy Model"
+  DTS:PackageType="5"
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{3E5E8608-4D96-4F45-8CBB-8679207B567B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3F912540-3196-4E68-9380-BD6669C4E39C}"
+      DTS:ObjectName="localhost, 1433.AdventureWorksDW2012.SA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost, 1433;User ID=SA;Initial Catalog=AdventureWorksDW2012;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB17ZvTg+0Dr5VExfbQCuiOw8F6OLYDwIv6cn3arRVPIwAAAAAOgAAAAAIAACAAAABdXPHvzGfA6Kqp3Uqc6q4HHoIfsK4O4Vu8ef0/g0UmBSAAAADDzgSwxH/u0lbk2rMzfp+mPhfqWPWNW7x+4hNzVKIWT0AAAADS5a00XpYu2yJb2QBUFVZCJeoNc5i+V2qOeAM+Unrvhv1EQ5Tum4vG3aW6pbN3SZBtA8y8j8m5P3UHm/0wvAug</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="C:\Users\kjmop\source\repos\DT_SISS\SSIS Tutorial\SSISTutorial.dtsConfig"
+      DTS:ConfigurationType="1"
+      DTS:CreationName=""
+      DTS:DTSID="{8E9749AA-84D1-4268-AE5E-29245019EA1C}"
+      DTS:ObjectName="SSISTutorial" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="{D29C66AB-4C2D-4877-A7C0-58FFBDF82361}"
+      DTS:CreationName="Microsoft.LogProviderTextFile"
+      DTS:Description="3단원 로그 파일 "
+      DTS:DTSID="{5F515EC6-DB4C-4959-AA69-866E7B1F9AB9}"
+      DTS:ObjectName="3단원 로그 파일">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{612DBC7D-E625-4A24-9FC7-DD22C14010EA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varFileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3B8AEA63-98D5-48E8-82F4-9E74BBA3F030}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varFolderName">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\New Sample Data</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="2" />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Merge Flow"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="데이터 흐름 태스크"
+      DTS:DTSID="{503E3960-5EDC-442D-8925-78AD909E175C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Merge Flow"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Merge Flow\FactCurrencyRate DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB 원본;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB 원본"
+              localeId="1033"
+              name="FactCurrencyRate DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="명령이 종료되기 전의 제한 시간 값(초)입니다. 값 0은 제한 시간이 없음을 나타냅니다."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="행 집합을 여는 데 사용되는 데이터베이스 개체의 이름을 지정합니다."
+                  name="OpenRowset">[dbo].[FactCurrencyRate]</property>
+                <property
+                  dataType="System.String"
+                  description="행 집합을 여는 데 사용되는 데이터베이스 개체의 이름이 들어 있는 변수를 지정합니다."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="실행할 SQL 명령입니다."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="실행할 SQL 명령이 들어 있는 변수입니다."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="데이터 원본에서 코드 페이지 정보를 사용할 수 없을 때 사용할 열 코드 페이지를 지정합니다."
+                  name="DefaultCodePage">949</property>
+                <property
+                  dataType="System.Boolean"
+                  description="문자 데이터를 설명할 때 DefaultCodePage 속성 값을 사용하도록 합니다."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="데이터베이스에 액세스하는 데 사용되는 모드를 지정합니다."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="SQL 명령의 매개 변수와 변수 사이의 매핑입니다."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Merge Flow\FactCurrencyRate DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                  description="데이터베이스에 액세스하는 데 사용되는 OLE DB 런타임 연결입니다."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력]"
+                  name="OLE DB 원본 출력">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[CurrencyKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[CurrencyKey]"
+                      lineageId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[CurrencyKey]"
+                      name="CurrencyKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[DateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[DateKey]"
+                      lineageId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[DateKey]"
+                      name="DateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[AverageRate]"
+                      dataType="r8"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[AverageRate]"
+                      lineageId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[AverageRate]"
+                      name="AverageRate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[EndOfDayRate]"
+                      dataType="r8"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[EndOfDayRate]"
+                      lineageId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[EndOfDayRate]"
+                      name="EndOfDayRate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[Date]"
+                      lineageId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[CurrencyKey]"
+                      dataType="i4"
+                      name="CurrencyKey" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[DateKey]"
+                      dataType="i4"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[AverageRate]"
+                      dataType="r8"
+                      name="AverageRate" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[EndOfDayRate]"
+                      dataType="r8"
+                      name="EndOfDayRate" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력]"
+                  isErrorOut="true"
+                  name="OLE DB 원본 오류 출력">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[CurrencyKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[CurrencyKey]"
+                      name="CurrencyKey" />
+                    <outputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[DateKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[DateKey]"
+                      name="DateKey" />
+                    <outputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[AverageRate]"
+                      dataType="r8"
+                      lineageId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[AverageRate]"
+                      name="AverageRate" />
+                    <outputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[EndOfDayRate]"
+                      dataType="r8"
+                      lineageId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[EndOfDayRate]"
+                      name="EndOfDayRate" />
+                    <outputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Merge Flow\FactCurrencyRate Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="정렬;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;1"
+              description="원본에서 정렬할 수 없는 입력 데이터를 오름차순이나 내림차순으로 정렬합니다. 예를 들어 판매 데이터를 플랫 파일에 작성하여 다른 부서로 전달하기 전에 '고객 ID'를 기준으로 정렬할 수 있습니다. 참고: 큰 데이터 흐름에는 이 변환을 사용하지 않는 것이 좋습니다."
+              name="FactCurrencyRate Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="정렬 변환에서 정렬 값이 중복된 행을 제거할지 여부를 나타냅니다."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="정렬에 사용할 최대 스레드 수를 지정합니다."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Merge Flow\FactCurrencyRate Sort.Inputs[정렬 입력]"
+                  name="정렬 입력">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate Sort.Inputs[정렬 입력].Columns[CurrencyKey]"
+                      cachedDataType="i4"
+                      cachedName="CurrencyKey"
+                      lineageId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[CurrencyKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="문자 데이터의 비교 옵션을 지정합니다."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="열의 정렬 순서를 지정합니다."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate Sort.Inputs[정렬 입력].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      lineageId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[DateKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="문자 데이터의 비교 옵션을 지정합니다."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="열의 정렬 순서를 지정합니다."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate Sort.Inputs[정렬 입력].Columns[AverageRate]"
+                      cachedDataType="r8"
+                      cachedName="AverageRate"
+                      lineageId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[AverageRate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="문자 데이터의 비교 옵션을 지정합니다."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="열의 정렬 순서를 지정합니다."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate Sort.Inputs[정렬 입력].Columns[EndOfDayRate]"
+                      cachedDataType="r8"
+                      cachedName="EndOfDayRate"
+                      lineageId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[EndOfDayRate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="문자 데이터의 비교 옵션을 지정합니다."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="열의 정렬 순서를 지정합니다."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate Sort.Inputs[정렬 입력].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      lineageId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[Date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="문자 데이터의 비교 옵션을 지정합니다."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="열의 정렬 순서를 지정합니다."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Merge Flow\FactCurrencyRate Sort.Outputs[정렬 출력]"
+                  isSorted="true"
+                  name="정렬 출력">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate Sort.Outputs[정렬 출력].Columns[CurrencyKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\FactCurrencyRate Sort.Outputs[정렬 출력].Columns[CurrencyKey]"
+                      name="CurrencyKey"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="이 출력 열에 연결된 입력 열의 계보 식별자를 지정합니다."
+                          name="SortColumnId">#{Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[CurrencyKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate Sort.Outputs[정렬 출력].Columns[DateKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\FactCurrencyRate Sort.Outputs[정렬 출력].Columns[DateKey]"
+                      name="DateKey"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="이 출력 열에 연결된 입력 열의 계보 식별자를 지정합니다."
+                          name="SortColumnId">#{Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[DateKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate Sort.Outputs[정렬 출력].Columns[AverageRate]"
+                      dataType="r8"
+                      lineageId="Package\Merge Flow\FactCurrencyRate Sort.Outputs[정렬 출력].Columns[AverageRate]"
+                      name="AverageRate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="이 출력 열에 연결된 입력 열의 계보 식별자를 지정합니다."
+                          name="SortColumnId">#{Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[AverageRate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate Sort.Outputs[정렬 출력].Columns[EndOfDayRate]"
+                      dataType="r8"
+                      lineageId="Package\Merge Flow\FactCurrencyRate Sort.Outputs[정렬 출력].Columns[EndOfDayRate]"
+                      name="EndOfDayRate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="이 출력 열에 연결된 입력 열의 계보 식별자를 지정합니다."
+                          name="SortColumnId">#{Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[EndOfDayRate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Flow\FactCurrencyRate Sort.Outputs[정렬 출력].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Merge Flow\FactCurrencyRate Sort.Outputs[정렬 출력].Columns[Date]"
+                      name="Date">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="이 출력 열에 연결된 입력 열의 계보 식별자를 지정합니다."
+                          name="SortColumnId">#{Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[Date]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Merge Flow\Insert NewFactCurrencyRate"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB 대상;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB 대상"
+              name="Insert NewFactCurrencyRate"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="명령이 종료되기 전의 제한 시간 값(초)입니다. 값 0은 제한 시간이 없음을 나타냅니다."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="행 집합을 여는 데 사용되는 데이터베이스 개체의 이름을 지정합니다."
+                  name="OpenRowset">[dbo].[NewFactCurrencyRate]</property>
+                <property
+                  dataType="System.String"
+                  description="행 집합을 여는 데 사용되는 데이터베이스 개체의 이름이 들어 있는 변수를 지정합니다."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="실행할 SQL 명령입니다."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="데이터 원본에서 코드 페이지 정보를 사용할 수 없을 때 사용할 열 코드 페이지를 지정합니다."
+                  name="DefaultCodePage">949</property>
+                <property
+                  dataType="System.Boolean"
+                  description="문자 데이터를 설명할 때 DefaultCodePage 속성 값을 사용하도록 합니다."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="데이터베이스에 액세스하는 데 사용되는 모드를 지정합니다."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="ID 열에 제공된 값을 대상에 복사할지 여부를 나타냅니다. false인 경우 ID 열의 값이 대상에서 자동 생성됩니다. 빠른 로드를 사용하는 경우에만 적용됩니다."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Null 포함 열을 대상에 Null로 삽입할지 여부를 나타냅니다. false인 경우 Null 포함 열은 지정된 기본값으로 대상에 삽입됩니다. 빠른 로드를 사용하는 경우에만 적용됩니다."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="빠른 로드와 함께 사용할 옵션을 지정합니다. 빠른 로드를 사용하는 경우에만 적용됩니다."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="데이터 삽입 도중 커밋이 수행되는 시점을 지정합니다. 값을 0으로 지정하면 데이터 삽입 완료 시에 커밋이 한 번 수행됩니다. 빠른 로드를 사용하는 경우에만 적용됩니다."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Merge Flow\Insert NewFactCurrencyRate.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                  description="데이터베이스에 액세스하는 데 사용되는 OLE DB 런타임 연결입니다."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Merge Flow\Insert NewFactCurrencyRate.Inputs[OLE DB 대상 입력]"
+                  errorOrTruncationOperation="삽입"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB 대상 입력">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Merge Flow\Insert NewFactCurrencyRate.Inputs[OLE DB 대상 입력].Columns[CurrencyKey]"
+                      cachedDataType="i4"
+                      cachedName="CurrencyKey"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Merge Flow\Insert NewFactCurrencyRate.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyKey]"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[CurrencyKey]" />
+                    <inputColumn
+                      refId="Package\Merge Flow\Insert NewFactCurrencyRate.Inputs[OLE DB 대상 입력].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\Merge Flow\Insert NewFactCurrencyRate.Inputs[OLE DB 대상 입력].ExternalColumns[DateKey]"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[DateKey]" />
+                    <inputColumn
+                      refId="Package\Merge Flow\Insert NewFactCurrencyRate.Inputs[OLE DB 대상 입력].Columns[AverageRate]"
+                      cachedDataType="r8"
+                      cachedName="AverageRate"
+                      externalMetadataColumnId="Package\Merge Flow\Insert NewFactCurrencyRate.Inputs[OLE DB 대상 입력].ExternalColumns[AverageRate]"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[AverageRate]" />
+                    <inputColumn
+                      refId="Package\Merge Flow\Insert NewFactCurrencyRate.Inputs[OLE DB 대상 입력].Columns[EndOfDayRate]"
+                      cachedDataType="r8"
+                      cachedName="EndOfDayRate"
+                      externalMetadataColumnId="Package\Merge Flow\Insert NewFactCurrencyRate.Inputs[OLE DB 대상 입력].ExternalColumns[EndOfDayRate]"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[EndOfDayRate]" />
+                    <inputColumn
+                      refId="Package\Merge Flow\Insert NewFactCurrencyRate.Inputs[OLE DB 대상 입력].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\Merge Flow\Insert NewFactCurrencyRate.Inputs[OLE DB 대상 입력].ExternalColumns[Date]"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\Insert NewFactCurrencyRate.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyKey]"
+                      dataType="i4"
+                      name="CurrencyKey" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\Insert NewFactCurrencyRate.Inputs[OLE DB 대상 입력].ExternalColumns[DateKey]"
+                      dataType="i4"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\Insert NewFactCurrencyRate.Inputs[OLE DB 대상 입력].ExternalColumns[AverageRate]"
+                      dataType="r8"
+                      name="AverageRate" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\Insert NewFactCurrencyRate.Inputs[OLE DB 대상 입력].ExternalColumns[EndOfDayRate]"
+                      dataType="r8"
+                      name="EndOfDayRate" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\Insert NewFactCurrencyRate.Inputs[OLE DB 대상 입력].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Merge Flow\Insert NewFactCurrencyRate.Outputs[OLE DB 대상 오류 출력]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB 대상 오류 출력"
+                  synchronousInputId="Package\Merge Flow\Insert NewFactCurrencyRate.Inputs[OLE DB 대상 입력]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Flow\Insert NewFactCurrencyRate.Outputs[OLE DB 대상 오류 출력].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\Insert NewFactCurrencyRate.Outputs[OLE DB 대상 오류 출력].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Merge Flow\Insert NewFactCurrencyRate.Outputs[OLE DB 대상 오류 출력].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\Insert NewFactCurrencyRate.Outputs[OLE DB 대상 오류 출력].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Merge Flow\Left Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="병합 조인;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;1"
+              description="FULL, LEFT 또는 INNER 조인을 사용하여 정렬된 두 데이터 흐름을 하나로 결합합니다. 데이터 흐름을 원본에서 정렬할 수 있는 경우 이 변환을 사용하는 것이 좋습니다."
+              name="Left Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="수행할 조인 유형을 지정합니다."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="순서 키의 열 수를 지정합니다."
+                  name="NumKeyColumns">2</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Null 값을 같은 값으로 처리할지 여부를 나타냅니다."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="차단하기 전에 입력당 요청된 최대 버퍼를 나타냅니다."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Merge Flow\Left Join.Inputs[병합 조인 왼쪽 입력]"
+                  hasSideEffects="true"
+                  name="병합 조인 왼쪽 입력">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Merge Flow\Left Join.Inputs[병합 조인 왼쪽 입력].Columns[CurrencyKey]"
+                      cachedDataType="i4"
+                      cachedName="CurrencyKey"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Merge Flow\FactCurrencyRate Sort.Outputs[정렬 출력].Columns[CurrencyKey]" />
+                    <inputColumn
+                      refId="Package\Merge Flow\Left Join.Inputs[병합 조인 왼쪽 입력].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\Merge Flow\FactCurrencyRate Sort.Outputs[정렬 출력].Columns[DateKey]" />
+                    <inputColumn
+                      refId="Package\Merge Flow\Left Join.Inputs[병합 조인 왼쪽 입력].Columns[AverageRate]"
+                      cachedDataType="r8"
+                      cachedName="AverageRate"
+                      lineageId="Package\Merge Flow\FactCurrencyRate Sort.Outputs[정렬 출력].Columns[AverageRate]" />
+                    <inputColumn
+                      refId="Package\Merge Flow\Left Join.Inputs[병합 조인 왼쪽 입력].Columns[EndOfDayRate]"
+                      cachedDataType="r8"
+                      cachedName="EndOfDayRate"
+                      lineageId="Package\Merge Flow\FactCurrencyRate Sort.Outputs[정렬 출력].Columns[EndOfDayRate]" />
+                    <inputColumn
+                      refId="Package\Merge Flow\Left Join.Inputs[병합 조인 왼쪽 입력].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      lineageId="Package\Merge Flow\FactCurrencyRate Sort.Outputs[정렬 출력].Columns[Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Merge Flow\Left Join.Inputs[병합 조인 오른쪽 입력]"
+                  hasSideEffects="true"
+                  name="병합 조인 오른쪽 입력">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Merge Flow\Left Join.Inputs[병합 조인 오른쪽 입력].Columns[CurrencyKey]"
+                      cachedDataType="i4"
+                      cachedName="CurrencyKey"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate Sort.Outputs[정렬 출력].Columns[CurrencyKey]" />
+                    <inputColumn
+                      refId="Package\Merge Flow\Left Join.Inputs[병합 조인 오른쪽 입력].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      cachedSortKeyPosition="2"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate Sort.Outputs[정렬 출력].Columns[DateKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력]"
+                  isSorted="true"
+                  name="병합 조인 출력">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[CurrencyKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[CurrencyKey]"
+                      name="CurrencyKey"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="이 출력 열에 연결된 입력 열"
+                          name="InputColumnID">#{Package\Merge Flow\Left Join.Inputs[병합 조인 왼쪽 입력].Columns[CurrencyKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[DateKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[DateKey]"
+                      name="DateKey"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="이 출력 열에 연결된 입력 열"
+                          name="InputColumnID">#{Package\Merge Flow\Left Join.Inputs[병합 조인 왼쪽 입력].Columns[DateKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[AverageRate]"
+                      dataType="r8"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[AverageRate]"
+                      name="AverageRate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="이 출력 열에 연결된 입력 열"
+                          name="InputColumnID">#{Package\Merge Flow\Left Join.Inputs[병합 조인 왼쪽 입력].Columns[AverageRate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[EndOfDayRate]"
+                      dataType="r8"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[EndOfDayRate]"
+                      name="EndOfDayRate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="이 출력 열에 연결된 입력 열"
+                          name="InputColumnID">#{Package\Merge Flow\Left Join.Inputs[병합 조인 왼쪽 입력].Columns[EndOfDayRate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[Date]"
+                      name="Date">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="이 출력 열에 연결된 입력 열"
+                          name="InputColumnID">#{Package\Merge Flow\Left Join.Inputs[병합 조인 왼쪽 입력].Columns[Date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[TargetCurrencyKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[TargetCurrencyKey]"
+                      name="TargetCurrencyKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="이 출력 열에 연결된 입력 열"
+                          name="InputColumnID">#{Package\Merge Flow\Left Join.Inputs[병합 조인 오른쪽 입력].Columns[CurrencyKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[TargetDateKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[TargetDateKey]"
+                      name="TargetDateKey">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="이 출력 열에 연결된 입력 열"
+                          name="InputColumnID">#{Package\Merge Flow\Left Join.Inputs[병합 조인 오른쪽 입력].Columns[DateKey]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Merge Flow\NewFactCurrencyRate DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB 원본;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB 원본"
+              name="NewFactCurrencyRate DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="명령이 종료되기 전의 제한 시간 값(초)입니다. 값 0은 제한 시간이 없음을 나타냅니다."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="행 집합을 여는 데 사용되는 데이터베이스 개체의 이름을 지정합니다."
+                  name="OpenRowset">[dbo].[NewFactCurrencyRate]</property>
+                <property
+                  dataType="System.String"
+                  description="행 집합을 여는 데 사용되는 데이터베이스 개체의 이름이 들어 있는 변수를 지정합니다."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="실행할 SQL 명령입니다."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="실행할 SQL 명령이 들어 있는 변수입니다."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="데이터 원본에서 코드 페이지 정보를 사용할 수 없을 때 사용할 열 코드 페이지를 지정합니다."
+                  name="DefaultCodePage">949</property>
+                <property
+                  dataType="System.Boolean"
+                  description="문자 데이터를 설명할 때 DefaultCodePage 속성 값을 사용하도록 합니다."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="데이터베이스에 액세스하는 데 사용되는 모드를 지정합니다."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="SQL 명령의 매개 변수와 변수 사이의 매핑입니다."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Merge Flow\NewFactCurrencyRate DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                  description="데이터베이스에 액세스하는 데 사용되는 OLE DB 런타임 연결입니다."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력]"
+                  name="OLE DB 원본 출력">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[CurrencyKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[CurrencyKey]"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[CurrencyKey]"
+                      name="CurrencyKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[DateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[DateKey]"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[DateKey]"
+                      name="DateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[AverageRate]"
+                      dataType="r8"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[AverageRate]"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[AverageRate]"
+                      name="AverageRate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[EndOfDayRate]"
+                      dataType="r8"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[EndOfDayRate]"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[EndOfDayRate]"
+                      name="EndOfDayRate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[Date]"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[CurrencyKey]"
+                      dataType="i4"
+                      name="CurrencyKey" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[DateKey]"
+                      dataType="i4"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[AverageRate]"
+                      dataType="r8"
+                      name="AverageRate" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[EndOfDayRate]"
+                      dataType="r8"
+                      name="EndOfDayRate" />
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].ExternalColumns[Date]"
+                      dataType="dbTimeStamp"
+                      name="Date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력]"
+                  isErrorOut="true"
+                  name="OLE DB 원본 오류 출력">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[CurrencyKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[CurrencyKey]"
+                      name="CurrencyKey" />
+                    <outputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[DateKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[DateKey]"
+                      name="DateKey" />
+                    <outputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[AverageRate]"
+                      dataType="r8"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[AverageRate]"
+                      name="AverageRate" />
+                    <outputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[EndOfDayRate]"
+                      dataType="r8"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[EndOfDayRate]"
+                      name="EndOfDayRate" />
+                    <outputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 오류 출력].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Merge Flow\NewFactCurrencyRate Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="정렬;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;1"
+              description="원본에서 정렬할 수 없는 입력 데이터를 오름차순이나 내림차순으로 정렬합니다. 예를 들어 판매 데이터를 플랫 파일에 작성하여 다른 부서로 전달하기 전에 '고객 ID'를 기준으로 정렬할 수 있습니다. 참고: 큰 데이터 흐름에는 이 변환을 사용하지 않는 것이 좋습니다."
+              name="NewFactCurrencyRate Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="정렬 변환에서 정렬 값이 중복된 행을 제거할지 여부를 나타냅니다."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="정렬에 사용할 최대 스레드 수를 지정합니다."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Merge Flow\NewFactCurrencyRate Sort.Inputs[정렬 입력]"
+                  name="정렬 입력">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate Sort.Inputs[정렬 입력].Columns[CurrencyKey]"
+                      cachedDataType="i4"
+                      cachedName="CurrencyKey"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[CurrencyKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="문자 데이터의 비교 옵션을 지정합니다."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="열의 정렬 순서를 지정합니다."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate Sort.Inputs[정렬 입력].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[DateKey]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="문자 데이터의 비교 옵션을 지정합니다."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="열의 정렬 순서를 지정합니다."
+                          name="NewSortKeyPosition">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate Sort.Inputs[정렬 입력].Columns[AverageRate]"
+                      cachedDataType="r8"
+                      cachedName="AverageRate"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[AverageRate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="문자 데이터의 비교 옵션을 지정합니다."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="열의 정렬 순서를 지정합니다."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate Sort.Inputs[정렬 입력].Columns[EndOfDayRate]"
+                      cachedDataType="r8"
+                      cachedName="EndOfDayRate"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[EndOfDayRate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="문자 데이터의 비교 옵션을 지정합니다."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="열의 정렬 순서를 지정합니다."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate Sort.Inputs[정렬 입력].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[Date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="문자 데이터의 비교 옵션을 지정합니다."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="열의 정렬 순서를 지정합니다."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Merge Flow\NewFactCurrencyRate Sort.Outputs[정렬 출력]"
+                  isSorted="true"
+                  name="정렬 출력">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate Sort.Outputs[정렬 출력].Columns[CurrencyKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate Sort.Outputs[정렬 출력].Columns[CurrencyKey]"
+                      name="CurrencyKey"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="이 출력 열에 연결된 입력 열의 계보 식별자를 지정합니다."
+                          name="SortColumnId">#{Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[CurrencyKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate Sort.Outputs[정렬 출력].Columns[DateKey]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate Sort.Outputs[정렬 출력].Columns[DateKey]"
+                      name="DateKey"
+                      sortKeyPosition="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="이 출력 열에 연결된 입력 열의 계보 식별자를 지정합니다."
+                          name="SortColumnId">#{Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[DateKey]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate Sort.Outputs[정렬 출력].Columns[AverageRate]"
+                      dataType="r8"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate Sort.Outputs[정렬 출력].Columns[AverageRate]"
+                      name="AverageRate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="이 출력 열에 연결된 입력 열의 계보 식별자를 지정합니다."
+                          name="SortColumnId">#{Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[AverageRate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate Sort.Outputs[정렬 출력].Columns[EndOfDayRate]"
+                      dataType="r8"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate Sort.Outputs[정렬 출력].Columns[EndOfDayRate]"
+                      name="EndOfDayRate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="이 출력 열에 연결된 입력 열의 계보 식별자를 지정합니다."
+                          name="SortColumnId">#{Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[EndOfDayRate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Merge Flow\NewFactCurrencyRate Sort.Outputs[정렬 출력].Columns[Date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Merge Flow\NewFactCurrencyRate Sort.Outputs[정렬 출력].Columns[Date]"
+                      name="Date">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="이 출력 열에 연결된 입력 열의 계보 식별자를 지정합니다."
+                          name="SortColumnId">#{Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력].Columns[Date]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Merge Flow\Update NewFactCurrencyRate"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB 명령;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;2"
+              description="데이터 흐름의 각 행에 대해 SQL 문을 실행합니다. 예를 들어 '신입 사원' 테이블의 각 행에 대해 '신입 사원 설정' 저장 프로시저를 호출할 수 있습니다. 참고: 큰 데이터 흐름의 각 행에 대해 SQL 문을 실행하는 경우 시간이 오래 걸릴 수 있습니다."
+              name="Update NewFactCurrencyRate"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="명령이 종료되기 전의 제한 시간 값(초)입니다. 값 0은 제한 시간이 없음을 나타냅니다."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="실행할 SQL 명령입니다."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.NewFactCurrencyRate SET
+    AverageRate      = ?
+    , EndOfDayRate = ?
+    , Date               = ?
+ WHERE CurrencyKey = ?
+      AND DateKey      = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="데이터 원본에서 코드 페이지 정보를 사용할 수 없을 때 사용할 열 코드 페이지를 지정합니다."
+                  name="DefaultCodePage">949</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Merge Flow\Update NewFactCurrencyRate.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                  description="데이터베이스에 액세스하는 데 사용되는 OLE DB 런타임 연결입니다."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력]"
+                  errorOrTruncationOperation="명령 실행"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB 명령 입력">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력].Columns[CurrencyKey]"
+                      cachedDataType="i4"
+                      cachedName="CurrencyKey"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력].ExternalColumns[Param_3]"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[CurrencyKey]" />
+                    <inputColumn
+                      refId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      cachedSortKeyPosition="2"
+                      externalMetadataColumnId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력].ExternalColumns[Param_4]"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[DateKey]" />
+                    <inputColumn
+                      refId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력].Columns[AverageRate]"
+                      cachedDataType="r8"
+                      cachedName="AverageRate"
+                      externalMetadataColumnId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력].ExternalColumns[Param_0]"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[AverageRate]" />
+                    <inputColumn
+                      refId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력].Columns[EndOfDayRate]"
+                      cachedDataType="r8"
+                      cachedName="EndOfDayRate"
+                      externalMetadataColumnId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력].ExternalColumns[Param_1]"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[EndOfDayRate]" />
+                    <inputColumn
+                      refId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력].Columns[Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력].ExternalColumns[Param_2]"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력].ExternalColumns[Param_0]"
+                      dataType="r8"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="매개 변수 정보입니다. OLE DB의 DBPARAMFLAGSENUM 값에 해당합니다."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력].ExternalColumns[Param_1]"
+                      dataType="r8"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="매개 변수 정보입니다. OLE DB의 DBPARAMFLAGSENUM 값에 해당합니다."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력].ExternalColumns[Param_2]"
+                      dataType="dbTimeStamp"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="매개 변수 정보입니다. OLE DB의 DBPARAMFLAGSENUM 값에 해당합니다."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력].ExternalColumns[Param_3]"
+                      dataType="i4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="매개 변수 정보입니다. OLE DB의 DBPARAMFLAGSENUM 값에 해당합니다."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력].ExternalColumns[Param_4]"
+                      dataType="i4"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="매개 변수 정보입니다. OLE DB의 DBPARAMFLAGSENUM 값에 해당합니다."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Merge Flow\Update NewFactCurrencyRate.Outputs[OLE DB 명령 출력]"
+                  exclusionGroup="1"
+                  name="OLE DB 명령 출력"
+                  synchronousInputId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Merge Flow\Update NewFactCurrencyRate.Outputs[OLE DB 명령 오류 출력]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB 명령 오류 출력"
+                  synchronousInputId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Flow\Update NewFactCurrencyRate.Outputs[OLE DB 명령 오류 출력].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\Update NewFactCurrencyRate.Outputs[OLE DB 명령 오류 출력].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Merge Flow\Update NewFactCurrencyRate.Outputs[OLE DB 명령 오류 출력].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\Update NewFactCurrencyRate.Outputs[OLE DB 명령 오류 출력].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Merge Flow\Where"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="조건부 분할;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;0"
+              description="데이터의 내용에 따라 데이터 행을 여러 출력으로 라우팅합니다. 조건(SSIS 식)을 사용하여 라우팅할 행을 지정합니다. 예를 들어 정리해야 하는 레코드를 로드할 준비가 된 레코드와 분리하거나 레코드 하위 집합만 라우팅할 수 있습니다."
+              name="Where"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Merge Flow\Where.Inputs[조건부 분할 입력]"
+                  description="조건부 분할 변환에 대한 입력"
+                  name="조건부 분할 입력">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Merge Flow\Where.Inputs[조건부 분할 입력].Columns[TargetCurrencyKey]"
+                      cachedDataType="i4"
+                      cachedName="TargetCurrencyKey"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[TargetCurrencyKey]" />
+                    <inputColumn
+                      refId="Package\Merge Flow\Where.Inputs[조건부 분할 입력].Columns[TargetDateKey]"
+                      cachedDataType="i4"
+                      cachedName="TargetDateKey"
+                      lineageId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[TargetDateKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Merge Flow\Where.Outputs[result]"
+                  description="조건부 분할 변환의 출력 1"
+                  errorOrTruncationOperation="계산"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="result"
+                  synchronousInputId="Package\Merge Flow\Where.Inputs[조건부 분할 입력]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="식을 지정합니다. 이 식 버전은 열 이름 대신 계보 식별자를 사용합니다."
+                      name="Expression">[ISNULL](#{Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[TargetCurrencyKey]}) &amp;&amp; [ISNULL](#{Package\Merge Flow\Left Join.Outputs[병합 조인 출력].Columns[TargetDateKey]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="식의 버전을 지정합니다. 이 식 버전은 열 이름을 사용합니다."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(TargetCurrencyKey) &amp;&amp; ISNULL(TargetDateKey)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="변환이 평가하는 조건 목록에서 조건의 위치를 지정합니다. 평가 순서는 오름차순으로 진행됩니다."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Merge Flow\Where.Outputs[조건부 분할 기본 출력]"
+                  description="조건부 분할 변환의 기본 출력"
+                  exclusionGroup="1"
+                  name="조건부 분할 기본 출력"
+                  synchronousInputId="Package\Merge Flow\Where.Inputs[조건부 분할 입력]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Merge Flow\Where.Outputs[조건부 분할 오류 출력]"
+                  description="조건부 분할 변환의 오류 출력"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="조건부 분할 오류 출력"
+                  synchronousInputId="Package\Merge Flow\Where.Inputs[조건부 분할 입력]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Merge Flow\Where.Outputs[조건부 분할 오류 출력].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\Where.Outputs[조건부 분할 오류 출력].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Merge Flow\Where.Outputs[조건부 분할 오류 출력].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Merge Flow\Where.Outputs[조건부 분할 오류 출력].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Merge Flow.Paths[OLE DB 원본 출력]"
+              endId="Package\Merge Flow\FactCurrencyRate Sort.Inputs[정렬 입력]"
+              name="OLE DB 원본 출력"
+              startId="Package\Merge Flow\FactCurrencyRate DB.Outputs[OLE DB 원본 출력]" />
+            <path
+              refId="Package\Merge Flow.Paths[OLE DB 원본 출력1]"
+              endId="Package\Merge Flow\NewFactCurrencyRate Sort.Inputs[정렬 입력]"
+              name="OLE DB 원본 출력"
+              startId="Package\Merge Flow\NewFactCurrencyRate DB.Outputs[OLE DB 원본 출력]" />
+            <path
+              refId="Package\Merge Flow.Paths[result]"
+              endId="Package\Merge Flow\Insert NewFactCurrencyRate.Inputs[OLE DB 대상 입력]"
+              name="result"
+              startId="Package\Merge Flow\Where.Outputs[result]" />
+            <path
+              refId="Package\Merge Flow.Paths[병합 조인 출력]"
+              endId="Package\Merge Flow\Where.Inputs[조건부 분할 입력]"
+              name="병합 조인 출력"
+              startId="Package\Merge Flow\Left Join.Outputs[병합 조인 출력]" />
+            <path
+              refId="Package\Merge Flow.Paths[정렬 출력]"
+              endId="Package\Merge Flow\Left Join.Inputs[병합 조인 왼쪽 입력]"
+              name="정렬 출력"
+              startId="Package\Merge Flow\FactCurrencyRate Sort.Outputs[정렬 출력]" />
+            <path
+              refId="Package\Merge Flow.Paths[정렬 출력1]"
+              endId="Package\Merge Flow\Left Join.Inputs[병합 조인 오른쪽 입력]"
+              name="정렬 출력"
+              startId="Package\Merge Flow\NewFactCurrencyRate Sort.Outputs[정렬 출력]" />
+            <path
+              refId="Package\Merge Flow.Paths[조건부 분할 기본 출력]"
+              endId="Package\Merge Flow\Update NewFactCurrencyRate.Inputs[OLE DB 명령 입력]"
+              name="조건부 분할 기본 출력"
+              startId="Package\Merge Flow\Where.Outputs[조건부 분할 기본 출력]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Merge Flow"
+          TopLeft="175.624997382984,104.51587026999" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Merge Flow">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="224,42"
+          Id="Package\Merge Flow\NewFactCurrencyRate DB"
+          TopLeft="494.874993341044,130.722218759266" />
+        <NodeLayout
+          Size="114,42"
+          Id="Package\Merge Flow\Where"
+          TopLeft="375.624994402751,374.111101200552" />
+        <NodeLayout
+          Size="248,42"
+          Id="Package\Merge Flow\Update NewFactCurrencyRate"
+          TopLeft="510.624992987141,464.477767465439" />
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Merge Flow\FactCurrencyRate Sort"
+          TopLeft="247.624995147809,210.888883302241" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\Merge Flow\Left Join"
+          TopLeft="380.624994328246,298.999992079205" />
+        <NodeLayout
+          Size="230,42"
+          Id="Package\Merge Flow\NewFactCurrencyRate Sort"
+          TopLeft="495.499993182719,213.055549911511" />
+        <NodeLayout
+          Size="200,42"
+          Id="Package\Merge Flow\FactCurrencyRate DB"
+          TopLeft="252.124995855615,131.444440962356" />
+        <NodeLayout
+          Size="238,42"
+          Id="Package\Merge Flow\Insert NewFactCurrencyRate"
+          TopLeft="234.374995762482,459.333321165156" />
+        <EdgeLayout
+          Id="Package\Merge Flow.Paths[정렬 출력]"
+          TopLeft="350.624995147809,252.888883302241">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73.6666658471037,46.111108776964"
+              Start="0,0"
+              End="73.6666658471037,38.611108776964">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.3224454805961" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.3224454805961"
+                    Point2="0,27.3224454805961"
+                    Point3="4,27.3224454805961" />
+                  <mssgle:LineSegment
+                    End="69.6666658471037,27.3224454805961" />
+                  <mssgle:CubicBezierSegment
+                    Point1="69.6666658471037,27.3224454805961"
+                    Point2="73.6666658471037,27.3224454805961"
+                    Point3="73.6666658471037,31.3224454805961" />
+                  <mssgle:LineSegment
+                    End="73.6666658471037,38.611108776964" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge Flow.Paths[병합 조인 출력]"
+          TopLeft="444.124994328246,340.999992079205">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.499999925495,33.111109121347"
+              Start="0,0"
+              End="-11.499999925495,25.611109121347">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.5555545606735" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.5555545606735"
+                    Point2="0,16.5555545606735"
+                    Point3="-4,16.5555545606735" />
+                  <mssgle:LineSegment
+                    End="-7.49999992549499,16.5555545606735" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.49999992549499,16.5555545606735"
+                    Point2="-11.499999925495,16.5555545606735"
+                    Point3="-11.499999925495,20.5555545606735" />
+                  <mssgle:LineSegment
+                    End="-11.499999925495,25.611109121347" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge Flow.Paths[result]"
+          TopLeft="414.958327736084,416.111101200552">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-61.5833319736023,43.222219964604"
+              Start="0,0"
+              End="-61.5833319736023,35.722219964604">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.6478268367587" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.6478268367587"
+                    Point2="0,17.6478268367587"
+                    Point3="-4,17.6478268367587" />
+                  <mssgle:LineSegment
+                    End="-57.5833319736023,17.6478268367587" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-57.5833319736023,17.6478268367587"
+                    Point2="-61.5833319736023,17.6478268367587"
+                    Point3="-61.5833319736023,21.6478268367587" />
+                  <mssgle:LineSegment
+                    End="-61.5833319736023,35.722219964604" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-43.7196737993011,22.6478268367587,25.856015625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge Flow.Paths[OLE DB 원본 출력1]"
+          TopLeft="608.687493261882,172.722218759266">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.333331152245"
+              Start="0,0"
+              End="0,32.833331152245">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.833331152245" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge Flow.Paths[OLE DB 원본 출력]"
+          TopLeft="351.374995501712,173.444440962356">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.444442339885"
+              Start="0,0"
+              End="0,29.944442339885">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.944442339885" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge Flow.Paths[조건부 분할 기본 출력]"
+          TopLeft="450.291661069418,416.111101200552">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="184.333331917723,48.366666264887"
+              Start="0,0"
+              End="184.333331917723,40.866666264887">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.7483274022722" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.7483274022722"
+                    Point2="0,19.7483274022722"
+                    Point3="4,19.7483274022722" />
+                  <mssgle:LineSegment
+                    End="180.333331917723,19.7483274022722" />
+                  <mssgle:CubicBezierSegment
+                    Point1="180.333331917723,19.7483274022722"
+                    Point2="184.333331917723,19.7483274022722"
+                    Point3="184.333331917723,23.7483274022722" />
+                  <mssgle:LineSegment
+                    End="184.333331917723,40.866666264887" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="42.5606503338617,24.7483274022722,99.21203125,11.5703125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge Flow.Paths[정렬 출력1]"
+          TopLeft="610.499993182719,255.055549911511">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-146.54166552114,43.944442167694"
+              Start="0,0"
+              End="-146.54166552114,36.444442167694">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.0386196981204" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.0386196981204"
+                    Point2="0,26.0386196981204"
+                    Point3="-4,26.0386196981204" />
+                  <mssgle:LineSegment
+                    End="-142.54166552114,26.0386196981204" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-142.54166552114,26.0386196981204"
+                    Point2="-146.54166552114,26.0386196981204"
+                    Point3="-146.54166552114,30.0386196981204" />
+                  <mssgle:LineSegment
+                    End="-146.54166552114,36.444442167694" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Merge Flow\NewFactCurrencyRate DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Merge Flow\FactCurrencyRate DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Merge Flow\Insert NewFactCurrencyRate">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

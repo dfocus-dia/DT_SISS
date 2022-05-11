@@ -1,0 +1,1 @@
+"C:\Program Files\Microsoft SQL Server\150\DTS\Binn\DTExec.exe" /F "C:\Users\kjmop\source\repos\DT_SISS\SSIS Tutorial\Dynamic Process Example.dtsx"

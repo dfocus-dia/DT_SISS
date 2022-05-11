@@ -1,0 +1,521 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/25/2022 4:12:29 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-5VBE4DS"
+  DTS:CreatorName="DESKTOP-5VBE4DS\kjmop"
+  DTS:DTSID="{07CB513D-7628-4766-AD2B-8ABBE10DB1BB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1042"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{90677D51-53F6-46F8-AD24-843677AAEBCA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{CD0B854D-9E5C-4DF3-BB02-DD50F3F228D9}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\kjmop\source\repos\Package to Package\FactCurrencyRate.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8BB58F8E-2A63-4062-8BE1-802CDD4541B0}"
+      DTS:ObjectName="localhost, 1433.AdventureWorksDW2012.SA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost, 1433;User ID=SA;Initial Catalog=AdventureWorksDW2012;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAByiXr0/us6s5YlMpr0V6TQCbtGiID/uxswOL7DGuNW0gAAAAAOgAAAAAIAACAAAABliuIrFboahr15yOwt9JLfqzU5FGrsrjOatvxypKpFtyAAAAAaxvtUgzwzJ1p8rIiF9TaHkGURzZg6/M/IdisyB63bBEAAAADK3zZm2LE+o4oMFhs2F6YmPJTZv+txw07fzyyj/XL01PYgrmX35a5c8p2sV7pnEpQxI7eusJWDO8sQ/Df0Hm8e</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\데이터 흐름 태스크"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="데이터 흐름 태스크"
+      DTS:DTSID="{A2FB73A5-8AF4-4FE0-AB71-DAC0B14BA59D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="데이터 흐름 태스크"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\데이터 흐름 태스크\Excel 원본"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel 원본;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel 원본"
+              name="Excel 원본"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="명령이 종료되기 전의 제한 시간 값(초)입니다. 값 0은 제한 시간이 없음을 나타냅니다."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="행 집합을 여는 데 사용되는 데이터베이스 개체의 이름을 지정합니다."
+                  name="OpenRowset">FactCurrencyRate</property>
+                <property
+                  dataType="System.String"
+                  description="행 집합을 여는 데 사용되는 데이터베이스 개체의 이름이 들어 있는 변수를 지정합니다."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="실행할 SQL 명령입니다."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="실행할 SQL 명령이 들어 있는 변수입니다."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="데이터베이스에 액세스하는 데 사용되는 모드를 지정합니다."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="SQL 명령의 매개 변수에서 변수로의 매핑입니다."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\데이터 흐름 태스크\Excel 원본.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="데이터베이스에 액세스하는 데 사용되는 OLE DB 런타임 연결입니다."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력]"
+                  name="Excel 원본 출력">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].Columns[CurrencyKey]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].ExternalColumns[CurrencyKey]"
+                      length="255"
+                      lineageId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].Columns[CurrencyKey]"
+                      name="CurrencyKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].Columns[DateKey]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].ExternalColumns[DateKey]"
+                      length="255"
+                      lineageId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].Columns[DateKey]"
+                      name="DateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].Columns[AverageRate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].ExternalColumns[AverageRate]"
+                      length="255"
+                      lineageId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].Columns[AverageRate]"
+                      name="AverageRate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].Columns[EndOfDayRate]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].ExternalColumns[EndOfDayRate]"
+                      length="255"
+                      lineageId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].Columns[EndOfDayRate]"
+                      name="EndOfDayRate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].Columns[Date]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].ExternalColumns[Date]"
+                      length="255"
+                      lineageId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].ExternalColumns[CurrencyKey]"
+                      dataType="wstr"
+                      length="255"
+                      name="CurrencyKey" />
+                    <externalMetadataColumn
+                      refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].ExternalColumns[DateKey]"
+                      dataType="wstr"
+                      length="255"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].ExternalColumns[AverageRate]"
+                      dataType="wstr"
+                      length="255"
+                      name="AverageRate" />
+                    <externalMetadataColumn
+                      refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].ExternalColumns[EndOfDayRate]"
+                      dataType="wstr"
+                      length="255"
+                      name="EndOfDayRate" />
+                    <externalMetadataColumn
+                      refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].ExternalColumns[Date]"
+                      dataType="wstr"
+                      length="255"
+                      name="Date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 오류 출력]"
+                  isErrorOut="true"
+                  name="Excel 원본 오류 출력">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 오류 출력].Columns[CurrencyKey]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 오류 출력].Columns[CurrencyKey]"
+                      name="CurrencyKey" />
+                    <outputColumn
+                      refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 오류 출력].Columns[DateKey]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 오류 출력].Columns[DateKey]"
+                      name="DateKey" />
+                    <outputColumn
+                      refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 오류 출력].Columns[AverageRate]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 오류 출력].Columns[AverageRate]"
+                      name="AverageRate" />
+                    <outputColumn
+                      refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 오류 출력].Columns[EndOfDayRate]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 오류 출력].Columns[EndOfDayRate]"
+                      name="EndOfDayRate" />
+                    <outputColumn
+                      refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 오류 출력].Columns[Date]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 오류 출력].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 오류 출력].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 오류 출력].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 오류 출력].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 오류 출력].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\데이터 흐름 태스크\OLE DB 대상"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB 대상;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB 대상"
+              name="OLE DB 대상"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="명령이 종료되기 전의 제한 시간 값(초)입니다. 값 0은 제한 시간이 없음을 나타냅니다."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="행 집합을 여는 데 사용되는 데이터베이스 개체의 이름을 지정합니다."
+                  name="OpenRowset">[NewFactCurrencyRate]</property>
+                <property
+                  dataType="System.String"
+                  description="행 집합을 여는 데 사용되는 데이터베이스 개체의 이름이 들어 있는 변수를 지정합니다."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="실행할 SQL 명령입니다."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="데이터 원본에서 코드 페이지 정보를 사용할 수 없을 때 사용할 열 코드 페이지를 지정합니다."
+                  name="DefaultCodePage">949</property>
+                <property
+                  dataType="System.Boolean"
+                  description="문자 데이터를 설명할 때 DefaultCodePage 속성 값을 사용하도록 합니다."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="데이터베이스에 액세스하는 데 사용되는 모드를 지정합니다."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="ID 열에 제공된 값을 대상에 복사할지 여부를 나타냅니다. false인 경우 ID 열의 값이 대상에서 자동 생성됩니다. 빠른 로드를 사용하는 경우에만 적용됩니다."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Null 포함 열을 대상에 Null로 삽입할지 여부를 나타냅니다. false인 경우 Null 포함 열은 지정된 기본값으로 대상에 삽입됩니다. 빠른 로드를 사용하는 경우에만 적용됩니다."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="빠른 로드와 함께 사용할 옵션을 지정합니다. 빠른 로드를 사용하는 경우에만 적용됩니다."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="데이터 삽입 도중 커밋이 수행되는 시점을 지정합니다. 값을 0으로 지정하면 데이터 삽입 완료 시에 커밋이 한 번 수행됩니다. 빠른 로드를 사용하는 경우에만 적용됩니다."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\데이터 흐름 태스크\OLE DB 대상.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                  description="데이터베이스에 액세스하는 데 사용되는 OLE DB 런타임 연결입니다."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\데이터 흐름 태스크\OLE DB 대상.Inputs[OLE DB 대상 입력]"
+                  errorOrTruncationOperation="삽입"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB 대상 입력">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\데이터 흐름 태스크\OLE DB 대상.Inputs[OLE DB 대상 입력].Columns[CurrencyKey]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CurrencyKey"
+                      externalMetadataColumnId="Package\데이터 흐름 태스크\OLE DB 대상.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyKey]"
+                      lineageId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].Columns[CurrencyKey]" />
+                    <inputColumn
+                      refId="Package\데이터 흐름 태스크\OLE DB 대상.Inputs[OLE DB 대상 입력].Columns[DateKey]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DateKey"
+                      externalMetadataColumnId="Package\데이터 흐름 태스크\OLE DB 대상.Inputs[OLE DB 대상 입력].ExternalColumns[DateKey]"
+                      lineageId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].Columns[DateKey]" />
+                    <inputColumn
+                      refId="Package\데이터 흐름 태스크\OLE DB 대상.Inputs[OLE DB 대상 입력].Columns[AverageRate]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="AverageRate"
+                      externalMetadataColumnId="Package\데이터 흐름 태스크\OLE DB 대상.Inputs[OLE DB 대상 입력].ExternalColumns[AverageRate]"
+                      lineageId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].Columns[AverageRate]" />
+                    <inputColumn
+                      refId="Package\데이터 흐름 태스크\OLE DB 대상.Inputs[OLE DB 대상 입력].Columns[EndOfDayRate]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="EndOfDayRate"
+                      externalMetadataColumnId="Package\데이터 흐름 태스크\OLE DB 대상.Inputs[OLE DB 대상 입력].ExternalColumns[EndOfDayRate]"
+                      lineageId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].Columns[EndOfDayRate]" />
+                    <inputColumn
+                      refId="Package\데이터 흐름 태스크\OLE DB 대상.Inputs[OLE DB 대상 입력].Columns[Date]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\데이터 흐름 태스크\OLE DB 대상.Inputs[OLE DB 대상 입력].ExternalColumns[Date]"
+                      lineageId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력].Columns[Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\데이터 흐름 태스크\OLE DB 대상.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyKey]"
+                      dataType="wstr"
+                      length="255"
+                      name="CurrencyKey" />
+                    <externalMetadataColumn
+                      refId="Package\데이터 흐름 태스크\OLE DB 대상.Inputs[OLE DB 대상 입력].ExternalColumns[DateKey]"
+                      dataType="wstr"
+                      length="255"
+                      name="DateKey" />
+                    <externalMetadataColumn
+                      refId="Package\데이터 흐름 태스크\OLE DB 대상.Inputs[OLE DB 대상 입력].ExternalColumns[AverageRate]"
+                      dataType="wstr"
+                      length="255"
+                      name="AverageRate" />
+                    <externalMetadataColumn
+                      refId="Package\데이터 흐름 태스크\OLE DB 대상.Inputs[OLE DB 대상 입력].ExternalColumns[EndOfDayRate]"
+                      dataType="wstr"
+                      length="255"
+                      name="EndOfDayRate" />
+                    <externalMetadataColumn
+                      refId="Package\데이터 흐름 태스크\OLE DB 대상.Inputs[OLE DB 대상 입력].ExternalColumns[Date]"
+                      dataType="wstr"
+                      length="255"
+                      name="Date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\데이터 흐름 태스크\OLE DB 대상.Outputs[OLE DB 대상 오류 출력]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB 대상 오류 출력"
+                  synchronousInputId="Package\데이터 흐름 태스크\OLE DB 대상.Inputs[OLE DB 대상 입력]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\데이터 흐름 태스크\OLE DB 대상.Outputs[OLE DB 대상 오류 출력].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\데이터 흐름 태스크\OLE DB 대상.Outputs[OLE DB 대상 오류 출력].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\데이터 흐름 태스크\OLE DB 대상.Outputs[OLE DB 대상 오류 출력].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\데이터 흐름 태스크\OLE DB 대상.Outputs[OLE DB 대상 오류 출력].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\데이터 흐름 태스크.Paths[Excel 원본 출력]"
+              endId="Package\데이터 흐름 태스크\OLE DB 대상.Inputs[OLE DB 대상 입력]"
+              name="Excel 원본 출력"
+              startId="Package\데이터 흐름 태스크\Excel 원본.Outputs[Excel 원본 출력]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="182.4,41.6"
+          Id="Package\데이터 흐름 태스크"
+          TopLeft="271.874995948747,124.222218931457" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\데이터 흐름 태스크">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\데이터 흐름 태스크\Excel 원본"
+          TopLeft="309.374995389953,127.111107743817" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\데이터 흐름 태스크\OLE DB 대상"
+          TopLeft="313.124995334074,223.166660754769" />
+        <EdgeLayout
+          Id="Package\데이터 흐름 태스크.Paths[Excel 원본 출력]"
+          TopLeft="377.374995389953,168.711107743817">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.9499999441207,54.4555530109524"
+              Start="0,0"
+              End="10.9499999441207,46.9555530109524">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.2277765054762" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.2277765054762"
+                    Point2="0,27.2277765054762"
+                    Point3="4,27.2277765054762" />
+                  <mssgle:LineSegment
+                    End="6.94999994412069,27.2277765054762" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.94999994412069,27.2277765054762"
+                    Point2="10.9499999441207,27.2277765054762"
+                    Point3="10.9499999441207,31.2277765054762" />
+                  <mssgle:LineSegment
+                    End="10.9499999441207,46.9555530109524" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\데이터 흐름 태스크\Excel 원본">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\데이터 흐름 태스크\OLE DB 대상">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

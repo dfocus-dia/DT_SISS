@@ -1,0 +1,1309 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/21/2022 1:03:25 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-5VBE4DS"
+  DTS:CreatorName="DESKTOP-5VBE4DS\kjmop"
+  DTS:DTSID="{AF79CEA4-8F8F-415C-BE9C-DDA9AD72F4F2}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1042"
+  DTS:ObjectName="Dynamic Process Example"
+  DTS:PackageType="5"
+  DTS:VersionBuild="68"
+  DTS:VersionGUID="{B1A4D7A5-5A6F-4598-B3E7-95FEB5027E33}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{AB07D59E-392B-4979-9A86-2A12AA7246A3}"
+      DTS:ObjectName="localhost, 1433.AdventureWorksDW2012.SA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost, 1433;User ID=SA;Initial Catalog=AdventureWorksDW2012;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD4vXM4BnZ0YmXmrTTTLXV9YSrykvSkVzLMfU5JMyw8wgAAAAAOgAAAAAIAACAAAABDT64W6PM5RmmHhqzZE/VCnxsdUGKFV9Oq/1W9i2TcWyAAAAALQxieqkw+5z2awK0MKctjhDhA8sXMSDyn5ZjS54qoY0AAAAD0fwyhMMAFrUlS6Sz1vWZYLquXNZ2MM9AdEYyno0VPUMWKugn5GdAZtAFle3WciKdla4rPG9rSkrEJoGfX9gRv</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SampleCurrencyData]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{559487BA-C86C-4D06-B9CA-19E4454E5EE4}"
+      DTS:ObjectName="SampleCurrencyData">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\kjmop\Downloads\Creating a Simple ETL Package\Creating a Simple ETL Package\Sample Data\SampleCurrencyDat.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AverageRate"
+              DTS:DTSID="{69CC89A9-967D-4052-8326-D45E52BC967C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CurrencyID"
+              DTS:DTSID="{CD153AC7-7196-4FF6-9EA0-1401B7905755}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CurrencyDate"
+              DTS:DTSID="{F4E2BB19-33CF-431A-8994-5DEDF3C4CA8A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EndOfDayRate"
+              DTS:DTSID="{B2619EF1-AE5D-45CB-A531-496CFCDA4EDF}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="C:\Users\kjmop\source\repos\DT_SISS\SSIS Tutorial\SSISTutorial.dtsConfig"
+      DTS:ConfigurationType="1"
+      DTS:CreationName=""
+      DTS:DTSID="{DA7E80EC-B30A-4318-9DB6-82364DBF74FF}"
+      DTS:ObjectName="SSISTutorial" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="{D29C66AB-4C2D-4877-A7C0-58FFBDF82361}"
+      DTS:CreationName="Microsoft.LogProviderTextFile"
+      DTS:Description="3단원 로그 파일 "
+      DTS:DTSID="{193852D9-8D36-4041-ABF4-D40C4E7CAD72}"
+      DTS:ObjectName="3단원 로그 파일">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{48ED4FC3-E549-44F7-B0CE-ACF582A8960E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varEndDate">
+      <DTS:VariableValue
+        DTS:DataType="7">7/30/2008</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3A9BC016-A25A-4228-92FB-4472656E955D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varFileName">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E15F06E7-68FA-480A-9EE5-FA70B74C63E4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varFolderName">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\New Sample Data</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ED6C98A6-2D85-4797-BD3B-77F53F0C0BC0}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="varStartDate">
+      <DTS:VariableValue
+        DTS:DataType="7">6/1/2008</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="2" />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Dynamic Process Flow"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="데이터 흐름 태스크"
+      DTS:DTSID="{0AAF2159-61C6-47B8-ADD5-456EF75AF1DA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dynamic Process Flow"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dynamic Process Flow\Lookup Currency"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="조회;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;6"
+              description="테이블의 값을 조회하여 데이터 흐름에 추가 열을 조인합니다. 예를 들어 직원 테이블을 '직원 ID' 열에 조인하여 '고용 날짜' 및 '직원 이름'을 가져올 수 있습니다. 조회 테이블이 메모리에 적합한 경우 이 변환을 사용하는 것이 좋습니다."
+              localeId="1033"
+              name="Lookup Currency"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="조회 테이블을 생성하는 SQL 문을 지정합니다."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM [dbo].[DimCurrency]
+WHERE [CurrencyAlternateKey]
+IN ('ARS', 'AUD', 'BRL', 'CAD', 'CNY',
+    'DEM', 'EUR', 'FRF', 'GBP', 'JPY',
+    'MXN', 'SAR', 'USD', 'VEB')</property>
+                <property
+                  dataType="System.String"
+                  description="매개 변수를 사용하여 조회 테이블을 생성하는 SQL 문을 지정합니다."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT * FROM [dbo].[DimCurrency]
+WHERE [CurrencyAlternateKey]
+IN ('ARS', 'AUD', 'BRL', 'CAD', 'CNY',
+    'DEM', 'EUR', 'FRF', 'GBP', 'JPY',
+    'MXN', 'SAR', 'USD', 'VEB')) [refTable]
+where [refTable].[CurrencyAlternateKey] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="참조 데이터 세트에 액세스하는 데 사용되는 연결 유형을 지정합니다."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="조회 테이블의 캐시 유형을 지정합니다."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="조회 변환 시 참조 데이터 집합에서 일치하는 항목이 없는 행을 처리하는 방법을 지정합니다."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="참조 데이터 세트에서 일치하는 항목이 없는 행에 할당되는 캐시의 비율을 지정합니다."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="32비트 플랫폼에서 참조 캐시의 최대 메모리 사용량입니다."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="64비트 플랫폼에서 참조 캐시의 최대 메모리 사용량입니다."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="XML 형식의 메타데이터를 참조할지 여부를 나타냅니다."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CurrencyKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrencyAlternateKey" dataType="DT_WSTR" length="3" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CurrencyName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="SQLCommand 속성의 SQL 문이 사용하는 매개 변수에 매핑되는 계보 식별자 목록을 지정합니다. 목록의 항목은 세미콜론으로 구분됩니다."
+                  name="ParameterMap">#{Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[CurrencyID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="데이터 원본에서 코드 페이지 정보를 사용할 수 없을 때 사용할 열 코드 페이지를 지정합니다."
+                  name="DefaultCodePage">949</property>
+                <property
+                  dataType="System.Boolean"
+                  description="전체 캐시 모드를 사용할 때 참조 데이터의 중복 키를 오류로 처리할지 여부를 결정합니다."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dynamic Process Flow\Lookup Currency.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                  description="조회 데이터에 액세스하는 데 사용되는 연결 관리자입니다."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dynamic Process Flow\Lookup Currency.Inputs[조회 입력]"
+                  name="조회 입력">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dynamic Process Flow\Lookup Currency.Inputs[조회 입력].Columns[CurrencyID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CurrencyID"
+                      lineageId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[CurrencyID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="열을 조인할 참조 테이블의 열을 지정합니다."
+                          name="JoinToReferenceColumn">CurrencyAlternateKey</property>
+                        <property
+                          dataType="System.Null"
+                          description="열을 복사할 참조 테이블의 열을 지정합니다."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dynamic Process Flow\Lookup Currency.Outputs[조회 일치 항목 출력]"
+                  errorOrTruncationOperation="조회"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="조회 일치 항목 출력"
+                  synchronousInputId="Package\Dynamic Process Flow\Lookup Currency.Inputs[조회 입력]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dynamic Process Flow\Lookup Currency.Outputs[조회 일치 항목 출력].Columns[CurrencyKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="열 복사"
+                      lineageId="Package\Dynamic Process Flow\Lookup Currency.Outputs[조회 일치 항목 출력].Columns[CurrencyKey]"
+                      name="CurrencyKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="열을 복사할 참조 테이블의 열을 지정합니다."
+                          name="CopyFromReferenceColumn">CurrencyKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dynamic Process Flow\Lookup Currency.Outputs[조회 불일치 항목 출력]"
+                  description="참조 데이터 세트에서 일치하는 항목이 없는 행을 처리하는 조회 출력입니다. NoMatchBehavior 속성이 &quot;일치하는 항목이 없는 행을 불일치 항목 출력으로 보냅니다.&quot;로 설정되어 있는 경우 이 출력을 사용합니다."
+                  exclusionGroup="1"
+                  name="조회 불일치 항목 출력"
+                  synchronousInputId="Package\Dynamic Process Flow\Lookup Currency.Inputs[조회 입력]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dynamic Process Flow\Lookup Currency.Outputs[조회 오류 출력]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="조회 오류 출력"
+                  synchronousInputId="Package\Dynamic Process Flow\Lookup Currency.Inputs[조회 입력]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dynamic Process Flow\Lookup Currency.Outputs[조회 오류 출력].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dynamic Process Flow\Lookup Currency.Outputs[조회 오류 출력].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dynamic Process Flow\Lookup Currency.Outputs[조회 오류 출력].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dynamic Process Flow\Lookup Currency.Outputs[조회 오류 출력].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dynamic Process Flow\Lookup Date"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="조회;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;6"
+              description="테이블의 값을 조회하여 데이터 흐름에 추가 열을 조인합니다. 예를 들어 직원 테이블을 '직원 ID' 열에 조인하여 '고용 날짜' 및 '직원 이름'을 가져올 수 있습니다. 조회 테이블이 메모리에 적합한 경우 이 변환을 사용하는 것이 좋습니다."
+              localeId="1033"
+              name="Lookup Date"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="조회 테이블을 생성하는 SQL 문을 지정합니다."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[DimDate]</property>
+                <property
+                  dataType="System.String"
+                  description="매개 변수를 사용하여 조회 테이블을 생성하는 SQL 문을 지정합니다."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[DimDate]) [refTable]
+where [refTable].[FullDateAlternateKey] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="참조 데이터 세트에 액세스하는 데 사용되는 연결 유형을 지정합니다."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="조회 테이블의 캐시 유형을 지정합니다."
+                  name="CacheType"
+                  typeConverter="CacheType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="조회 변환 시 참조 데이터 집합에서 일치하는 항목이 없는 행을 처리하는 방법을 지정합니다."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="참조 데이터 세트에서 일치하는 항목이 없는 행에 할당되는 캐시의 비율을 지정합니다."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="32비트 플랫폼에서 참조 캐시의 최대 메모리 사용량입니다."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="64비트 플랫폼에서 참조 캐시의 최대 메모리 사용량입니다."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="XML 형식의 메타데이터를 참조할지 여부를 나타냅니다."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateKey" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FullDateAlternateKey" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberOfWeek" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EnglishDayNameOfWeek" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SpanishDayNameOfWeek" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FrenchDayNameOfWeek" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberOfMonth" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DayNumberOfYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WeekNumberOfYear" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EnglishMonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SpanishMonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FrenchMonthName" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="MonthNumberOfYear" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CalendarQuarter" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CalendarYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CalendarSemester" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FiscalQuarter" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FiscalYear" dataType="DT_I2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FiscalSemester" dataType="DT_UI1" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="SQLCommand 속성의 SQL 문이 사용하는 매개 변수에 매핑되는 계보 식별자 목록을 지정합니다. 목록의 항목은 세미콜론으로 구분됩니다."
+                  name="ParameterMap">#{Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[CurrencyDate]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="데이터 원본에서 코드 페이지 정보를 사용할 수 없을 때 사용할 열 코드 페이지를 지정합니다."
+                  name="DefaultCodePage">949</property>
+                <property
+                  dataType="System.Boolean"
+                  description="전체 캐시 모드를 사용할 때 참조 데이터의 중복 키를 오류로 처리할지 여부를 결정합니다."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dynamic Process Flow\Lookup Date.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                  description="조회 데이터에 액세스하는 데 사용되는 연결 관리자입니다."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dynamic Process Flow\Lookup Date.Inputs[조회 입력]"
+                  name="조회 입력">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dynamic Process Flow\Lookup Date.Inputs[조회 입력].Columns[CurrencyDate]"
+                      cachedDataType="dbDate"
+                      cachedName="CurrencyDate"
+                      lineageId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[CurrencyDate]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="열을 조인할 참조 테이블의 열을 지정합니다."
+                          name="JoinToReferenceColumn">FullDateAlternateKey</property>
+                        <property
+                          dataType="System.Null"
+                          description="열을 복사할 참조 테이블의 열을 지정합니다."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dynamic Process Flow\Lookup Date.Outputs[조회 일치 항목 출력]"
+                  errorOrTruncationOperation="조회"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="조회 일치 항목 출력"
+                  synchronousInputId="Package\Dynamic Process Flow\Lookup Date.Inputs[조회 입력]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dynamic Process Flow\Lookup Date.Outputs[조회 일치 항목 출력].Columns[DateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="열 복사"
+                      lineageId="Package\Dynamic Process Flow\Lookup Date.Outputs[조회 일치 항목 출력].Columns[DateKey]"
+                      name="DateKey"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="열을 복사할 참조 테이블의 열을 지정합니다."
+                          name="CopyFromReferenceColumn">DateKey</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dynamic Process Flow\Lookup Date.Outputs[조회 불일치 항목 출력]"
+                  description="참조 데이터 세트에서 일치하는 항목이 없는 행을 처리하는 조회 출력입니다. NoMatchBehavior 속성이 &quot;일치하는 항목이 없는 행을 불일치 항목 출력으로 보냅니다.&quot;로 설정되어 있는 경우 이 출력을 사용합니다."
+                  exclusionGroup="1"
+                  name="조회 불일치 항목 출력"
+                  synchronousInputId="Package\Dynamic Process Flow\Lookup Date.Inputs[조회 입력]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dynamic Process Flow\Lookup Date.Outputs[조회 오류 출력]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="조회 오류 출력"
+                  synchronousInputId="Package\Dynamic Process Flow\Lookup Date.Inputs[조회 입력]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dynamic Process Flow\Lookup Date.Outputs[조회 오류 출력].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dynamic Process Flow\Lookup Date.Outputs[조회 오류 출력].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dynamic Process Flow\Lookup Date.Outputs[조회 오류 출력].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dynamic Process Flow\Lookup Date.Outputs[조회 오류 출력].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dynamic Process Flow\NewFactCurrencyRate DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB 대상;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB 대상"
+              localeId="1033"
+              name="NewFactCurrencyRate DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="명령이 종료되기 전의 제한 시간 값(초)입니다. 값 0은 제한 시간이 없음을 나타냅니다."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="행 집합을 여는 데 사용되는 데이터베이스 개체의 이름을 지정합니다."
+                  name="OpenRowset">[NewFactCurrencyRate]</property>
+                <property
+                  dataType="System.String"
+                  description="행 집합을 여는 데 사용되는 데이터베이스 개체의 이름이 들어 있는 변수를 지정합니다."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="실행할 SQL 명령입니다."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="데이터 원본에서 코드 페이지 정보를 사용할 수 없을 때 사용할 열 코드 페이지를 지정합니다."
+                  name="DefaultCodePage">949</property>
+                <property
+                  dataType="System.Boolean"
+                  description="문자 데이터를 설명할 때 DefaultCodePage 속성 값을 사용하도록 합니다."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="데이터베이스에 액세스하는 데 사용되는 모드를 지정합니다."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="ID 열에 제공된 값을 대상에 복사할지 여부를 나타냅니다. false인 경우 ID 열의 값이 대상에서 자동 생성됩니다. 빠른 로드를 사용하는 경우에만 적용됩니다."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Null 포함 열을 대상에 Null로 삽입할지 여부를 나타냅니다. false인 경우 Null 포함 열은 지정된 기본값으로 대상에 삽입됩니다. 빠른 로드를 사용하는 경우에만 적용됩니다."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="빠른 로드와 함께 사용할 옵션을 지정합니다. 빠른 로드를 사용하는 경우에만 적용됩니다."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="데이터 삽입 도중 커밋이 수행되는 시점을 지정합니다. 값을 0으로 지정하면 데이터 삽입 완료 시에 커밋이 한 번 수행됩니다. 빠른 로드를 사용하는 경우에만 적용됩니다."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost, 1433.AdventureWorksDW2012.SA]"
+                  description="데이터베이스에 액세스하는 데 사용되는 OLE DB 런타임 연결입니다."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력]"
+                  errorOrTruncationOperation="삽입"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB 대상 입력">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력].Columns[AverageRate]"
+                      cachedDataType="r4"
+                      cachedName="AverageRate"
+                      externalMetadataColumnId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력].ExternalColumns[AverageRate]"
+                      lineageId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[AverageRate]" />
+                    <inputColumn
+                      refId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력].Columns[CurrencyID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="CurrencyID"
+                      externalMetadataColumnId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyID]"
+                      lineageId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[CurrencyID]" />
+                    <inputColumn
+                      refId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력].Columns[CurrencyDate]"
+                      cachedDataType="dbDate"
+                      cachedName="CurrencyDate"
+                      externalMetadataColumnId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyDate]"
+                      lineageId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[CurrencyDate]" />
+                    <inputColumn
+                      refId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력].Columns[EndOfDayRate]"
+                      cachedDataType="r4"
+                      cachedName="EndOfDayRate"
+                      externalMetadataColumnId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력].ExternalColumns[EndOfDayRate]"
+                      lineageId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[EndOfDayRate]" />
+                    <inputColumn
+                      refId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력].Columns[CurrencyKey]"
+                      cachedDataType="i4"
+                      cachedName="CurrencyKey"
+                      externalMetadataColumnId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyKey]"
+                      lineageId="Package\Dynamic Process Flow\Lookup Currency.Outputs[조회 일치 항목 출력].Columns[CurrencyKey]" />
+                    <inputColumn
+                      refId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력].Columns[DateKey]"
+                      cachedDataType="i4"
+                      cachedName="DateKey"
+                      externalMetadataColumnId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력].ExternalColumns[DateKey]"
+                      lineageId="Package\Dynamic Process Flow\Lookup Date.Outputs[조회 일치 항목 출력].Columns[DateKey]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력].ExternalColumns[AverageRate]"
+                      dataType="r4"
+                      name="AverageRate" />
+                    <externalMetadataColumn
+                      refId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyID]"
+                      dataType="wstr"
+                      length="50"
+                      name="CurrencyID" />
+                    <externalMetadataColumn
+                      refId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyDate]"
+                      dataType="dbDate"
+                      name="CurrencyDate" />
+                    <externalMetadataColumn
+                      refId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력].ExternalColumns[EndOfDayRate]"
+                      dataType="r4"
+                      name="EndOfDayRate" />
+                    <externalMetadataColumn
+                      refId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력].ExternalColumns[CurrencyKey]"
+                      dataType="i4"
+                      name="CurrencyKey" />
+                    <externalMetadataColumn
+                      refId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력].ExternalColumns[DateKey]"
+                      dataType="i4"
+                      name="DateKey" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Outputs[OLE DB 대상 오류 출력]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB 대상 오류 출력"
+                  synchronousInputId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Outputs[OLE DB 대상 오류 출력].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Outputs[OLE DB 대상 오류 출력].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Outputs[OLE DB 대상 오류 출력].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Outputs[OLE DB 대상 오류 출력].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dynamic Process Flow\SampleCurrencyData"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="플랫 파일 원본;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;1"
+              description="플랫 파일 원본"
+              localeId="1033"
+              name="SampleCurrencyData"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="길이가 0인 열을 Null로 처리할지 여부를 지정합니다."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="파일 이름이 들어 있는 출력 열의 이름을 지정합니다. 이름을 지정하지 않으면 파일 이름이 들어 있는 출력 열이 생성되지 않습니다."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dynamic Process Flow\SampleCurrencyData.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SampleCurrencyData]"
+                  connectionManagerRefId="Package.ConnectionManagers[SampleCurrencyData]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력]"
+                  name="플랫 파일 원본 출력">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[AverageRate]"
+                      dataType="r4"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].ExternalColumns[AverageRate]"
+                      lineageId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[AverageRate]"
+                      name="AverageRate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="열이 보다 빠른 로캘 중립 구문 분석 루틴을 사용하는지 여부를 나타냅니다."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="데이터가 이진 형식인지 여부를 나타냅니다."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[CurrencyID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].ExternalColumns[CurrencyID]"
+                      length="50"
+                      lineageId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[CurrencyID]"
+                      name="CurrencyID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="열이 보다 빠른 로캘 중립 구문 분석 루틴을 사용하는지 여부를 나타냅니다."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="데이터가 이진 형식인지 여부를 나타냅니다."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[CurrencyDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].ExternalColumns[CurrencyDate]"
+                      lineageId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[CurrencyDate]"
+                      name="CurrencyDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="열이 보다 빠른 로캘 중립 구문 분석 루틴을 사용하는지 여부를 나타냅니다."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="데이터가 이진 형식인지 여부를 나타냅니다."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[EndOfDayRate]"
+                      dataType="r4"
+                      errorOrTruncationOperation="변환"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].ExternalColumns[EndOfDayRate]"
+                      lineageId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[EndOfDayRate]"
+                      name="EndOfDayRate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="열이 보다 빠른 로캘 중립 구문 분석 루틴을 사용하는지 여부를 나타냅니다."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="데이터가 이진 형식인지 여부를 나타냅니다."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].ExternalColumns[AverageRate]"
+                      dataType="r4"
+                      name="AverageRate" />
+                    <externalMetadataColumn
+                      refId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].ExternalColumns[CurrencyID]"
+                      dataType="wstr"
+                      length="50"
+                      name="CurrencyID" />
+                    <externalMetadataColumn
+                      refId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].ExternalColumns[CurrencyDate]"
+                      dataType="dbDate"
+                      name="CurrencyDate" />
+                    <externalMetadataColumn
+                      refId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].ExternalColumns[EndOfDayRate]"
+                      dataType="r4"
+                      name="EndOfDayRate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 오류 출력]"
+                  isErrorOut="true"
+                  name="플랫 파일 원본 오류 출력">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 오류 출력].Columns[플랫 파일 원본 오류 출력 열]"
+                      codePage="1252"
+                      dataType="text"
+                      description="플랫 파일 원본 오류 출력 열"
+                      lineageId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 오류 출력].Columns[플랫 파일 원본 오류 출력 열]"
+                      name="플랫 파일 원본 오류 출력 열" />
+                    <outputColumn
+                      refId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 오류 출력].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 오류 출력].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 오류 출력].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 오류 출력].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dynamic Process Flow\Where"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="조건부 분할;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;0"
+              description="데이터의 내용에 따라 데이터 행을 여러 출력으로 라우팅합니다. 조건(SSIS 식)을 사용하여 라우팅할 행을 지정합니다. 예를 들어 정리해야 하는 레코드를 로드할 준비가 된 레코드와 분리하거나 레코드 하위 집합만 라우팅할 수 있습니다."
+              name="Where"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Dynamic Process Flow\Where.Inputs[조건부 분할 입력]"
+                  description="조건부 분할 변환에 대한 입력"
+                  name="조건부 분할 입력">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dynamic Process Flow\Where.Inputs[조건부 분할 입력].Columns[CurrencyDate]"
+                      cachedDataType="dbDate"
+                      cachedName="CurrencyDate"
+                      lineageId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[CurrencyDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dynamic Process Flow\Where.Outputs[result]"
+                  description="조건부 분할 변환의 출력 1"
+                  errorOrTruncationOperation="계산"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="result"
+                  synchronousInputId="Package\Dynamic Process Flow\Where.Inputs[조건부 분할 입력]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="식을 지정합니다. 이 식 버전은 열 이름 대신 계보 식별자를 사용합니다."
+                      name="Expression">@[User::varStartDate] &lt;= #{Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[CurrencyDate]} &amp;&amp; @[User::varEndDate] &gt;= #{Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력].Columns[CurrencyDate]}</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="식의 버전을 지정합니다. 이 식 버전은 열 이름을 사용합니다."
+                      expressionType="Notify"
+                      name="FriendlyExpression">@[User::varStartDate] &lt;= CurrencyDate &amp;&amp; @[User::varEndDate] &gt;= CurrencyDate</property>
+                    <property
+                      dataType="System.Int32"
+                      description="변환이 평가하는 조건 목록에서 조건의 위치를 지정합니다. 평가 순서는 오름차순으로 진행됩니다."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dynamic Process Flow\Where.Outputs[조건부 분할 기본 출력]"
+                  description="조건부 분할 변환의 기본 출력"
+                  exclusionGroup="1"
+                  name="조건부 분할 기본 출력"
+                  synchronousInputId="Package\Dynamic Process Flow\Where.Inputs[조건부 분할 입력]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dynamic Process Flow\Where.Outputs[조건부 분할 오류 출력]"
+                  description="조건부 분할 변환의 오류 출력"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="조건부 분할 오류 출력"
+                  synchronousInputId="Package\Dynamic Process Flow\Where.Inputs[조건부 분할 입력]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dynamic Process Flow\Where.Outputs[조건부 분할 오류 출력].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dynamic Process Flow\Where.Outputs[조건부 분할 오류 출력].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dynamic Process Flow\Where.Outputs[조건부 분할 오류 출력].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dynamic Process Flow\Where.Outputs[조건부 분할 오류 출력].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dynamic Process Flow.Paths[result]"
+              endId="Package\Dynamic Process Flow\NewFactCurrencyRate DB.Inputs[OLE DB 대상 입력]"
+              name="result"
+              startId="Package\Dynamic Process Flow\Where.Outputs[result]" />
+            <path
+              refId="Package\Dynamic Process Flow.Paths[조회 일치 항목 출력]"
+              endId="Package\Dynamic Process Flow\Lookup Date.Inputs[조회 입력]"
+              name="조회 일치 항목 출력"
+              startId="Package\Dynamic Process Flow\Lookup Currency.Outputs[조회 일치 항목 출력]" />
+            <path
+              refId="Package\Dynamic Process Flow.Paths[조회 일치 항목 출력1]"
+              endId="Package\Dynamic Process Flow\Where.Inputs[조건부 분할 입력]"
+              name="조회 일치 항목 출력"
+              startId="Package\Dynamic Process Flow\Lookup Date.Outputs[조회 일치 항목 출력]" />
+            <path
+              refId="Package\Dynamic Process Flow.Paths[플랫 파일 원본 출력]"
+              endId="Package\Dynamic Process Flow\Lookup Currency.Inputs[조회 입력]"
+              name="플랫 파일 원본 출력"
+              startId="Package\Dynamic Process Flow\SampleCurrencyData.Outputs[플랫 파일 원본 출력]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Pre Process"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{A33F197D-4039-47F1-8DE1-76880718E8D7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Pre Process"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AB07D59E-392B-4979-9A86-2A12AA7246A3}"
+          SQLTask:SqlStatementSource="IF EXISTS(SELECT * FROM AdventureWorksDW2012.dbo.NewFactCurrencyRate)&#xA;DELETE FROM AdventureWorksDW2012.dbo.NewFactCurrencyRate" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{172A9E0B-FDDB-487E-8B0B-1716D76611EF}"
+      DTS:From="Package\Pre Process"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Dynamic Process Flow" />
+  </DTS:PrecedenceConstraints>
+  <DTS:EventHandlers>
+    <DTS:EventHandler
+      DTS:refId="Package.EventHandlers[OnError]"
+      DTS:CreationName="OnError"
+      DTS:DTSID="{87F0A8B0-C49F-499C-95E1-5F0316E34A3B}"
+      DTS:EventID="0"
+      DTS:EventName="OnError"
+      DTS:LocaleID="-1">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:Description="이벤트의 전파 속성"
+          DTS:DTSID="{0FE9F009-A83B-48A3-B119-3A2B9AAE8FCD}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="System"
+          DTS:ObjectName="Propagate">
+          <DTS:VariableValue
+            DTS:DataType="11">-1</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package.EventHandlers[OnError]\Log Errors"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{BADCF954-C3E7-44A9-902F-174FF68D3B66}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="1033"
+          DTS:ObjectName="Log Errors"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:PropertyExpression
+            DTS:Name="SqlStatementSource">"insert into dbo.tbl_log values
+('" + @[System::PackageName]  + "', '" + @[System::ErrorDescription]  + "', getDate())"</DTS:PropertyExpression>
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{AB07D59E-392B-4979-9A86-2A12AA7246A3}"
+              SQLTask:SqlStatementSource="insert into dbo.tbl_log values&#xA;('Dynamic Process Example', '', getDate())"
+              SQLTask:CodePage="1252" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:EventHandler>
+  </DTS:EventHandlers>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="207,42"
+          Id="Package\Dynamic Process Flow"
+          TopLeft="175.624997382984,123.08729789261" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Pre Process"
+          TopLeft="174.166659745905,33.428569720716" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="247.666659745905,75.428569720716">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="31.458337637079,47.658728171894"
+              Start="0,0"
+              End="31.458337637079,40.158728171894">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.829364085947" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.829364085947"
+                    Point2="0,23.829364085947"
+                    Point3="4,23.829364085947" />
+                  <mssgle:LineSegment
+                    End="27.458337637079,23.829364085947" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.458337637079,23.829364085947"
+                    Point2="31.458337637079,23.829364085947"
+                    Point3="31.458337637079,27.829364085947" />
+                  <mssgle:LineSegment
+                    End="31.458337637079,40.158728171894" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Dynamic Process Flow">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Dynamic Process Flow\SampleCurrencyData"
+          TopLeft="376.666651699279,43.642854913157" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Dynamic Process Flow\Lookup Date"
+          TopLeft="375.833318399059,214.499989041261" />
+        <NodeLayout
+          Size="114,42"
+          Id="Package\Dynamic Process Flow\Where"
+          TopLeft="377.499984999498,286.928556769479" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Dynamic Process Flow\Lookup Currency"
+          TopLeft="377.499984999498,128.142850596078" />
+        <NodeLayout
+          Size="224,42"
+          Id="Package\Dynamic Process Flow\NewFactCurrencyRate DB"
+          TopLeft="375.833318399059,359.357124497697" />
+        <EdgeLayout
+          Id="Package\Dynamic Process Flow.Paths[result]"
+          TopLeft="434.499984999498,328.928556769479">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="53.3333333995602,30.4285677282183"
+              Start="0,0"
+              End="53.3333333995602,22.9285677282183">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.2142838641091" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.2142838641091"
+                    Point2="0,15.2142838641091"
+                    Point3="4,15.2142838641091" />
+                  <mssgle:LineSegment
+                    End="49.3333333995602,15.2142838641091" />
+                  <mssgle:CubicBezierSegment
+                    Point1="49.3333333995602,15.2142838641091"
+                    Point2="53.3333333995602,15.2142838641091"
+                    Point3="53.3333333995602,19.2142838641091" />
+                  <mssgle:LineSegment
+                    End="53.3333333995602,22.9285677282183" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="13.7386588872801,20.2142838641091,25.856015625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dynamic Process Flow.Paths[플랫 파일 원본 출력]"
+          TopLeft="475.166651699279,85.642854913157">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.666666699781,42.499995682921"
+              Start="0,0"
+              End="-10.666666699781,34.999995682921">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.2499978414605" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.2499978414605"
+                    Point2="0,21.2499978414605"
+                    Point3="-4,21.2499978414605" />
+                  <mssgle:LineSegment
+                    End="-6.66666669978099,21.2499978414605" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.66666669978099,21.2499978414605"
+                    Point2="-10.666666699781,21.2499978414605"
+                    Point3="-10.666666699781,25.2499978414605" />
+                  <mssgle:LineSegment
+                    End="-10.666666699781,34.999995682921" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dynamic Process Flow.Paths[조회 일치 항목 출력1]"
+          TopLeft="450.833318399059,256.499989041261">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16.3333333995606,30.4285677282178"
+              Start="0,0"
+              End="-16.3333333995606,22.9285677282178">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.2142838641089" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.2142838641089"
+                    Point2="0,15.2142838641089"
+                    Point3="-4,15.2142838641089" />
+                  <mssgle:LineSegment
+                    End="-12.3333333995606,15.2142838641089" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.3333333995606,15.2142838641089"
+                    Point2="-16.3333333995606,15.2142838641089"
+                    Point3="-16.3333333995606,19.2142838641089" />
+                  <mssgle:LineSegment
+                    End="-16.3333333995606,22.9285677282178" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-61.5876237310303,20.2142838641089,106.8419140625,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dynamic Process Flow.Paths[조회 일치 항목 출력]"
+          TopLeft="464.499984999498,170.142850596078">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-13.6666666004392,44.357138445183"
+              Start="0,0"
+              End="-13.6666666004392,36.857138445183">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.1785692225915" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.1785692225915"
+                    Point2="0,22.1785692225915"
+                    Point3="-4,22.1785692225915" />
+                  <mssgle:LineSegment
+                    End="-9.66666660043921,22.1785692225915" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-9.66666660043921,22.1785692225915"
+                    Point2="-13.6666666004392,22.1785692225915"
+                    Point3="-13.6666666004392,26.1785692225915" />
+                  <mssgle:LineSegment
+                    End="-13.6666666004392,36.857138445183" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-51.4393489252196,27.1785692225915,89.21203125,11.55078125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dynamic Process Flow\Lookup Date">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDate]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dynamic Process Flow\NewFactCurrencyRate DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dynamic Process Flow\Lookup Currency">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <DtsEventHandler
+    design-time-name="Package.EventHandlers[OnError]">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="137,42"
+          Id="Package.EventHandlers[OnError]\Log Errors"
+          TopLeft="335,122" />
+      </GraphLayout>
+    </LayoutInfo>
+  </DtsEventHandler>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
