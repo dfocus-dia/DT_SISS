@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:DelayValidation="True"
+  DTS:ObjectName="MBO_DH_ODS"
+  DTS:DTSID="{314C28CB-ECEB-46EC-B5FA-D7D1BC91AE27}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=105.1.12.219;User ID=mbodh_user;Initial Catalog=MBO_DH_ODS;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAACAAAAAAAQZgAAAAEAACAAAACGFilT01FetvrefVR/yzKIfwakTgn5k6qmGprBZdGHHgAAAAAOgAAAAAIAACAAAAAIGrX49sOsqqEYdUsJP3LajbUk1N+EqzVW/+uqJ5X67IAAAAA+ExMNtKKbMjUiqsc478Nhmjy+ityubQ6SpNuORIKALX78gsGji46ExAbRlxbyl3gJ5TSay2ZiThY2TwhrstdImvxbBnKMSlwDOMzCAnIhhBgN1aFBW7ydDkTaFyBkLmnQjS2MysJoIMRGeWG4FBHiEBcemmYfOQZXEcNmUTkopEAAAACh67H4V7R380mNZH5/lR5ZDp2LtigohORhIOlyoL42kQ4C1+wSwotllLLiZ2hrukQgTtAjg8F6tttvwb4ZiQbY</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
