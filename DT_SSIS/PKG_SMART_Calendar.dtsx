@@ -1,34 +1,33 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="4/20/2022 2:26:23 PM"
-  DTS:CreationName="SSIS.Package.3"
+  DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-5VBE4DS"
   DTS:CreatorName="DESKTOP-5VBE4DS\kjmop"
   DTS:DTSID="{9CBB37AE-F2C9-4CD4-8640-E5B644AC9834}"
-  DTS:ExecutableType="SSIS.Package.3"
+  DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1042"
   DTS:ObjectName="PKG_SMART_Calendar"
   DTS:PackageType="5"
-  DTS:ProtectionLevel="1"
-  DTS:VersionBuild="112"
-  DTS:VersionGUID="{F9113610-62F1-4DE0-9B0F-402C4CC147BF}">
+  DTS:VersionBuild="114"
+  DTS:VersionGUID="{82B10409-E3EE-4DC4-AB75-CB438807843B}">
   <DTS:Property
-    DTS:Name="PackageFormatVersion">6</DTS:Property>
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[SMART]"
-      DTS:CreationName="MSORA"
+      DTS:CreationName="ORACLE"
       DTS:DelayValidation="True"
       DTS:DTSID="{A25725C4-EA05-4168-A224-FB832609E093}"
       DTS:ObjectName="SMART">
       <DTS:ObjectData>
-        <OracleXMLPackage>
+        <DTS:ConnectionManager>
           <OraConnectionString>SERVER=105.1.11.162:1525/NADEV2;USERNAME=dbuser_mbo;WINAUTH=0;</OraConnectionString>
           <OraPassword
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAACAAAAAAAQZgAAAAEAACAAAAB60CpQ88HYC03itnXWAu7ia2LWehW5uBIxKxu39bGBFAAAAAAOgAAAAAIAACAAAAC+DUuPEPVueOB7ZVPHG/eunapwMV0hZfNUE1wyHbBw7CAAAAAgTE4fn207CLy0mAdSR72wIgEimwDnaBABmkNQc1yCl0AAAAAne5JAMjp2Upv6fxnNO/DCYVidQbsSP1XZGFIfWPOOFRSsIbySlxfecCBtPMyiQKR97CdSMfqbiyBz2X3vhZlj</OraPassword>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA5MMk++IxnXjlDcKqkrW3WfgrVjR8yo5jfQJw0Jy/cEQAAAAAOgAAAAAIAACAAAABucQsGCc02kpbQtcaF/IVmU6DeSQuZ2mjmgZ7PKWLWCyAAAAAb6SCC5Iw2nGd5bB6tlIily3O5G1fOSqChih+8i/1rr0AAAABO4lCXfUmUlowC8rFe0+2dCFqrX2c8FzymU4whLUBoa+Uzw4Q3L/ZT4R9JbBrDsCBx+Dwk8btVzpUnzP4bDP5m</OraPassword>
           <OraRetain>False</OraRetain>
           <OraInitialCatalog></OraInitialCatalog>
           <OraServerName>105.1.11.162:1525/NADEV2</OraServerName>
@@ -37,7 +36,7 @@
           <OraOracleHome64></OraOracleHome64>
           <OraWinAuthentication>False</OraWinAuthentication>
           <OraEnableDetailedTracing>False</OraEnableDetailedTracing>
-        </OracleXMLPackage>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -277,7 +276,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Load Data SMART To Target Table">
       <DTS:ForEachEnumerator
-        DTS:CreationName="Microsoft.SqlServer.Dts.Runtime.Enumerators.ADO.ForEachADOEnumerator, Microsoft.SqlServer.ForEachADOEnumerator, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+        DTS:CreationName="Microsoft.ForEachADOEnumerator"
         DTS:DTSID="{BA9931B3-C198-46E7-BD80-6EFE4A9DDB67}"
         DTS:ObjectName="{BA9931B3-C198-46E7-BD80-6EFE4A9DDB67}">
         <DTS:ObjectData>
@@ -290,10 +289,10 @@
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Load Data SMART To Target Table\Count Loaded Raws in Staging Table"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{8BC97118-611D-4410-AAA1-C00860D98299}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Count Loaded Raws in Staging Table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
@@ -313,10 +312,10 @@
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Load Data SMART To Target Table\Delete Data for CDATE in ODS Target Table"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{32C39D7B-4455-40DA-8752-628D4FC49DDC}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Delete Data for CDATE in ODS Target Table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
@@ -331,11 +330,11 @@
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Load Data SMART To Target Table\Drop and Create Staging Table"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:DelayValidation="True"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{137EA897-50B9-4859-B4BD-869FA77A9188}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Drop and Create Staging Table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
@@ -350,11 +349,11 @@
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Load Data SMART To Target Table\Load Data From ODS Staging Table to Target Table"
-          DTS:CreationName="CozyRoc.SqlServer.SSIS.DataFlowTaskPlus"
+          DTS:CreationName="CozyRoc.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task Plus"
           DTS:DTSID="{A46C876A-6B57-47CB-8BA4-DADC7D32B331}"
-          DTS:ExecutableType="CozyRoc.SqlServer.SSIS.DataFlowTaskPlus"
+          DTS:ExecutableType="CozyRoc.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Load Data From ODS Staging Table to Target Table"
           DTS:TaskContact="Data Flow Task Plus;CozyRoc LLC; SSIS+; © 2006-2020 COZYROC LLC; All Rights Reserved; http://www.cozyroc.com/;0">
@@ -366,7 +365,7 @@
                 <component
                   id="1"
                   name="Read ODS Staging Table"
-                  componentClassID="DTSAdapter.OLEDBSource.3"
+                  componentClassID="Microsoft.OLEDBSource"
                   description="OLE DB 원본"
                   usesDispositions="true"
                   validateExternalMetadata="False"
@@ -393,7 +392,7 @@
                       name="SqlCommand"
                       dataType="System.String"
                       description="실행할 SQL 명령입니다."
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       id="6"
                       name="SqlCommandVariable"
@@ -487,7 +486,7 @@
                 <component
                   id="18"
                   name="Count Raws"
-                  componentClassID="DTSTransform.RowCount.3"
+                  componentClassID="Microsoft.RowCount"
                   description="데이터 흐름을 통과하는 행 개수를 계산합니다. 예를 들어 처리되는 행 수를 사용하여 정리 작업 수행 여부를 결정하거나, 전자 메일 메시지의 텍스트를 업데이트하여 처리 상태를 전달할 수 있습니다."
                   contactInfo="행 개수;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;0">
                   <properties>
@@ -517,7 +516,7 @@
                 <component
                   id="23"
                   name="Write to ODS Target Table"
-                  componentClassID="DTSAdapter.OLEDBDestination.3"
+                  componentClassID="Microsoft.OLEDBDestination"
                   description="OLE DB 대상"
                   usesDispositions="true"
                   validateExternalMetadata="False"
@@ -544,7 +543,7 @@
                       name="SqlCommand"
                       dataType="System.String"
                       description="실행할 SQL 명령입니다."
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       id="28"
                       name="DefaultCodePage"
@@ -657,8 +656,8 @@
               </paths>
               <ScriptProject
                 Name="ST_7343412cd7f04e7daf4803c59b89cbda"
-                VSTAMajorVersion="2"
-                VSTAMinorVersion="2"
+                VSTAMajorVersion="15"
+                VSTAMinorVersion="0"
                 Language="CSharp" />
               <ArrayOfDynamicComponentProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                 <DynamicComponentProperties>
@@ -761,11 +760,11 @@
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package\Load Data SMART To Target Table\Load Data From SMART To ODS Staging Table"
-          DTS:CreationName="CozyRoc.SqlServer.SSIS.DataFlowTaskPlus"
+          DTS:CreationName="CozyRoc.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task Plus"
           DTS:DTSID="{5AD795E6-3D64-4234-B39A-9B7E8473B80C}"
-          DTS:ExecutableType="CozyRoc.SqlServer.SSIS.DataFlowTaskPlus"
+          DTS:ExecutableType="CozyRoc.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Load Data From SMART To ODS Staging Table"
           DTS:TaskContact="Data Flow Task Plus;CozyRoc LLC; SSIS+; © 2006-2020 COZYROC LLC; All Rights Reserved; http://www.cozyroc.com/;0">
@@ -779,11 +778,11 @@
                 <component
                   id="1"
                   name="READ TO SMART Table"
-                  componentClassID="AttunitySSISOraSrc.4"
+                  componentClassID="Microsoft.SSISOracleSrc"
                   description="Oracle 원본"
                   usesDispositions="true"
                   validateExternalMetadata="False"
-                  version="4">
+                  version="1">
                   <properties>
                     <property
                       id="2"
@@ -832,7 +831,7 @@
                   <connections>
                     <connection
                       id="9"
-                      name="MSOraConnection"
+                      name="ORACLEConnection"
                       description="데이터베이스에 액세스하는 데 사용되는 ORACLE 런타임 연결입니다."
                       connectionManagerID="{A25725C4-EA05-4168-A224-FB832609E093}" />
                   </connections>
@@ -894,7 +893,7 @@
                 <component
                   id="17"
                   name="Derived Column"
-                  componentClassID="DTSTransform.DerivedColumn.3"
+                  componentClassID="Microsoft.DerivedColumn"
                   description="변환 입력 열에 식을 적용하여 새 열 값을 만듭니다. 이때 새 열을 만들거나 기존 열을 덮어씁니다. 예를 들어 '이름' 및 '성' 열의 값을 연결하여 '전체 이름' 열을 만들 수 있습니다."
                   usesDispositions="true"
                   validateExternalMetadata="False"
@@ -1049,7 +1048,7 @@
                 <component
                   id="65"
                   name="Write to ODS Staging Table"
-                  componentClassID="DTSAdapter.OLEDBDestination.3"
+                  componentClassID="Microsoft.OLEDBDestination"
                   description="OLE DB 대상"
                   usesDispositions="true"
                   validateExternalMetadata="False"
@@ -1076,7 +1075,7 @@
                       name="SqlCommand"
                       dataType="System.String"
                       description="실행할 SQL 명령입니다."
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
                       id="70"
                       name="DefaultCodePage"
@@ -1223,8 +1222,8 @@
               </paths>
               <ScriptProject
                 Name="ST_f5840d233be74fa2bdade67fd5596171"
-                VSTAMajorVersion="2"
-                VSTAMinorVersion="2"
+                VSTAMajorVersion="15"
+                VSTAMinorVersion="0"
                 Language="CSharp" />
               <ArrayOfDynamicComponentProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
                 <DynamicComponentProperties>
@@ -1357,14 +1356,14 @@
           <DTS:Executables>
             <DTS:Executable
               DTS:refId="Package\Load Data SMART To Target Table\Sequence Container\Set Column Mapping Variable From ODS Meta Table"
-              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{9E9E81D2-E9FD-488A-BA01-567415F2E9CE}"
-              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Set Column Mapping Variable From ODS Meta Table"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1391,14 +1390,14 @@
             </DTS:Executable>
             <DTS:Executable
               DTS:refId="Package\Load Data SMART To Target Table\Sequence Container\Set Derived Column Variable From ODS Meta Table"
-              DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
               DTS:DTSID="{1C39575F-AF24-4243-8A4C-C3F1E5C0ABC5}"
-              DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Set Derived Column Variable From ODS Meta Table"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1509,10 +1508,10 @@
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Send Fail Mail"
-      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{CACC4012-8FA9-4BCE-9207-438571512126}"
-      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Send Fail Mail"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
@@ -1539,10 +1538,10 @@
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Send Success Mail"
-      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{9ABB436E-E0F4-4A14-AC79-78C709EB1635}"
-      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Send Success Mail"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
@@ -1579,10 +1578,10 @@
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Set Variables\Get Target Table"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{2DD52A96-B2B2-4699-AA1C-B7AD7A3570C0}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get Target Table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
@@ -1609,10 +1608,10 @@
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Set Variables From ODS Meta Table"
-      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
       DTS:DTSID="{C76185E3-81D9-49A6-A7C1-2E9DEFDE1BA8}"
-      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Variables From ODS Meta Table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
@@ -1710,10 +1709,10 @@
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\ErrorDescription Parse"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
           DTS:DTSID="{FDCAAA7E-2084-44C7-87F3-9309F239E236}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExpressionTask.ExpressionTask, Microsoft.SqlServer.ExpressionTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ErrorDescription Parse"
           DTS:TaskContact="Expression Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -1725,10 +1724,10 @@
         </DTS:Executable>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnError]\Log OnError"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{E0EF24CD-C45A-4B7F-831B-F2AF8FA9490C}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Log OnError"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -1822,10 +1821,10 @@
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPostExecute]\Log OnPostExecute"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{3C270753-3F6A-4E80-970A-0393D7303624}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Log OnPostExecute"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -1897,10 +1896,10 @@
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package.EventHandlers[OnPreExecute]\Log OnPreExecute"
-          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{AF9E30CC-01D7-476C-BAF9-C9395B244351}"
-          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Log OnPreExecute"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
@@ -1956,7 +1955,7 @@
 <!--If you manually edit this section and make a mistake, you can delete it. -->
 <!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
-  Version="sql11">
+  Version="8">
   <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
