@@ -11,7 +11,7 @@
       DTS:ConnectionString="Data Source=105.1.12.219;User ID=mbodh_user;Initial Catalog=MBO_DH_ODS;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAACAAAAAAAQZgAAAAEAACAAAAC6wzRp10AtNTtm2SC37ArJt0b+7VTvOxwxJ7BMGtdTdAAAAAAOgAAAAAIAACAAAABDogWEQtmvp4Rg5IiZiH58hARNJqCgui33fJic1iWKwoAAAACPcdY7cIw2yGjY5zGc43rBHk4yj4NLHK/e2FY4pdZFw6ss0icqzexBrI0vnzQlwi025hn0rPqDc4KYkwUCeXa3Uby57t7Z/HaLOw7Qsgb0Vaids+RYOVRQhiKBugWgjup99IhMpkCWsg0iR5mi7cwyCUEos1/yNXnORyXmPYrH7UAAAACErKJmgZLhoUDyUT/98GRkOjDhGXwHbG3tIx0TwNceddBg4N1jyROnTTCO0PBvF2JoJZD1mk9xoQj1/bUUv6dv</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAACAAAAAAAQZgAAAAEAACAAAAAe/iQtZkwkuJu3nWOTs4Io1UFVnf1fxrEBmi77sKOLiwAAAAAOgAAAAAIAACAAAADYW276aeNjMudZEFZ4AAKwUqLhrDmYIcGA1sv4PRhQNYAAAABYHbeqp7bABzN566tNzqFM7H/4hk4St8oOnzjEi2GCGLfoEcgHqk6HYhAQRQZVb3HdN719yOEfzxMunkb6TcnQLVPmM9ymHl67h/3Wr52oMAyObs8TQS+EHuReD6Y0nclIXhpHdF5cjcDvwXLee2CZO533kdnmdyPEItPNSUb4fUAAAACi2d9xrwsTasQV8T2VJpVLnb13bkff6IG9WJn+lIhHo9Q0aurx6QXlUIszPg53rfXLODmtiZdypYlnvpcvxAYa</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
