@@ -11,8 +11,8 @@
   DTS:LocaleID="1042"
   DTS:ObjectName="PKG_SMART_Model"
   DTS:PackageType="5"
-  DTS:VersionBuild="162"
-  DTS:VersionGUID="{48ADADCF-6198-47D8-AAE6-4C8563935029}">
+  DTS:VersionBuild="163"
+  DTS:VersionGUID="{43E81E9D-88D7-49E7-8B74-EED62333AEBB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <OraConnectionString>SERVER=105.1.11.162:1525/NADEV2;USERNAME=dbuser_mbo;WINAUTH=0;</OraConnectionString>
           <OraPassword
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAhP+Y9ND9warnhRKdyC8AUW8GAhgzR6UJsPKo6FntviAAAAAAOgAAAAAIAACAAAADN/CA2F5c8AX8WN9gZ4GKeOsQEa0dWwPdzxVzCzxpcFyAAAADtRSb4flulDI7QY1pHpY74OPloZeONGhzE4UCcejGh7kAAAABu9+oE/vcePMBjk1KWC5fVQ0+u9zKrQ2WXe53T82c1c6LZcVpKCAyA2ptpoQOgcrl/bFbisxpA2nM2uNoJEtLK</OraPassword>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACAtOJJRbUOlTWhs3a2PyhNb17O44BbR5vToMU5QM3kFQAAAAAOgAAAAAIAACAAAADZE2ha31oK2OL4nomX9eHWjPdJFbZmri0nHp9HrDYiEiAAAAC6guZ+/D/iazWF53ABpUzkVSVYVBY9ANRgzO/fqc70b0AAAADZ9ifPF5wjn2qQgsF8COYOSdSdslr+KE8jgNqnceWBYqRz0SwF+C+ppgoxD1ijYhemZ/Ycgzgfk25FV0AqEPq1</OraPassword>
           <OraRetain>False</OraRetain>
           <OraInitialCatalog></OraInitialCatalog>
           <OraServerName>105.1.11.162:1525/NADEV2</OraServerName>
@@ -2282,17 +2282,17 @@ FROM _ WHERE TO_CHAR(UPDATED_DATE, 'YYYY-MM-DD') BETWEEN TO_CHAR(SYSDATE-7, 'YYY
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.3883289630611" />
+                    End="0,15.388328963061" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.3883289630611"
-                    Point2="0,19.3883289630611"
-                    Point3="-4,19.3883289630611" />
+                    Point1="0,15.388328963061"
+                    Point2="0,19.388328963061"
+                    Point3="-4,19.388328963061" />
                   <mssgle:LineSegment
-                    End="-127.666596631206,19.3883289630611" />
+                    End="-127.666596631206,19.388328963061" />
                   <mssgle:CubicBezierSegment
-                    Point1="-127.666596631206,19.3883289630611"
-                    Point2="-131.666596631206,19.3883289630611"
-                    Point3="-131.666596631206,23.3883289630611" />
+                    Point1="-127.666596631206,19.388328963061"
+                    Point2="-131.666596631206,19.388328963061"
+                    Point3="-131.666596631206,23.388328963061" />
                   <mssgle:LineSegment
                     End="-131.666596631206,40.561209823926" />
                 </mssgle:SegmentCollection>
