@@ -798,7 +798,7 @@
           DTS:TaskContact="Data Flow Task Plus;CozyRoc LLC; SSIS+; © 2006-2020 COZYROC LLC; All Rights Reserved; http://www.cozyroc.com/;0">
           <DTS:Variables />
           <DTS:PropertyExpression
-            DTS:Name="[READ TO SMART Table].[SqlCommand]">"SELECT MFR_CODE, MFR_NAME, SORT, USE_FLAG, CREATED_ID, CREATED_DATE, UPDATED_ID, UPDATED_DATE FROM " + @[User::SourceTableName]+ " WHERE TO_CHAR(UPDATED_DATE, 'YYYY-MM-DD') BETWEEN TO_CHAR(SYSDATE-7, 'YYYY-MM-DD') AND TO_CHAR(SYSDATE-1, 'YYYY-MM-DD')"</DTS:PropertyExpression>
+            DTS:Name="[READ TO SMART Table].[SqlCommand]">"SELECT MFR_CODE, MFR_NAME, SORT, USE_FLAG, CREATED_ID, CREATED_DATE, UPDATED_ID, UPDATED_DATE FROM " + @[User::SourceTableName]+ " WHERE UPDATED_DATE &gt;= TRUNC(SYSDATE-7) AND UPDATED_DATE &lt; TRUNC(SYSDATE)"</DTS:PropertyExpression>
           <DTS:ObjectData>
             <pipeline
               version="1">

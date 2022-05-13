@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-5VBE4DS"
   DTS:CreatorName="DESKTOP-5VBE4DS\kjmop"
-  DTS:DTSID="{79A90D1E-DD91-4C9F-AF32-572AD0F63E61}"
+  DTS:DTSID="{349D2F20-1252-44F3-9C92-93053751961A}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="15.0.2000.180"
   DTS:LocaleID="1042"
-  DTS:ObjectName="PKG_SMART_Device_Sub"
+  DTS:ObjectName="PKG_SMART_AttacheRate_PC"
   DTS:PackageType="5"
-  DTS:VersionBuild="158"
-  DTS:VersionGUID="{F8C651C1-F2C7-4BA4-B06C-F6E924E1322E}">
+  DTS:VersionBuild="184"
+  DTS:VersionGUID="{C36708F3-38D1-415E-B263-A7D6D7065E21}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -20,14 +20,14 @@
       DTS:refId="Package.ConnectionManagers[SMART]"
       DTS:CreationName="ORACLE"
       DTS:DelayValidation="True"
-      DTS:DTSID="{40C17CF6-BD75-416E-8071-5AA7A3219195}"
+      DTS:DTSID="{22C2C332-5B75-4EB6-8C8E-32CF17526E09}"
       DTS:ObjectName="SMART">
       <DTS:ObjectData>
         <DTS:ConnectionManager>
           <OraConnectionString>SERVER=105.1.11.162:1525/NADEV2;USERNAME=dbuser_mbo;WINAUTH=0;</OraConnectionString>
           <OraPassword
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAF3sk2cefCmkY1DqmdpvlpEXklD43jrwAjn0RdV8b8VAAAAAAOgAAAAAIAACAAAAC99GhZjC9m5MCXXJUK/rgx215Q3tkKvolC9ktO+Vu6xCAAAABvt0nT6sROMoJNZpILkO56L9QjqeRy58y4U8oJZAmhgEAAAABcr6iY+jkNulBPsyQ612juv1S7y9CC4GDXgPP69bMNzbdloODzNnTVmp7OHSOq9ZwyM+6Ui7kKWOcI1FtGEDUf</OraPassword>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD/ui5UQ6RL+3tgXjdRNZasOO/U0004prFbnyzJ3YxckwAAAAAOgAAAAAIAACAAAADOV0Yy+DWT7gcF5rQBlQOqeW5qKDwcAXCkJahBBzZobiAAAACull8VNao2TIRPnI4Kkz8gprSqmJYW0ZL5PK1T+CSsJUAAAACi9cm5CJzLPFN93wpbOlcuuLG8JKimoT9NTDT+fXs4TUCDsUUwb/hjGbuQTkaOzZLAIqJ3D+Dcxmc7q07Jw5Uo</OraPassword>
           <OraRetain>False</OraRetain>
           <OraInitialCatalog></OraInitialCatalog>
           <OraServerName>105.1.11.162:1525/NADEV2</OraServerName>
@@ -43,7 +43,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{DAB39853-CDE6-4BAF-A779-03158B44AC4E}"
+      DTS:DTSID="{3B104DF9-4279-44AB-B30F-F85FD46D30C7}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="BaseColumn">
@@ -53,7 +53,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{35865DAB-E2D0-403E-9BAA-2902A02FC51F}"
+      DTS:DTSID="{DDA57844-52D9-45DA-8365-21BB9040B700}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="ColumnMapping">
@@ -71,7 +71,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C165F6D4-7D3A-4F2B-85F0-635E309BF890}"
+      DTS:DTSID="{D614A5A9-405D-4B65-B85A-0F5EFE337FE5}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="DC_Config">
@@ -89,7 +89,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{40CD2287-6285-40D2-A05D-1DE5548BE2E5}"
+      DTS:DTSID="{6DC8D449-A3ED-47BD-8434-D23C36F6ED3C}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ErrorDescription">
@@ -99,7 +99,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{50210FF1-C600-4825-9496-F4E6E5ADF165}"
+      DTS:DTSID="{2060420C-4EBC-4B34-9FF0-AD197A430844}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="EtlExecId">
@@ -109,7 +109,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{9B97B445-4CA1-4D76-AFA0-B1C9DC2968BE}"
+      DTS:DTSID="{7B13E6B4-6D00-4D33-BBF1-FA0A82CA7757}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="InsertCnt">
@@ -118,7 +118,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{9DFD5147-970D-4A4E-93D0-B14FCD2E3A10}"
+      DTS:DTSID="{3D737466-47EB-4EB2-921C-39F77063654A}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="InterfaceNo">
@@ -127,7 +127,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A03A2B7F-4D3D-4410-A84D-7D72237FE9EF}"
+      DTS:DTSID="{8BCB3256-7C67-4D78-A6E7-841F99A167AE}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Param_From">
@@ -137,7 +137,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{77D0416A-2679-443C-B0C6-0D845683479A}"
+      DTS:DTSID="{3C5D8C14-1B9B-48C4-8479-70E409A8867F}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="Param_To">
@@ -147,7 +147,17 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{DC009845-CB66-482D-953C-E91A202B3F62}"
+      DTS:DTSID="{73EB5B31-15AD-45AD-AF66-40AD5D9FD8F4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="PlanWeek">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0EF14873-7134-4F48-A60A-D551532F3276}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceFile">
@@ -157,7 +167,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C0A9B9CB-5246-412E-8D5F-F788BAE3078B}"
+      DTS:DTSID="{D6B53DF5-0DE9-4524-9658-EE8064C4BA4A}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceSchemaName">
@@ -167,7 +177,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{7C012E77-4C43-4C81-BECF-2C6ECFD9338A}"
+      DTS:DTSID="{EDCD4AEE-CFAD-4586-B690-441B735B651D}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceServerName">
@@ -177,7 +187,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{B41ABF21-F37E-41E5-9BA5-1BD39B028A20}"
+      DTS:DTSID="{ADD37199-ED7F-4C72-864A-326988A453C4}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="SourceTableName">
@@ -186,7 +196,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8EFCF393-6AAF-4F24-85EE-56B50411D123}"
+      DTS:DTSID="{3DF43C4E-AE26-4069-AB87-2164420B68B1}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;DELETE FROM &quot; + @[User::TableName] + &quot; WHERE [ETL_EXEC_ID] IN (SELECT s.[ETL_EXEC_ID] FROM &quot; + @[User::StagingTableName] + &quot; AS s)&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -197,7 +207,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8EB73ED4-7CEA-4930-A97A-3BA01CCC88AA}"
+      DTS:DTSID="{84B980DF-9F1B-4C8E-B13A-44FB820EA599}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;IF OBJECT_ID ('&quot; + @[User::StagingTableName] + &quot;', 'U') IS NOT NULL DROP TABLE &quot; +  @[User::StagingTableName] + &quot;; SELECT * INTO &quot; + @[User::StagingTableName] + &quot; FROM &quot; +  @[User::TableName] + &quot; WHERE 1=0&quot;"
       DTS:IncludeInDebugDump="2345"
@@ -208,7 +218,18 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8E15D519-6436-46C3-9A79-753BCB5C6839}"
+      DTS:DTSID="{C2CB0534-C2D7-4782-A580-144041693F7A}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT CAST(ISNULL(MAX(CAST(ETL_EXEC_ID AS NUMERIC)), 0) +1 AS VARCHAR) FROM &quot; + @[User::TableName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQL_SelectODSTargetTableEtlExecId">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT CAST(ISNULL(MAX(CAST(ETL_EXEC_ID AS NUMERIC)), 0) +1 AS VARCHAR) FROM </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{04866B90-7583-490C-8218-D53C404E61A6}"
       DTS:EvaluateAsExpression="True"
       DTS:Expression="&quot;SELECT COUNT(*) FROM &quot; +  @[User::StagingTableName]"
       DTS:IncludeInDebugDump="2345"
@@ -219,7 +240,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{18860A2F-0132-4384-A473-0BCC7A6A3EC9}"
+      DTS:DTSID="{C1A1060D-BA00-4FD4-AAB7-271B98209E3C}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="StagingTableInsertCnt">
@@ -229,7 +250,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{27E464F5-22B8-48E8-956E-4386CEDC2658}"
+      DTS:DTSID="{F077D2CD-3770-4A86-B5FE-4EE662FA3327}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="StagingTableName">
@@ -239,7 +260,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{72F7721E-512A-4155-AC2A-7AC371422F02}"
+      DTS:DTSID="{930E13CF-CCBF-4D56-98D5-7DFFB922E15B}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="TableName">
@@ -249,7 +270,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8FFEF408-7BA4-418B-BB27-850098D6E359}"
+      DTS:DTSID="{EE9BA341-7F27-4928-84C0-29AF06CA4B4C}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="TargetNo">
@@ -258,7 +279,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{5B5980F0-3C20-48F8-9E9E-726CE017CB8E}"
+      DTS:DTSID="{1D12419C-DB41-4A65-B141-EE314B899E76}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="TargetTableList">
@@ -275,20 +296,63 @@
       </DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="2">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">2,7,OnError,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+  </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
       DTS:refId="Package\Load Data SMART To Target Table"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:DelayValidation="True"
       DTS:Description="Foreach Loop Container"
-      DTS:DTSID="{C602DD89-04D5-4F14-840F-04942D3C7CBB}"
+      DTS:DTSID="{F680CD54-6043-45B1-BB28-7AC74A94AC66}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load Data SMART To Target Table">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachADOEnumerator"
-        DTS:DTSID="{838B5704-1156-487D-915B-82F9957D3CEE}"
-        DTS:ObjectName="{838B5704-1156-487D-915B-82F9957D3CEE}">
+        DTS:DTSID="{A358AF83-3ED9-4452-AFAC-321E6A3189CF}"
+        DTS:ObjectName="{A358AF83-3ED9-4452-AFAC-321E6A3189CF}">
         <DTS:ObjectData>
           <FEEADO
             EnumType="EnumerateRowsInFirstTable"
@@ -296,18 +360,22 @@
         </DTS:ObjectData>
       </DTS:ForEachEnumerator>
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Load Data SMART To Target Table\Count Loaded Raws in Staging Table"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0C189DFC-FD75-4D46-941A-DD48E74F9FBD}"
+          DTS:DTSID="{792D4F30-8457-4E68-AC21-5B87E4D2D931}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Count Loaded Raws in Staging Table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{314C28CB-ECEB-46EC-B5FA-D7D1BC91AE27}"
@@ -321,35 +389,19 @@
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\Load Data SMART To Target Table\Delete Data for CDATE in ODS Target Table"
-          DTS:CreationName="Microsoft.ExecuteSQLTask"
-          DTS:Description="Execute SQL Task"
-          DTS:DTSID="{32F8D052-4B24-4C5D-8A04-3E5BF9F3684A}"
-          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-          DTS:LocaleID="-1"
-          DTS:ObjectName="Delete Data for CDATE in ODS Target Table"
-          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
-          <DTS:Variables />
-          <DTS:ObjectData>
-            <SQLTask:SqlTaskData
-              SQLTask:Connection="{314C28CB-ECEB-46EC-B5FA-D7D1BC91AE27}"
-              SQLTask:SqlStmtSourceType="Variable"
-              SQLTask:SqlStatementSource="User::SQL_DeleteODSTargetTableBetweenData" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-          </DTS:ObjectData>
-        </DTS:Executable>
-        <DTS:Executable
           DTS:refId="Package\Load Data SMART To Target Table\Drop and Create Staging Table"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:DelayValidation="True"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{206493EB-F656-499E-A6DC-659A87C51A86}"
+          DTS:DTSID="{52C4E454-17E3-440F-85F6-53AADA1E3FF8}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Drop and Create Staging Table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{314C28CB-ECEB-46EC-B5FA-D7D1BC91AE27}"
@@ -362,12 +414,14 @@
           DTS:CreationName="CozyRoc.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task Plus"
-          DTS:DTSID="{19876971-6539-4512-B08D-7113FDE677B2}"
+          DTS:DTSID="{9A71412A-88F3-45BC-8930-A6EAE5DAFBCF}"
           DTS:ExecutableType="CozyRoc.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Load Data From ODS Staging Table to Target Table"
           DTS:TaskContact="Data Flow Task Plus;CozyRoc LLC; SSIS+; © 2006-2020 COZYROC LLC; All Rights Reserved; http://www.cozyroc.com/;0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -773,20 +827,22 @@
           DTS:CreationName="CozyRoc.Pipeline"
           DTS:DelayValidation="True"
           DTS:Description="Data Flow Task Plus"
-          DTS:DTSID="{E79795A4-D708-4D3C-A234-B7E933730CB0}"
+          DTS:DTSID="{9E902771-232A-44FD-AC8D-A14C1E2FE805}"
           DTS:ExecutableType="CozyRoc.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Load Data From SMART To ODS Staging Table"
           DTS:TaskContact="Data Flow Task Plus;CozyRoc LLC; SSIS+; © 2006-2020 COZYROC LLC; All Rights Reserved; http://www.cozyroc.com/;0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:PropertyExpression
-            DTS:Name="[READ TO SMART Table].[SqlCommand]">"SELECT * FROM " + @[User::SourceTableName] + " WHERE UPDATED_DATE &gt;= TRUNC(SYSDATE-7) AND UPDATED_DATE &lt; TRUNC(SYSDATE)"</DTS:PropertyExpression>
+            DTS:Name="[READ TO SMART Table].[SqlCommand]">"SELECT * FROM "+ @[User::SourceTableName] +" WHERE PLANWEEK = " +  @[User::PlanWeek]</DTS:PropertyExpression>
           <DTS:ObjectData>
             <pipeline
               version="1">
               <components>
                 <component
-                  id="91"
+                  id="169"
                   name="READ TO SMART Table"
                   componentClassID="Microsoft.SSISOracleSrc"
                   description="Oracle 원본"
@@ -795,44 +851,44 @@
                   version="1">
                   <properties>
                     <property
-                      id="92"
+                      id="170"
                       name="TableName"
                       dataType="System.String"
                       description="가져올 테이블의 이름입니다."
                       expressionType="Notify"></property>
                     <property
-                      id="93"
+                      id="171"
                       name="SqlCommand"
                       dataType="System.String"
                       description="실행할 SQL 명령입니다."
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-                      expressionType="Notify">SELECT * FROM _ WHERE UPDATED_DATE &gt;= TRUNC(SYSDATE-7) AND UPDATED_DATE &lt; TRUNC(SYSDATE)</property>
+                      expressionType="Notify">SELECT * FROM _ WHERE PLANWEEK = </property>
                     <property
-                      id="94"
+                      id="172"
                       name="BatchSize"
                       dataType="System.Int32"
                       description="일괄 처리당 가져오는 행 수를 지정합니다."
                       expressionType="Notify">1000</property>
                     <property
-                      id="95"
+                      id="173"
                       name="LobChunkSize"
                       dataType="System.Int32"
                       description="LOB 열에 할당되는 청크 크기 결정"
                       expressionType="Notify">32768</property>
                     <property
-                      id="96"
+                      id="174"
                       name="DefaultCodePage"
                       dataType="System.Int32"
                       description="데이터 원본에서 코드 페이지 정보를 사용할 수 없을 때 사용할 코드 페이지입니다."
                       expressionType="Notify">1252</property>
                     <property
-                      id="97"
+                      id="175"
                       name="PrefetchCount"
                       dataType="System.Int32"
                       description="미리 반입한 행 수입니다."
                       expressionType="Notify">0</property>
                     <property
-                      id="98"
+                      id="176"
                       name="AccessMode"
                       dataType="System.Int32"
                       description="데이터베이스에 액세스하는 데 사용되는 모드입니다."
@@ -840,31 +896,31 @@
                   </properties>
                   <connections>
                     <connection
-                      id="99"
+                      id="177"
                       name="ORACLEConnection"
                       description="데이터베이스에 액세스하는 데 사용되는 ORACLE 런타임 연결입니다."
-                      connectionManagerID="{40C17CF6-BD75-416E-8071-5AA7A3219195}" />
+                      connectionManagerID="{22C2C332-5B75-4EB6-8C8E-32CF17526E09}" />
                   </connections>
                   <outputs>
                     <output
-                      id="100"
+                      id="178"
                       name="Oracle 원본 출력"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent">
                       <outputColumns>
                         <outputColumn
-                          id="105"
+                          id="179"
                           name="THUNK_COLUMN"
-                          lineageId="105"
+                          lineageId="179"
                           length="4000"
                           dataType="str"
                           codePage="1252"
-                          externalMetadataColumnId="104" />
+                          externalMetadataColumnId="180" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          id="104"
+                          id="180"
                           name="THUNK_COLUMN"
                           dataType="str"
                           length="4000"
@@ -872,26 +928,26 @@
                       </externalMetadataColumns>
                     </output>
                     <output
-                      id="101"
+                      id="181"
                       name="Oracle 원본 오류 출력"
                       isErrorOut="true">
                       <outputColumns>
                         <outputColumn
-                          id="102"
+                          id="182"
                           name="ErrorCode"
-                          lineageId="102"
+                          lineageId="182"
                           dataType="i4"
                           specialFlags="1" />
                         <outputColumn
-                          id="103"
+                          id="183"
                           name="ErrorColumn"
-                          lineageId="103"
+                          lineageId="183"
                           dataType="i4"
                           specialFlags="2" />
                         <outputColumn
-                          id="106"
+                          id="184"
                           name="THUNK_COLUMN"
-                          lineageId="106"
+                          lineageId="184"
                           length="4000"
                           dataType="str"
                           codePage="1252" />
@@ -901,7 +957,7 @@
                   </outputs>
                 </component>
                 <component
-                  id="109"
+                  id="288"
                   name="Derived Column"
                   componentClassID="Microsoft.DerivedColumn"
                   description="변환 입력 열에 식을 적용하여 새 열 값을 만듭니다. 이때 새 열을 만들거나 기존 열을 덮어씁니다. 예를 들어 '이름' 및 '성' 열의 값을 연결하여 '전체 이름' 열을 만들 수 있습니다."
@@ -910,13 +966,13 @@
                   contactInfo="파생 열;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;0">
                   <inputs>
                     <input
-                      id="110"
+                      id="289"
                       name="파생 열 입력"
                       description="파생 열 변환에 대한 입력">
                       <inputColumns>
                         <inputColumn
-                          id="116"
-                          lineageId="105"
+                          id="310"
+                          lineageId="179"
                           usageType="readWrite"
                           errorOrTruncationOperation="계산"
                           errorRowDisposition="FailComponent"
@@ -927,13 +983,13 @@
                           cachedCodepage="1252">
                           <properties>
                             <property
-                              id="120"
+                              id="314"
                               name="Expression"
                               dataType="System.String"
                               description="파생 열 식"
-                              containsID="true">#105</property>
+                              containsID="true">#179</property>
                             <property
-                              id="121"
+                              id="315"
                               name="FriendlyExpression"
                               dataType="System.String"
                               description="친숙한 파생 열 식"
@@ -947,30 +1003,30 @@
                   </inputs>
                   <outputs>
                     <output
-                      id="111"
+                      id="290"
                       name="파생 열 출력"
                       description="파생 열 변환의 기본 출력"
                       exclusionGroup="1"
-                      synchronousInputId="110">
+                      synchronousInputId="289">
                       <outputColumns>
                         <outputColumn
-                          id="122"
+                          id="316"
                           name="ETL_PROGRAM_ID"
-                          lineageId="122"
-                          length="20"
+                          lineageId="316"
+                          length="100"
                           dataType="wstr"
                           errorOrTruncationOperation="계산"
                           errorRowDisposition="FailComponent"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
-                              id="123"
+                              id="317"
                               name="Expression"
                               dataType="System.String"
                               description="파생 열 식"
                               containsID="true">@[System::PackageName]</property>
                             <property
-                              id="124"
+                              id="318"
                               name="FriendlyExpression"
                               dataType="System.String"
                               description="친숙한 파생 열 식"
@@ -979,22 +1035,22 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          id="125"
+                          id="319"
                           name="ETL_EXEC_DATE"
-                          lineageId="125"
+                          lineageId="319"
                           dataType="dbTimeStamp"
                           errorOrTruncationOperation="계산"
                           errorRowDisposition="FailComponent"
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
-                              id="126"
+                              id="320"
                               name="Expression"
                               dataType="System.String"
                               description="파생 열 식"
                               containsID="true">[GETDATE]()</property>
                             <property
-                              id="127"
+                              id="321"
                               name="FriendlyExpression"
                               dataType="System.String"
                               description="친숙한 파생 열 식"
@@ -1003,9 +1059,9 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          id="128"
+                          id="322"
                           name="ETL_EXEC_ID"
-                          lineageId="128"
+                          lineageId="322"
                           length="30"
                           dataType="wstr"
                           errorOrTruncationOperation="계산"
@@ -1013,13 +1069,13 @@
                           truncationRowDisposition="FailComponent">
                           <properties>
                             <property
-                              id="129"
+                              id="323"
                               name="Expression"
                               dataType="System.String"
                               description="파생 열 식"
                               containsID="true">@[User::EtlExecId]</property>
                             <property
-                              id="130"
+                              id="324"
                               name="FriendlyExpression"
                               dataType="System.String"
                               description="친숙한 파생 열 식"
@@ -1031,23 +1087,23 @@
                       <externalMetadataColumns />
                     </output>
                     <output
-                      id="112"
+                      id="291"
                       name="파생 열 오류 출력"
                       description="파생 열 변환의 오류 출력"
                       exclusionGroup="1"
-                      synchronousInputId="110"
+                      synchronousInputId="289"
                       isErrorOut="true">
                       <outputColumns>
                         <outputColumn
-                          id="113"
+                          id="292"
                           name="ErrorCode"
-                          lineageId="113"
+                          lineageId="292"
                           dataType="i4"
                           specialFlags="1" />
                         <outputColumn
-                          id="114"
+                          id="293"
                           name="ErrorColumn"
-                          lineageId="114"
+                          lineageId="293"
                           dataType="i4"
                           specialFlags="2" />
                       </outputColumns>
@@ -1056,7 +1112,7 @@
                   </outputs>
                 </component>
                 <component
-                  id="149"
+                  id="325"
                   name="Write to ODS Staging Table"
                   componentClassID="Microsoft.OLEDBDestination"
                   description="OLE DB 대상"
@@ -1066,125 +1122,125 @@
                   contactInfo="OLE DB 대상;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All rights reserved; http://www.microsoft.com/sql/support;4">
                   <properties>
                     <property
-                      id="150"
+                      id="326"
                       name="CommandTimeout"
                       dataType="System.Int32"
                       description="명령이 종료되기 전의 제한 시간 값(초)입니다. 값 0은 제한 시간이 없음을 나타냅니다.">0</property>
                     <property
-                      id="151"
+                      id="327"
                       name="OpenRowset"
                       dataType="System.String"
                       description="행 집합을 여는 데 사용되는 데이터베이스 개체의 이름을 지정합니다."></property>
                     <property
-                      id="152"
+                      id="328"
                       name="OpenRowsetVariable"
                       dataType="System.String"
                       description="행 집합을 여는 데 사용되는 데이터베이스 개체의 이름이 들어 있는 변수를 지정합니다.">User::StagingTableName</property>
                     <property
-                      id="153"
+                      id="329"
                       name="SqlCommand"
                       dataType="System.String"
                       description="실행할 SQL 명령입니다."
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                     <property
-                      id="154"
+                      id="330"
                       name="DefaultCodePage"
                       dataType="System.Int32"
                       description="데이터 원본에서 코드 페이지 정보를 사용할 수 없을 때 사용할 열 코드 페이지를 지정합니다.">1252</property>
                     <property
-                      id="155"
+                      id="331"
                       name="AlwaysUseDefaultCodePage"
                       dataType="System.Boolean"
                       description="문자 데이터를 설명할 때 DefaultCodePage 속성 값을 사용하도록 합니다.">false</property>
                     <property
-                      id="156"
+                      id="332"
                       name="AccessMode"
                       dataType="System.Int32"
                       description="데이터베이스에 액세스하는 데 사용되는 모드를 지정합니다."
                       typeConverter="AccessMode">4</property>
                     <property
-                      id="157"
+                      id="333"
                       name="FastLoadKeepIdentity"
                       dataType="System.Boolean"
                       description="ID 열에 제공된 값을 대상에 복사할지 여부를 나타냅니다. false인 경우 ID 열의 값이 대상에서 자동 생성됩니다. 빠른 로드를 사용하는 경우에만 적용됩니다.">false</property>
                     <property
-                      id="158"
+                      id="334"
                       name="FastLoadKeepNulls"
                       dataType="System.Boolean"
                       description="Null 포함 열을 대상에 Null로 삽입할지 여부를 나타냅니다. false인 경우 Null 포함 열은 지정된 기본값으로 대상에 삽입됩니다. 빠른 로드를 사용하는 경우에만 적용됩니다.">false</property>
                     <property
-                      id="159"
+                      id="335"
                       name="FastLoadOptions"
                       dataType="System.String"
                       description="빠른 로드와 함께 사용할 옵션을 지정합니다. 빠른 로드를 사용하는 경우에만 적용됩니다.">TABLOCK,CHECK_CONSTRAINTS</property>
                     <property
-                      id="160"
+                      id="336"
                       name="FastLoadMaxInsertCommitSize"
                       dataType="System.Int32"
                       description="데이터 삽입 도중 커밋이 수행되는 시점을 지정합니다. 값을 0으로 지정하면 데이터 삽입 완료 시에 커밋이 한 번 수행됩니다. 빠른 로드를 사용하는 경우에만 적용됩니다.">2147483647</property>
                   </properties>
                   <connections>
                     <connection
-                      id="161"
+                      id="337"
                       name="OleDbConnection"
                       description="데이터베이스에 액세스하는 데 사용되는 OLE DB 런타임 연결입니다."
                       connectionManagerID="{314C28CB-ECEB-46EC-B5FA-D7D1BC91AE27}" />
                   </connections>
                   <inputs>
                     <input
-                      id="162"
+                      id="338"
                       name="OLE DB 대상 입력"
                       hasSideEffects="true"
                       errorOrTruncationOperation="삽입"
                       errorRowDisposition="FailComponent">
                       <inputColumns>
                         <inputColumn
-                          id="163"
-                          lineageId="105"
-                          externalMetadataColumnId="170"
+                          id="339"
+                          lineageId="179"
+                          externalMetadataColumnId="346"
                           cachedName="THUNK_COLUMN"
                           cachedDataType="str"
                           cachedLength="4000"
                           cachedCodepage="1252" />
                         <inputColumn
-                          id="164"
-                          lineageId="122"
-                          externalMetadataColumnId="169"
+                          id="340"
+                          lineageId="316"
+                          externalMetadataColumnId="345"
                           cachedName="ETL_PROGRAM_ID"
                           cachedDataType="wstr"
-                          cachedLength="20" />
+                          cachedLength="17" />
                         <inputColumn
-                          id="165"
-                          lineageId="125"
-                          externalMetadataColumnId="168"
+                          id="341"
+                          lineageId="319"
+                          externalMetadataColumnId="344"
                           cachedName="ETL_EXEC_DATE"
                           cachedDataType="dbTimeStamp" />
                         <inputColumn
-                          id="166"
+                          id="342"
                           name="ETL_EXEC_ID"
-                          lineageId="128"
-                          externalMetadataColumnId="167"
+                          lineageId="322"
+                          externalMetadataColumnId="343"
                           cachedName="ETL_EXEC_ID"
                           cachedDataType="wstr" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          id="167"
+                          id="343"
                           name="ETL_EXEC_ID"
                           dataType="wstr"
                           length="30" />
                         <externalMetadataColumn
-                          id="168"
+                          id="344"
                           name="ETL_EXEC_DATE"
                           dataType="dbTime" />
                         <externalMetadataColumn
-                          id="169"
+                          id="345"
                           name="ETL_PROGRAM_ID"
                           dataType="wstr"
-                          length="21" />
+                          length="100" />
                         <externalMetadataColumn
-                          id="170"
+                          id="346"
                           name="THUNK_COLUMN"
                           dataType="str"
                           length="4000"
@@ -1194,22 +1250,22 @@
                   </inputs>
                   <outputs>
                     <output
-                      id="171"
+                      id="347"
                       name="OLE DB 대상 오류 출력"
                       exclusionGroup="1"
-                      synchronousInputId="162"
+                      synchronousInputId="338"
                       isErrorOut="true">
                       <outputColumns>
                         <outputColumn
-                          id="172"
+                          id="348"
                           name="ErrorCode"
-                          lineageId="172"
+                          lineageId="348"
                           dataType="i4"
                           specialFlags="1" />
                         <outputColumn
-                          id="173"
+                          id="349"
                           name="ErrorColumn"
-                          lineageId="173"
+                          lineageId="349"
                           dataType="i4"
                           specialFlags="2" />
                       </outputColumns>
@@ -1220,15 +1276,15 @@
               </components>
               <paths>
                 <path
-                  id="115"
+                  id="294"
                   name="Oracle 원본 출력"
-                  startId="100"
-                  endId="110" />
+                  startId="178"
+                  endId="289" />
                 <path
-                  id="174"
+                  id="350"
                   name="파생 열 출력"
-                  startId="111"
-                  endId="162" />
+                  startId="290"
+                  endId="338" />
               </paths>
               <ScriptProject
                 Name="ST_f5840d233be74fa2bdade67fd5596171"
@@ -1243,7 +1299,7 @@
                     </key>
                     <value>
                       <anyType
-                        xsi:type="xsd:int">149</anyType>
+                        xsi:type="xsd:int">325</anyType>
                     </value>
                   </item>
                   <item>
@@ -1290,7 +1346,7 @@
                     </key>
                     <value>
                       <anyType
-                        xsi:type="xsd:int">91</anyType>
+                        xsi:type="xsd:int">169</anyType>
                     </value>
                   </item>
                   <item>
@@ -1337,7 +1393,7 @@
                     </key>
                     <value>
                       <anyType
-                        xsi:type="xsd:int">109</anyType>
+                        xsi:type="xsd:int">288</anyType>
                     </value>
                   </item>
                   <item>
@@ -1358,23 +1414,27 @@
           DTS:refId="Package\Load Data SMART To Target Table\Sequence Container"
           DTS:CreationName="STOCK:SEQUENCE"
           DTS:Description="Sequence Container"
-          DTS:DTSID="{FE1908F5-ADAE-42C5-8560-7BD840D263BD}"
+          DTS:DTSID="{7DAE0E17-C04A-471F-B890-E0B6996AE289}"
           DTS:ExecutableType="STOCK:SEQUENCE"
           DTS:LocaleID="-1"
           DTS:ObjectName="Sequence Container">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:Executables>
             <DTS:Executable
               DTS:refId="Package\Load Data SMART To Target Table\Sequence Container\Set Derived Column Variable From ODS Meta Table"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{88CA6173-F3B0-42F6-98BB-65C015B67137}"
+              DTS:DTSID="{8270DC47-9BB9-4DD3-B077-0FE7B87AE750}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Set Derived Column Variable From ODS Meta Table"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="2">
               <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{314C28CB-ECEB-46EC-B5FA-D7D1BC91AE27}"
@@ -1402,21 +1462,46 @@
               DTS:refId="Package\Load Data SMART To Target Table\Sequence Container\Set Identifier From DB"
               DTS:CreationName="Microsoft.ExecuteSQLTask"
               DTS:Description="Execute SQL Task"
-              DTS:DTSID="{5b4a454c-8ea7-4e65-8e84-af1d43f7311f}"
+              DTS:DTSID="{A3AD5499-DF2E-4433-AD56-7231D660769C}"
               DTS:ExecutableType="Microsoft.ExecuteSQLTask"
               DTS:LocaleID="-1"
               DTS:ObjectName="Set Identifier From DB"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
               DTS:ThreadHint="1">
               <DTS:Variables />
+              <DTS:LoggingOptions
+                DTS:FilterKind="0" />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
                   SQLTask:Connection="{314C28CB-ECEB-46EC-B5FA-D7D1BC91AE27}"
-                  SQLTask:SqlStatementSource="SELECT CONCAT(YEAR(GETDATE()),DATEPART(WEEK, GETDATE()))"
+                  SQLTask:SqlStmtSourceType="Variable"
+                  SQLTask:SqlStatementSource="User::SQL_SelectODSTargetTableEtlExecId"
                   SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
                   <SQLTask:ResultBinding
                     SQLTask:ResultName="0"
                     SQLTask:DtsVariableName="User::EtlExecId" />
+                </SQLTask:SqlTaskData>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Load Data SMART To Target Table\Sequence Container\Set Plan Week From Calendar Table"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{0907C644-B8E5-43F2-A295-E0F567741BBC}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Set Plan Week From Calendar Table"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{314C28CB-ECEB-46EC-B5FA-D7D1BC91AE27}"
+                  SQLTask:SqlStatementSource="SELECT PLAN_WEEK FROM T_SMT_CALENDAR WHERE CDATE = CONVERT(CHAR(10),(GETDATE() -1), 112)"
+                  SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+                  <SQLTask:ResultBinding
+                    SQLTask:ResultName="0"
+                    SQLTask:DtsVariableName="User::PlanWeek" />
                 </SQLTask:SqlTaskData>
               </DTS:ObjectData>
             </DTS:Executable>
@@ -1426,13 +1511,15 @@
           DTS:refId="Package\Load Data SMART To Target Table\SP_Trim_All_Varchar"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{ba386f4a-1314-46a4-b571-1411725102cc}"
+          DTS:DTSID="{E7C20524-0B44-41D1-8333-F3A6AD4BB7E6}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="SP_Trim_All_Varchar"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{314C28CB-ECEB-46EC-B5FA-D7D1BC91AE27}"
@@ -1451,7 +1538,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Data SMART To Target Table.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{7ED127F0-F199-42F1-8732-B313B9B0E265}"
+          DTS:DTSID="{F7E6B2FF-B564-4A18-8E5E-B8F0945CC238}"
           DTS:From="Package\Load Data SMART To Target Table\Sequence Container"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -1459,7 +1546,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Data SMART To Target Table.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{66F4AC54-A9C0-4E99-83F4-595E8CB67463}"
+          DTS:DTSID="{7C5D1A6E-8DB7-4A16-8159-3A813D19CCB7}"
           DTS:From="Package\Load Data SMART To Target Table\Drop and Create Staging Table"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -1467,7 +1554,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Data SMART To Target Table.PrecedenceConstraints[Constraint 2]"
           DTS:CreationName=""
-          DTS:DTSID="{08498A92-7679-47A6-A229-2400AE11E13B}"
+          DTS:DTSID="{AAA4A575-F782-41B1-AD0B-459AAEDDAB3E}"
           DTS:From="Package\Load Data SMART To Target Table\Load Data From SMART To ODS Staging Table"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 2"
@@ -1475,63 +1562,55 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Data SMART To Target Table.PrecedenceConstraints[Constraint 3]"
           DTS:CreationName=""
-          DTS:DTSID="{DFAF791E-D223-48D3-9A53-4932E4ECB8A5}"
-          DTS:From="Package\Load Data SMART To Target Table\Delete Data for CDATE in ODS Target Table"
+          DTS:DTSID="{1ED58491-0BA5-4556-B2F2-756D3183A555}"
+          DTS:From="Package\Load Data SMART To Target Table\Count Loaded Raws in Staging Table"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 3"
           DTS:To="Package\Load Data SMART To Target Table\Load Data From ODS Staging Table to Target Table" />
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Data SMART To Target Table.PrecedenceConstraints[Constraint 4]"
           DTS:CreationName=""
-          DTS:DTSID="{33597208-DA5C-435E-902C-4E2ED5C3D9C9}"
+          DTS:DTSID="{8A451B36-1752-4442-AE19-7BECD4F407B8}"
           DTS:From="Package\Load Data SMART To Target Table\SP_Trim_All_Varchar"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 4"
           DTS:To="Package\Load Data SMART To Target Table\Count Loaded Raws in Staging Table" />
-        <DTS:PrecedenceConstraint
-          DTS:refId="Package\Load Data SMART To Target Table.PrecedenceConstraints[Constraint 6]"
-          DTS:CreationName=""
-          DTS:DTSID="{0D3B7E11-EB7A-44F8-AB96-BBC039AE5E06}"
-          DTS:From="Package\Load Data SMART To Target Table\Count Loaded Raws in Staging Table"
-          DTS:LogicalAnd="True"
-          DTS:ObjectName="Constraint 6"
-          DTS:To="Package\Load Data SMART To Target Table\Delete Data for CDATE in ODS Target Table" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{8B90D742-CEC8-45CA-B27B-3A2C0AE08869}"
-          DTS:ObjectName="{8B90D742-CEC8-45CA-B27B-3A2C0AE08869}"
+          DTS:DTSID="{5D8F269F-5D4A-4DAD-AAD9-B1481B00EC42}"
+          DTS:ObjectName="{5D8F269F-5D4A-4DAD-AAD9-B1481B00EC42}"
           DTS:ValueIndex="0"
           DTS:VariableName="User::StagingTableName" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{E6082056-4791-4A40-9E4A-E18BF15D9503}"
-          DTS:ObjectName="{E6082056-4791-4A40-9E4A-E18BF15D9503}"
+          DTS:DTSID="{66B4CC4A-9251-4EE5-8690-48619E75B89D}"
+          DTS:ObjectName="{66B4CC4A-9251-4EE5-8690-48619E75B89D}"
           DTS:ValueIndex="1"
           DTS:VariableName="User::TableName" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{8F1D11EF-E297-49F7-A5DA-3EC15822C0DA}"
-          DTS:ObjectName="{8F1D11EF-E297-49F7-A5DA-3EC15822C0DA}"
+          DTS:DTSID="{223EF1D3-361A-4FAF-AB1D-DEAD38E74D4F}"
+          DTS:ObjectName="{223EF1D3-361A-4FAF-AB1D-DEAD38E74D4F}"
           DTS:ValueIndex="2"
           DTS:VariableName="User::Param_From" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{738768B2-2B7B-45D8-BBDA-6DE5B6E4BD0E}"
-          DTS:ObjectName="{738768B2-2B7B-45D8-BBDA-6DE5B6E4BD0E}"
+          DTS:DTSID="{949D6098-A94B-4A57-A8AB-2564EFB70ADB}"
+          DTS:ObjectName="{949D6098-A94B-4A57-A8AB-2564EFB70ADB}"
           DTS:ValueIndex="3"
           DTS:VariableName="User::Param_To" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{16D99BDE-B803-4DA5-9A33-A82BEC7CA54D}"
-          DTS:ObjectName="{16D99BDE-B803-4DA5-9A33-A82BEC7CA54D}"
+          DTS:DTSID="{1249776B-F384-4025-A77A-108C77830D86}"
+          DTS:ObjectName="{1249776B-F384-4025-A77A-108C77830D86}"
           DTS:ValueIndex="4"
           DTS:VariableName="User::BaseColumn" />
         <DTS:ForEachVariableMapping
           DTS:CreationName=""
-          DTS:DTSID="{69EB992A-43FA-4AE7-969A-E12A1D83A60C}"
-          DTS:ObjectName="{69EB992A-43FA-4AE7-969A-E12A1D83A60C}"
+          DTS:DTSID="{0FC3E6B4-F851-4CF4-9E8A-212EA8B24627}"
+          DTS:ObjectName="{0FC3E6B4-F851-4CF4-9E8A-212EA8B24627}"
           DTS:ValueIndex="5"
           DTS:VariableName="User::TargetNo" />
       </DTS:ForEachVariableMappings>
@@ -1540,13 +1619,15 @@
       DTS:refId="Package\Send Fail Mail"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{4AE560AD-8065-4A7B-95A1-2A5BF5D8402C}"
+      DTS:DTSID="{E0A387BC-6617-49C4-AF2B-AF2A7B4D834F}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Send Fail Mail"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="3">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{314C28CB-ECEB-46EC-B5FA-D7D1BC91AE27}"
@@ -1570,13 +1651,15 @@
       DTS:refId="Package\Send Success Mail"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{258E9746-9A29-4AE8-8B63-133A972FD523}"
+      DTS:DTSID="{4B02C55E-96D7-4A54-B8C3-C0B5677811EA}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Send Success Mail"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{314C28CB-ECEB-46EC-B5FA-D7D1BC91AE27}"
@@ -1600,23 +1683,27 @@
       DTS:refId="Package\Set Variables"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{E245B111-4AF9-4CC7-8237-A461E3AAB962}"
+      DTS:DTSID="{6523BE03-94E5-4F0C-8EC0-663FB9665629}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Variables">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:Executables>
         <DTS:Executable
           DTS:refId="Package\Set Variables\Get Target Table"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{A3998391-AF98-4B2E-81C9-C1AEAF00AFAA}"
+          DTS:DTSID="{2D88F74E-887B-4065-829A-5C88BC431038}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Get Target Table"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
+          <DTS:LoggingOptions
+            DTS:FilterKind="0" />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{314C28CB-ECEB-46EC-B5FA-D7D1BC91AE27}"
@@ -1640,13 +1727,15 @@
       DTS:refId="Package\Set Variables From ODS Meta Table"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{0FB26755-4720-4AE2-B811-E24271CA78A1}"
+      DTS:DTSID="{37CCB819-5744-49C8-A98C-F1A38E241616}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set Variables From ODS Meta Table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{314C28CB-ECEB-46EC-B5FA-D7D1BC91AE27}"
@@ -1678,7 +1767,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{58A0A700-CD9C-4C5C-B7E6-5D50A1BCE130}"
+      DTS:DTSID="{D260C13E-10CC-4CC5-B677-DDEB70BB77BA}"
       DTS:From="Package\Set Variables From ODS Meta Table"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -1686,7 +1775,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{4F25358F-EA94-44B3-A1AA-E673572AFEAB}"
+      DTS:DTSID="{74B89573-6F14-4B0B-AC37-6FEFB87BD617}"
       DTS:From="Package\Set Variables"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -1694,7 +1783,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{7907D4A6-B33A-4FEE-B211-4E0D44B8559C}"
+      DTS:DTSID="{9D0F0F44-C2A4-431E-B50D-367256A73553}"
       DTS:From="Package\Set Variables From ODS Meta Table"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\Send Fail Mail"
@@ -1702,7 +1791,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{9B6E343F-C492-43ED-9DE7-CC7510BE62DF}"
+      DTS:DTSID="{D833DCDD-99FA-4E8A-A94E-4222D1E81C43}"
       DTS:From="Package\Load Data SMART To Target Table"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Send Fail Mail"
@@ -1710,7 +1799,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{B433E65A-EAB5-400C-A235-6A030CAB31F8}"
+      DTS:DTSID="{3E24479A-509F-4229-8C55-A48544083DA6}"
       DTS:From="Package\Load Data SMART To Target Table"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -1720,7 +1809,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnError]"
       DTS:CreationName="OnError"
-      DTS:DTSID="{1185FE27-9895-48E2-8C6C-72E6AB645E68}"
+      DTS:DTSID="{98C4B30D-3ABE-4D74-9817-8033065DBA7A}"
       DTS:EventID="0"
       DTS:EventName="OnError"
       DTS:LocaleID="-1">
@@ -1728,7 +1817,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="이벤트의 전파 속성"
-          DTS:DTSID="{1908B0D7-EB3A-4471-8AF8-2B47609AB523}"
+          DTS:DTSID="{E1FEE157-01C1-43D4-B383-805009399FB0}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -1741,7 +1830,7 @@
           DTS:refId="Package.EventHandlers[OnError]\ErrorDescription Parse"
           DTS:CreationName="Microsoft.ExpressionTask"
           DTS:Description="Expression Task"
-          DTS:DTSID="{970364C1-B04C-4327-9E31-4E1D3B077253}"
+          DTS:DTSID="{4B9C3C2D-4A23-4251-9244-658077C89374}"
           DTS:ExecutableType="Microsoft.ExpressionTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="ErrorDescription Parse"
@@ -1756,7 +1845,7 @@
           DTS:refId="Package.EventHandlers[OnError]\Log OnError"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{FA8B444E-681F-4E71-8313-B9524EC5ECAB}"
+          DTS:DTSID="{1B463DEC-151A-4263-884B-DB27854F9BA1}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Log OnError"
@@ -1822,7 +1911,7 @@
         <DTS:PrecedenceConstraint
           DTS:refId="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{9934ED87-1332-4597-BC31-29B77A325D82}"
+          DTS:DTSID="{B5F5469B-CC36-40A3-A47E-0272066F81F2}"
           DTS:From="Package.EventHandlers[OnError]\ErrorDescription Parse"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -1832,7 +1921,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPostExecute]"
       DTS:CreationName="OnPostExecute"
-      DTS:DTSID="{807A8D7A-BDF2-4E32-B0FD-6C2AD8A29CFD}"
+      DTS:DTSID="{AE30833C-9EC5-4A37-B7BE-8EB7F0D678B6}"
       DTS:EventID="0"
       DTS:EventName="OnPostExecute"
       DTS:LocaleID="-1">
@@ -1840,7 +1929,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="이벤트의 전파 속성"
-          DTS:DTSID="{CE0DD111-1C89-4DE9-B3C1-D81CBFEA3B73}"
+          DTS:DTSID="{5F3BE08D-A62A-4419-AFE5-758C10C0B421}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -1853,7 +1942,7 @@
           DTS:refId="Package.EventHandlers[OnPostExecute]\Log OnPostExecute"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{EEE0323B-1A68-4AB8-B74B-BEF1A98BFA27}"
+          DTS:DTSID="{5BE8E99F-3197-4D64-9F5B-38F47A9920DB}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Log OnPostExecute"
@@ -1907,7 +1996,7 @@
     <DTS:EventHandler
       DTS:refId="Package.EventHandlers[OnPreExecute]"
       DTS:CreationName="OnPreExecute"
-      DTS:DTSID="{CB8E6571-B98D-4443-8613-C818466A6AC5}"
+      DTS:DTSID="{0F3900D5-94C8-4A03-91F8-7580D957245A}"
       DTS:EventID="6619192"
       DTS:EventName="OnPreExecute"
       DTS:LocaleID="-1">
@@ -1915,7 +2004,7 @@
         <DTS:Variable
           DTS:CreationName=""
           DTS:Description="이벤트의 전파 속성"
-          DTS:DTSID="{C91ABDEE-679F-491F-821D-45D56EF74E58}"
+          DTS:DTSID="{50003C4D-489B-46C6-A4B1-AA9AECF0EF6C}"
           DTS:IncludeInDebugDump="6789"
           DTS:Namespace="System"
           DTS:ObjectName="Propagate">
@@ -1928,7 +2017,7 @@
           DTS:refId="Package.EventHandlers[OnPreExecute]\Log OnPreExecute"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{7225C649-CD4D-4826-A113-00B30940C9B8}"
+          DTS:DTSID="{9F954B40-E501-400A-A15A-EA52733D8526}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Log OnPreExecute"
@@ -1995,56 +2084,56 @@
         <NodeLayout
           Size="287,42"
           Id="Package\Load Data SMART To Target Table\Count Loaded Raws in Staging Table"
-          TopLeft="403.079605047497,433.329332274307" />
+          TopLeft="403.510560452795,525.186480407001" />
         <NodeLayout
-          Size="325,42"
-          Id="Package\Load Data SMART To Target Table\Delete Data for CDATE in ODS Target Table"
-          TopLeft="384.079605047497,503.32932696098" />
-        <NodeLayout
-          Size="253,42"
+          Size="252,42"
           Id="Package\Load Data SMART To Target Table\Drop and Create Staging Table"
-          TopLeft="416.666656368313,35.5" />
+          TopLeft="415.77379923876,20.0238099337886" />
         <NodeLayout
           Size="369,42"
           Id="Package\Load Data SMART To Target Table\Load Data From ODS Staging Table to Target Table"
-          TopLeft="362.079605047497,575.662662508208" />
+          TopLeft="362.510560452795,618.996000478696" />
         <NodeLayout
           Size="342,42"
           Id="Package\Load Data SMART To Target Table\Load Data From SMART To ODS Staging Table"
-          TopLeft="376.621271672772,288.58926734298" />
+          TopLeft="376.010560452795,360.353160503605" />
         <NodeLayout
           Size="367,42"
           Id="Package\Load Data SMART To Target Table\Sequence Container\Set Derived Column Variable From ODS Meta Table"
-          TopLeft="24.3333333002192,26.714285856607" />
+          TopLeft="42.6468251115148,20.6728397400127" />
         <NodeLayout
           Size="203,42"
           Id="Package\Load Data SMART To Target Table\Sequence Container\Set Identifier From DB"
-          TopLeft="490.333333300219,26.9840849835339" />
+          TopLeft="491.257929537801,21.8574545803242" />
+        <NodeLayout
+          Size="281,42"
+          Id="Package\Load Data SMART To Target Table\Sequence Container\Set Plan Week From Calendar Table"
+          TopLeft="45.6666485203648,92.6428469431648" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="817,96"
-          Size="817,139"
+          PanelSize="817,191"
+          Size="817,234"
           Id="Package\Load Data SMART To Target Table\Sequence Container"
-          TopLeft="136.714251622954,117.687059957734" />
+          TopLeft="135.821394493401,99.1156318782802" />
         <NodeLayout
-          Size="192,42"
+          Size="193,42"
           Id="Package\Load Data SMART To Target Table\SP_Trim_All_Varchar"
-          TopLeft="451.621271672772,358.482115282394" />
+          TopLeft="450.510560452795,438.143646851019" />
         <EdgeLayout
           Id="Package\Load Data SMART To Target Table.PrecedenceConstraints[Constraint]"
-          TopLeft="546.417761647863,256.687059957734">
+          TopLeft="545.665977473098,333.11563187828">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.902207385246"
+              EndConnector="0,27.2375286253249"
               Start="0,0"
-              End="0,24.402207385246">
+              End="0,19.7375286253249">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.402207385246" />
+                    End="0,19.7375286253249" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2055,18 +2144,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Data SMART To Target Table.PrecedenceConstraints[Constraint 1]"
-          TopLeft="544.190453995633,77.5">
+          TopLeft="543.04759686608,62.0238099337886">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.1870599577339"
+              EndConnector="0,37.0918219444916"
               Start="0,0"
-              End="0,32.6870599577339">
+              End="0,29.5918219444916">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.6870599577339" />
+                    End="0,29.5918219444916" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2077,18 +2166,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Data SMART To Target Table.PrecedenceConstraints[Constraint 2]"
-          TopLeft="547.621271672772,330.58926734298">
+          TopLeft="547.010560452795,402.353160503605">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27.892847939414"
+              EndConnector="0,35.7904863474139"
               Start="0,0"
-              End="0,20.392847939414">
+              End="0,28.2904863474139">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.392847939414" />
+                    End="0,28.2904863474139" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2099,18 +2188,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Data SMART To Target Table.PrecedenceConstraints[Constraint 3]"
-          TopLeft="546.579605047497,545.32932696098">
+          TopLeft="547.010560452795,567.186480407001">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30.3333355472282"
+              EndConnector="0,51.809520071695"
               Start="0,0"
-              End="0,22.8333355472282">
+              End="0,44.309520071695">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.8333355472282" />
+                    End="0,44.309520071695" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2121,40 +2210,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Data SMART To Target Table.PrecedenceConstraints[Constraint 4]"
-          TopLeft="547.100438360135,400.482115282394">
+          TopLeft="547.010560452795,480.143646851019">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.8472169919137"
+              EndConnector="0,45.042833555982"
               Start="0,0"
-              End="0,25.3472169919137">
+              End="0,37.542833555982">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.3472169919137" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Data SMART To Target Table.PrecedenceConstraints[Constraint 6]"
-          TopLeft="546.579605047497,475.329332274307">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27.9999946866722"
-              Start="0,0"
-              End="0,20.4999946866722">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.4999946866722" />
+                    End="0,37.542833555982" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2166,8 +2233,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="1084,673"
-          Size="1084,716"
+          PanelSize="1084,716"
+          Size="1084,759"
           Id="Package\Load Data SMART To Target Table"
           TopLeft="1808.30302783456,691.038954483556" />
         <NodeLayout
@@ -2177,7 +2244,7 @@
         <NodeLayout
           Size="185,42"
           Id="Package\Send Success Mail"
-          TopLeft="2256.33541743877,1405.1976810579" />
+          TopLeft="2253.47166068084,1475.84847856953" />
         <NodeLayout
           Size="173,42"
           Id="Package\Set Variables\Get Target Table"
@@ -2287,13 +2354,13 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="2892.30302783456,1035.03895448356">
+          TopLeft="2892.30302783456,1054.53895448356">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="213.72071922264,-324.232831973581"
+              EndConnector="213.72071922264,-343.732831973581"
               Start="0,0"
-              End="206.22071922264,-324.232831973581">
+              End="206.22071922264,-343.732831973581">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -2304,13 +2371,13 @@
                     Point2="106.86035961132,0"
                     Point3="106.86035961132,-4" />
                   <mssgle:LineSegment
-                    End="106.86035961132,-320.232831973581" />
+                    End="106.86035961132,-339.732831973581" />
                   <mssgle:CubicBezierSegment
-                    Point1="106.86035961132,-320.232831973581"
-                    Point2="106.86035961132,-324.232831973581"
-                    Point3="110.86035961132,-324.232831973581" />
+                    Point1="106.86035961132,-339.732831973581"
+                    Point2="106.86035961132,-343.732831973581"
+                    Point3="110.86035961132,-343.732831973581" />
                   <mssgle:LineSegment
-                    End="206.22071922264,-324.232831973581" />
+                    End="206.22071922264,-343.732831973581" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2323,18 +2390,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="2349.56922263667,1379.03895448356">
+          TopLeft="2348.1373442577,1450.03895448356">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,26.1587265743437"
+              EndConnector="0,25.8095240859739"
               Start="0,0"
-              End="0,18.6587265743437">
+              End="0,18.3095240859739">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.6587265743437" />
+                    End="0,18.3095240859739" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2352,24 +2419,40 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="205,42"
           Id="Package.EventHandlers[OnError]\ErrorDescription Parse"
-          TopLeft="NaN,NaN" />
+          TopLeft="36,34" />
         <NodeLayout
-          Size="NaN,NaN"
+          Size="147,42"
           Id="Package.EventHandlers[OnError]\Log OnError"
-          TopLeft="NaN,NaN" />
+          TopLeft="76,112" />
         <EdgeLayout
           Id="Package.EventHandlers[OnError].PrecedenceConstraints[Constraint]"
-          TopLeft="NaN,NaN">
+          TopLeft="138.5,76">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="11,36"
               Start="0,0"
-              End="0,0">
+              End="11,28.5">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14"
+                    Point2="0,18"
+                    Point3="4,18" />
+                  <mssgle:LineSegment
+                    End="7,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7,18"
+                    Point2="11,18"
+                    Point3="11,22" />
+                  <mssgle:LineSegment
+                    End="11,28.5" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
@@ -2388,7 +2471,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="190,42"
           Id="Package.EventHandlers[OnPostExecute]\Log OnPostExecute"
           TopLeft="NaN,NaN" />
       </GraphLayout>
@@ -2400,7 +2483,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="183,42"
           Id="Package.EventHandlers[OnPreExecute]\Log OnPreExecute"
           TopLeft="NaN,NaN" />
       </GraphLayout>
@@ -2410,57 +2493,61 @@
     design-time-name="Package\Load Data SMART To Target Table\Load Data From ODS Staging Table to Target Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="NaN,NaN"
+          Size="146,42"
           Id="18"
-          TopLeft="NaN,NaN" />
+          TopLeft="45.5,107.1" />
         <NodeLayout
-          Size="NaN,NaN"
+          Size="226,42"
           Id="23"
-          TopLeft="NaN,NaN" />
+          TopLeft="5.50000000000003,208.7" />
         <NodeLayout
-          Size="NaN,NaN"
+          Size="218,42"
           Id="1"
-          TopLeft="NaN,NaN" />
+          TopLeft="9.50000000000001,5.50000000000007" />
         <EdgeLayout
           Id="40"
-          TopLeft="NaN,NaN">
+          TopLeft="118.3,148.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,0">
+              End="0,52.5">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="22"
-          TopLeft="NaN,NaN">
+          TopLeft="118.3,47.1000000000001">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="{assembly:Null}"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,0">
+              End="0,52.5">
               <mssgle:Curve.Segments>
-                <assembly:Null />
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2470,61 +2557,65 @@
     design-time-name="Package\Load Data SMART To Target Table\Load Data From SMART To ODS Staging Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="232,42"
+          Id="325"
+          TopLeft="278.818746100087,214.447219232792" />
         <NodeLayout
           Size="168,42"
-          Id="109"
-          TopLeft="38,107.5" />
+          Id="288"
+          TopLeft="311.718745355029,126.388885540727" />
         <NodeLayout
-          Size="233,42"
-          Id="149"
-          TopLeft="5.50000000000003,209.5" />
-        <NodeLayout
-          Size="210,42"
-          Id="91"
-          TopLeft="17,5.5" />
+          Size="209,42"
+          Id="169"
+          TopLeft="293.662495878898,37.9999991390441" />
         <EdgeLayout
-          Id="115"
-          TopLeft="122,47.5">
+          Id="350"
+          TopLeft="395.268745727558,167.988885540727">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,46.458333692065"
               Start="0,0"
-              End="0,52.5">
+              End="0,38.958333692065">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,38.958333692065" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="174"
-          TopLeft="122,149.5">
+          Id="294"
+          TopLeft="396.890620616963,79.5999991390441">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,46.7888864016827"
               Start="0,0"
-              End="0,52.5">
+              End="0,39.2888864016827">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,39.2888864016827" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1042"
   DTS:ObjectName="PKG_SMART_Device_Sub"
   DTS:PackageType="5"
-  DTS:VersionBuild="157"
-  DTS:VersionGUID="{E934267C-A09E-4A6E-B315-7920E852A3A5}">
+  DTS:VersionBuild="158"
+  DTS:VersionGUID="{F8C651C1-F2C7-4BA4-B06C-F6E924E1322E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <OraConnectionString>SERVER=105.1.11.162:1525/NADEV2;USERNAME=dbuser_mbo;WINAUTH=0;</OraConnectionString>
           <OraPassword
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACkNKotGazniuB7g5wOVh1+5IZeHTtxfsfhmFEVMMw1mwAAAAAOgAAAAAIAACAAAACN/5Rxu/FzUAMXO89AQIV29Fe0EidEUSgTCse78CUe3SAAAABkKnVBvIlbTHw7OI1bBupr3EhDGIeR7CkPdGgPZZbfFkAAAACloZPu0JyH3Ltqo56gd144wacJExFUUJFky/eSMXqfWtvSe4az80tJTWThRgmlTecEd8OGLALkKRynJmZsEKJ9</OraPassword>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADHpKmFlFkH3XflV36VoYMYWjy/fXXzanI3Ys6jlRpaVgAAAAAOgAAAAAIAACAAAAA0OIQKyMFsF3B+k6riGjMGIyrhMUd2uZhtC/YhELSiYyAAAABFK5aow9cEuLmBBEn4yowphg9guoXcH6KW7aQhQOOLkUAAAAAdbSnmtcv9/kcHjsZkdFFy+MihlFkCLivcgPMStC+pjV0+D1RA9Vurw6DNigTkGfJ3bo+w7w59/5C9j0C1jSKZ</OraPassword>
           <OraRetain>False</OraRetain>
           <OraInitialCatalog></OraInitialCatalog>
           <OraServerName>105.1.11.162:1525/NADEV2</OraServerName>
@@ -780,7 +780,7 @@
           DTS:TaskContact="Data Flow Task Plus;CozyRoc LLC; SSIS+; © 2006-2020 COZYROC LLC; All Rights Reserved; http://www.cozyroc.com/;0">
           <DTS:Variables />
           <DTS:PropertyExpression
-            DTS:Name="[READ TO SMART Table].[SqlCommand]">"SELECT * FROM " + @[User::SourceTableName] + " WHERE TO_CHAR(UPDATED_DATE, 'YYYY-MM-DD') BETWEEN TO_CHAR(SYSDATE-7, 'YYYY-MM-DD') AND TO_CHAR(SYSDATE-1, 'YYYY-MM-DD')"</DTS:PropertyExpression>
+            DTS:Name="[READ TO SMART Table].[SqlCommand]">"SELECT * FROM " + @[User::SourceTableName] + " WHERE UPDATED_DATE &gt;= TRUNC(SYSDATE-7) AND UPDATED_DATE &lt; TRUNC(SYSDATE)"</DTS:PropertyExpression>
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -806,7 +806,7 @@
                       dataType="System.String"
                       description="실행할 SQL 명령입니다."
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-                      expressionType="Notify">SELECT * FROM _ WHERE TO_CHAR(UPDATED_DATE, 'YYYY-MM-DD') BETWEEN TO_CHAR(SYSDATE-7, 'YYYY-MM-DD') AND TO_CHAR(SYSDATE-1, 'YYYY-MM-DD')</property>
+                      expressionType="Notify">SELECT * FROM _ WHERE UPDATED_DATE &gt;= TRUNC(SYSDATE-7) AND UPDATED_DATE &lt; TRUNC(SYSDATE)</property>
                     <property
                       id="94"
                       name="BatchSize"
@@ -1373,7 +1373,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Set Derived Column Variable From ODS Meta Table"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -1407,7 +1407,7 @@
               DTS:LocaleID="-1"
               DTS:ObjectName="Set Identifier From DB"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:ObjectData>
                 <SQLTask:SqlTaskData
@@ -2037,14 +2037,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.9022073852461"
+              EndConnector="0,31.902207385246"
               Start="0,0"
-              End="0,24.4022073852461">
+              End="0,24.402207385246">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.4022073852461" />
+                    End="0,24.402207385246" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2166,8 +2166,8 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="1084,645"
-          Size="1084,688"
+          PanelSize="1084,673"
+          Size="1084,716"
           Id="Package\Load Data SMART To Target Table"
           TopLeft="1808.30302783456,691.038954483556" />
         <NodeLayout
@@ -2412,32 +2412,28 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="146,42"
+          Size="NaN,NaN"
           Id="18"
-          TopLeft="311,188" />
+          TopLeft="NaN,NaN" />
         <NodeLayout
-          Size="226,42"
+          Size="NaN,NaN"
           Id="23"
-          TopLeft="270,272" />
+          TopLeft="NaN,NaN" />
         <NodeLayout
-          Size="218,42"
+          Size="NaN,NaN"
           Id="1"
-          TopLeft="278,100" />
+          TopLeft="NaN,NaN" />
         <EdgeLayout
           Id="40"
-          TopLeft="383.5,230">
+          TopLeft="NaN,NaN">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42"
+              EndConnector="{assembly:Null}"
               Start="0,0"
-              End="0,34.5">
+              End="0,0">
               <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                </mssgle:SegmentCollection>
+                <assembly:Null />
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
@@ -2449,19 +2445,15 @@
         </EdgeLayout>
         <EdgeLayout
           Id="22"
-          TopLeft="385.5,142">
+          TopLeft="NaN,NaN">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46"
+              EndConnector="{assembly:Null}"
               Start="0,0"
-              End="0,38.5">
+              End="0,0">
               <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.5" />
-                </mssgle:SegmentCollection>
+                <assembly:Null />
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
@@ -2478,65 +2470,61 @@
     design-time-name="Package\Load Data SMART To Target Table\Load Data From SMART To ODS Staging Table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="168,42"
           Id="109"
-          TopLeft="454.166648619705,177.357133796021" />
+          TopLeft="38,107.5" />
         <NodeLayout
           Size="233,42"
           Id="149"
-          TopLeft="422.166652394666,265.571415003466" />
+          TopLeft="5.50000000000003,209.5" />
         <NodeLayout
           Size="210,42"
           Id="91"
-          TopLeft="434.999982714654,91.928566731969" />
+          TopLeft="17,5.5" />
         <EdgeLayout
-          Id="174"
-          TopLeft="538.416650507186,219.357133796021">
+          Id="115"
+          TopLeft="122,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46.214281207445"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,38.714281207445">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.714281207445" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="115"
-          TopLeft="539.08331566718,133.928566731969">
+          Id="174"
+          TopLeft="122,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.4285670640519"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,35.9285670640519">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.9285670640519" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

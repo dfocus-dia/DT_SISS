@@ -27,7 +27,7 @@
           <OraConnectionString>SERVER=105.1.11.162:1525/NADEV2;USERNAME=dbuser_mbo;WINAUTH=0;</OraConnectionString>
           <OraPassword
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABCi5ZGZjn6d4oRmJ1zVqDxPLzXubxGxjqrJ6b0+DtZzQAAAAAOgAAAAAIAACAAAAA7k2oRW/Afud9x9gv4b5vNw2TxcIhLAVxFLnsVlxFz4CAAAACN9+q3uvdy3/z5NSvI5MzkcApD7b9Ejg3MR+hmchJpl0AAAAC9DrYLFsQq7GL8SvKm7+zRs8oNb4jHrAzLsMKcd6EmvUB1dpK100W3Pf8l7gIpZTlNAF9+4+9AJO89QjTK02Bb</OraPassword>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACTfNGInDYfGKXSJI+G9/EqQyuhs0XPRtuzr649y46eIwAAAAAOgAAAAAIAACAAAACE8AbIxn8ZrTfcGFEsk/kcQMxFfoBntsMljmJPvEeHiiAAAADJ5PmFnIX4gfuc08njxkGxawoQb5CsxQmYkHHYNGkYs0AAAABcFKkT7MoafC3raqblbiKmCCa1Oi4/Lp1Jrb5BxDC5oIj7ygf/evcfIhAj3Jpda1h74k7DG/YA0VEcCIhjtvQA</OraPassword>
           <OraRetain>False</OraRetain>
           <OraInitialCatalog></OraInitialCatalog>
           <OraServerName>105.1.11.162:1525/NADEV2</OraServerName>

@@ -836,7 +836,7 @@
             DTS:FilterKind="0" />
           <DTS:PropertyExpression
             DTS:Name="[READ TO SMART Table].[SqlCommand]">"SELECT MFR_CODE,MODEL_CODE,MODEL_NAME,MARKET_NAME,PROGRAM_CODE,DEVICE_SUB_CODE,USE_FLAG,CREATED_ID,CREATED_DATE,UPDATED_ID,UPDATED_DATE	
-FROM "+ @[User::SourceTableName] +" WHERE TO_CHAR(UPDATED_DATE, 'YYYY-MM-DD') BETWEEN TO_CHAR(SYSDATE-7, 'YYYY-MM-DD') AND TO_CHAR(SYSDATE-1, 'YYYY-MM-DD')"</DTS:PropertyExpression>
+FROM "+ @[User::SourceTableName] +" WHERE UPDATED_DATE &gt;= TRUNC(SYSDATE-7) AND UPDATED_DATE &lt; TRUNC(SYSDATE)"</DTS:PropertyExpression>
           <DTS:ObjectData>
             <pipeline
               version="1">

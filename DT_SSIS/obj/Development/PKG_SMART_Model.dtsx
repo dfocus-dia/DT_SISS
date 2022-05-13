@@ -11,8 +11,8 @@
   DTS:LocaleID="1042"
   DTS:ObjectName="PKG_SMART_Model"
   DTS:PackageType="5"
-  DTS:VersionBuild="162"
-  DTS:VersionGUID="{48ADADCF-6198-47D8-AAE6-4C8563935029}">
+  DTS:VersionBuild="163"
+  DTS:VersionGUID="{43E81E9D-88D7-49E7-8B74-EED62333AEBB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -27,7 +27,7 @@
           <OraConnectionString>SERVER=105.1.11.162:1525/NADEV2;USERNAME=dbuser_mbo;WINAUTH=0;</OraConnectionString>
           <OraPassword
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADA308dzsVsVXD4lhJaXXL4x0cCJ35hRmGL+p97k9I4igAAAAAOgAAAAAIAACAAAACcwQjUN9fA7mWiTLMTPCt0VPX61TW/zWsFxzgFADjP7CAAAADUpmiMT4+dXiHEUo0wDTBjmJyHqhnFjbhILP5i8YZlmEAAAACP/HDfrmQE4oI41iSLy/Ur+JB/zJpV1B4Y/Pj4aFsfO4uzbtLy6STv3NyPrFCBBbx7pfNbX6y98RC7SHKI0a9z</OraPassword>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgeeh8iWWMEm7PfJnpB9lGQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACc1Ltogw0d5kNZ9E/vz4f0Gxrs9sdGdF7C2RIIsyGM9gAAAAAOgAAAAAIAACAAAADLYISKC+OcsdQOMP/4SfQY8cQHvHd9jxsyapclGM4zXyAAAADSnjPFe55n9GVyXcJxRy5HvPhedqdcUIbqipwyZSoeBUAAAAAe4v1hbno4eYD7MGEKZHYGz9TOK74tmWzxbNxCUAlylkwKcYO6uQ5WBFQ8g5jat9AZyU5oAU7uV8JYnri62kS3</OraPassword>
           <OraRetain>False</OraRetain>
           <OraInitialCatalog></OraInitialCatalog>
           <OraServerName>105.1.11.162:1525/NADEV2</OraServerName>
@@ -836,7 +836,7 @@
             DTS:FilterKind="0" />
           <DTS:PropertyExpression
             DTS:Name="[READ TO SMART Table].[SqlCommand]">"SELECT MFR_CODE,MODEL_CODE,MODEL_NAME,MARKET_NAME,PROGRAM_CODE,DEVICE_SUB_CODE,USE_FLAG,CREATED_ID,CREATED_DATE,UPDATED_ID,UPDATED_DATE	
-FROM "+ @[User::SourceTableName] +" WHERE TO_CHAR(UPDATED_DATE, 'YYYY-MM-DD') BETWEEN TO_CHAR(SYSDATE-7, 'YYYY-MM-DD') AND TO_CHAR(SYSDATE-1, 'YYYY-MM-DD')"</DTS:PropertyExpression>
+FROM "+ @[User::SourceTableName] +" WHERE UPDATED_DATE &gt;= TRUNC(SYSDATE-7) AND UPDATED_DATE &lt; TRUNC(SYSDATE)"</DTS:PropertyExpression>
           <DTS:ObjectData>
             <pipeline
               version="1">
@@ -863,7 +863,7 @@ FROM "+ @[User::SourceTableName] +" WHERE TO_CHAR(UPDATED_DATE, 'YYYY-MM-DD') BE
                       description="실행할 SQL 명령입니다."
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
                       expressionType="Notify">SELECT MFR_CODE,MODEL_CODE,MODEL_NAME,MARKET_NAME,PROGRAM_CODE,DEVICE_SUB_CODE,USE_FLAG,CREATED_ID,CREATED_DATE,UPDATED_ID,UPDATED_DATE	
-FROM _ WHERE TO_CHAR(UPDATED_DATE, 'YYYY-MM-DD') BETWEEN TO_CHAR(SYSDATE-7, 'YYYY-MM-DD') AND TO_CHAR(SYSDATE-1, 'YYYY-MM-DD')</property>
+FROM _ WHERE UPDATED_DATE &gt;= TRUNC(SYSDATE-7) AND UPDATED_DATE &lt; TRUNC(SYSDATE)</property>
                     <property
                       id="172"
                       name="BatchSize"
@@ -1433,7 +1433,7 @@ FROM _ WHERE TO_CHAR(UPDATED_DATE, 'YYYY-MM-DD') BETWEEN TO_CHAR(SYSDATE-7, 'YYY
               DTS:LocaleID="-1"
               DTS:ObjectName="Set Derived Column Variable From ODS Meta Table"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="1">
+              DTS:ThreadHint="0">
               <DTS:Variables />
               <DTS:LoggingOptions
                 DTS:FilterKind="0" />
@@ -1469,7 +1469,7 @@ FROM _ WHERE TO_CHAR(UPDATED_DATE, 'YYYY-MM-DD') BETWEEN TO_CHAR(SYSDATE-7, 'YYY
               DTS:LocaleID="-1"
               DTS:ObjectName="Set Identifier From DB"
               DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-              DTS:ThreadHint="0">
+              DTS:ThreadHint="1">
               <DTS:Variables />
               <DTS:LoggingOptions
                 DTS:FilterKind="0" />
@@ -2282,17 +2282,17 @@ FROM _ WHERE TO_CHAR(UPDATED_DATE, 'YYYY-MM-DD') BETWEEN TO_CHAR(SYSDATE-7, 'YYY
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.3883289630611" />
+                    End="0,15.388328963061" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.3883289630611"
-                    Point2="0,19.3883289630611"
-                    Point3="-4,19.3883289630611" />
+                    Point1="0,15.388328963061"
+                    Point2="0,19.388328963061"
+                    Point3="-4,19.388328963061" />
                   <mssgle:LineSegment
-                    End="-127.666596631206,19.3883289630611" />
+                    End="-127.666596631206,19.388328963061" />
                   <mssgle:CubicBezierSegment
-                    Point1="-127.666596631206,19.3883289630611"
-                    Point2="-131.666596631206,19.3883289630611"
-                    Point3="-131.666596631206,23.3883289630611" />
+                    Point1="-127.666596631206,19.388328963061"
+                    Point2="-131.666596631206,19.388328963061"
+                    Point3="-131.666596631206,23.388328963061" />
                   <mssgle:LineSegment
                     End="-131.666596631206,40.561209823926" />
                 </mssgle:SegmentCollection>

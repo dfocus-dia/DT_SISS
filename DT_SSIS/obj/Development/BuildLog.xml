@@ -2,18 +2,18 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>MBO_SSIS</Name>
-    <LastWriteTime>2022-05-12T04:43:43.3551804Z</LastWriteTime>
+    <LastWriteTime>2022-05-13T16:18:50.4130579Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>PKG_SMART_Model.dtsx</Name>
-      <LastWriteTime>2022-05-12T04:48:47.2035622Z</LastWriteTime>
+      <LastWriteTime>2022-05-13T11:06:30.3013567Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>PKG_SMART_Device_Sub.dtsx</Name>
-      <LastWriteTime>2022-05-12T04:43:43.2941759Z</LastWriteTime>
+      <LastWriteTime>2022-05-13T12:40:29.1139354Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -23,7 +23,37 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>PKG_SMART_Manufacture.dtsx</Name>
-      <LastWriteTime>2022-05-12T04:45:58.5202435Z</LastWriteTime>
+      <LastWriteTime>2022-05-13T11:05:55.2253537Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>PKG_SMART_AttacheRate_NC.dtsx</Name>
+      <LastWriteTime>2022-05-13T15:59:55.5558483Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>PKG_SMART_AttacheRate_Target.dtsx</Name>
+      <LastWriteTime>2022-05-13T12:23:13.0178729Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>PKG_SMART_Carrier.dtsx</Name>
+      <LastWriteTime>2022-05-13T11:07:59.9741214Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>PKG_SMART_Sellout.dtsx</Name>
+      <LastWriteTime>2022-05-13T13:28:12.2958195Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>PKG_SMART_AttacheRate_ME.dtsx</Name>
+      <LastWriteTime>2022-05-13T19:39:29.1706227Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>PKG_SMART_AttacheRate_PC.dtsx</Name>
+      <LastWriteTime>2022-05-13T19:39:52.0509968Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
